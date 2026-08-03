@@ -1,16 +1,37 @@
-# React + Vite
+# Flycast
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Plataforma de conectividade e inteligencia operacional para a aviacao.
 
-Currently, two official plugins are available:
+## Visualizacao do Projeto
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+O projeto pode ser acessado online em:
+https://flycast-ten.vercel.app/
 
-## React Compiler
+## Sobre o Projeto
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+O Flycast e uma solucao moderna desenvolvida para garantir transmissao de telemetria, audio e video ao vivo com conectividade hibrida em aeronaves, suportando operacoes em ambientes extremos e areas remotas.
 
-## Expanding the Oxlint configuration
+Esta interface inclui:
+- Landing Page informativa sobre os produtos Air Bind e Flybox.
+- Modulo de Autenticacao (Login e Cadastro) com sistema de rotas.
+- Layout totalmente responsivo com visual tecnologico e dark mode.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+## Tecnologias Utilizadas
+
+- React
+- Vite
+- React Router DOM
+- CSS (Custom Properties, Grid, Flexbox)
+- Lucide React para iconografia
+
+## Como rodar localmente
+
+Para iniciar o projeto em sua maquina, siga os passos abaixo:
+
+1. Instale as dependencias do projeto:
+   npm install
+
+2. Inicie o servidor de desenvolvimento:
+   npm run dev
+
+3. Acesse no navegador o link local gerado pelo Vite.
