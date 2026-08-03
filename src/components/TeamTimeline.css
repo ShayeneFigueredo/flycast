@@ -1,0 +1,116 @@
+.team-timeline {
+  background: var(--bg-dark);
+  position: relative;
+}
+
+.mb-5 {
+  margin-bottom: 5rem;
+}
+
+.mb-2 {
+  margin-bottom: 1rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.timeline-container {
+  position: relative;
+  padding: 2rem 0;
+}
+
+.timeline-line {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: rgba(0, 136, 255, 0.3);
+  z-index: 1;
+}
+
+.timeline-line::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--neon-blue);
+  box-shadow: var(--glow-shadow);
+}
+
+.timeline-items {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  z-index: 2;
+  gap: 1rem;
+}
+
+.timeline-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.timeline-dot {
+  width: 16px;
+  height: 16px;
+  background: var(--bg-dark);
+  border: 3px solid var(--neon-blue);
+  border-radius: 50%;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 0 10px var(--neon-blue);
+  align-self: flex-start;
+  margin-left: 20%;
+}
+
+.role-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.role-desc {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+@media (max-width: 968px) {
+  .timeline-container {
+    padding-left: 20px;
+  }
+
+  .timeline-line {
+    top: 0;
+    left: 28px;
+    width: 2px;
+    height: 100%;
+  }
+
+  .timeline-line::after {
+    width: 100%;
+    height: 100%;
+  }
+
+  .timeline-items {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .timeline-dot {
+    margin-left: 0;
+    margin-bottom: 0;
+    position: absolute;
+    left: 0;
+    top: 5px;
+  }
+
+  .timeline-item {
+    padding-left: 40px;
+  }
+}

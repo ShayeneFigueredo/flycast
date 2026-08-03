@@ -1,0 +1,75 @@
+.process {
+  background: var(--bg-dark);
+  position: relative;
+  overflow: hidden;
+}
+
+.process-subtitle {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.process-step {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.step-number {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--neon-blue);
+  text-shadow: 0 0 15px rgba(0, 136, 255, 0.4);
+  line-height: 1;
+  opacity: 0.8;
+}
+
+.step-content {
+  flex: 1;
+}
+
+.step-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.step-desc {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.bg-graph-line {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1000 200" xmlns="http://www.w3.org/2000/svg"><path d="M0 150 Q 100 100 200 120 T 400 80 T 600 100 T 800 40 T 1000 0 L 1000 200 L 0 200 Z" fill="rgba(0,136,255,0.03)" stroke="rgba(0,136,255,0.2)" stroke-width="2"/></svg>') no-repeat bottom;
+  background-size: cover;
+  z-index: 1;
+  pointer-events: none;
+}
+
+@media (max-width: 968px) {
+  .process-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .process-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}

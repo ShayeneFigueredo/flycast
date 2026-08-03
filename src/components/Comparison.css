@@ -1,0 +1,141 @@
+.comparison {
+  background: var(--bg-dark);
+}
+
+.comparison-content-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.comparison-text-side {
+  display: flex;
+  flex-direction: column;
+}
+
+.comparison-text-side .section-title {
+  text-align: left;
+  margin-bottom: 1.5rem;
+  font-size: 2.8rem;
+}
+
+.comparison-paragraph {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.table-container {
+  max-width: 900px;
+  margin: 0 auto;
+  border-radius: 12px;
+  background: rgba(2, 6, 23, 0.7);
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+}
+
+.table-header {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  padding: 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-align: center;
+  align-items: center;
+}
+
+.table-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  align-items: center;
+  text-align: center;
+  transition: background 0.3s;
+}
+
+.table-row:hover {
+  background: rgba(0, 136, 255, 0.05);
+}
+
+.table-row:last-child {
+  border-bottom: none;
+}
+
+.col-feature {
+  display: flex;
+  align-items: center;
+  text-align: left;
+  padding-left: 1rem;
+  color: var(--text-primary);
+  font-size: 0.95rem;
+}
+
+.table-header .col-feature {
+  color: var(--neon-blue-light);
+  font-size: 1.1rem;
+  text-transform: uppercase;
+}
+
+.col-airbind, .col-flybox {
+  display: flex;
+  justify-content: center;
+}
+
+.feature-icon {
+  width: 20px;
+  height: 20px;
+  color: var(--text-secondary);
+  margin-right: 12px;
+  flex-shrink: 0;
+}
+
+.check-icon {
+  color: var(--neon-blue);
+  width: 24px;
+  height: 24px;
+  filter: drop-shadow(0 0 5px var(--neon-blue));
+}
+
+.minus-icon {
+  color: var(--text-secondary);
+  width: 20px;
+  height: 20px;
+}
+
+@media (max-width: 968px) {
+  .comparison-content-wrapper {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .comparison-text-side .section-title {
+    text-align: center;
+    font-size: 2.2rem;
+  }
+  
+  .comparison-paragraph {
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .table-header, .table-row {
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 1rem 0.5rem;
+  }
+  
+  .col-feature {
+    font-size: 0.8rem;
+    padding-left: 0.5rem;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .feature-icon {
+    margin-right: 0;
+    margin-bottom: 4px;
+  }
+}

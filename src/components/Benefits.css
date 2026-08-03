@@ -1,0 +1,39 @@
+.benefits {
+  background: var(--bg-dark);
+  position: relative;
+  overflow: hidden;
+}
+
+.benefits::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, rgba(0, 136, 255, 0.05) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.benefits-diagram {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4rem;
+}
+
+.ecossistema-img {
+  max-width: 100%;
+  height: auto;
+  position: relative;
+  z-index: 2;
+  filter: drop-shadow(0 10px 30px rgba(0, 136, 255, 0.2));
+}
+
+@media (max-width: 968px) {
+  .benefits-diagram {
+    margin-top: 2rem;
+  }
+}
