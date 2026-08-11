@@ -37,9 +37,8 @@ const Hero = () => {
     const { currentTime, duration } = videoRef.current;
     if (!duration) return;
 
-    // Fade gradually over the course of the video, reaching 100% at exactly 3 seconds before the end
-    const fadeEnd = Math.max(0.1, duration - 3);
-    const fadeProgress = Math.min(1, currentTime / fadeEnd);
+    // Fade gradually over the course of the entire video, reaching 100% at the end
+    const fadeProgress = Math.min(1, currentTime / duration);
     
     // Video fades to 100% (from 0.3)
     videoRef.current.style.opacity = 0.3 + (0.7 * fadeProgress);

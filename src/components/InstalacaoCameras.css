@@ -1,0 +1,99 @@
+.instalacao-page {
+  padding-top: 120px;
+  padding-bottom: 80px;
+  min-height: 100vh;
+}
+
+.btn-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  margin-bottom: 2rem;
+}
+
+.btn-back:hover {
+  color: var(--primary-color);
+}
+
+.subtitle-text {
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.instalacao-intro {
+  background: rgba(255, 255, 255, 0.03);
+  padding: 3rem;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+}
+
+.instalacao-intro p {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.instalacao-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  margin-top: 4rem;
+}
+
+.instalacao-card {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  padding: 2rem;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .instalacao-card {
+    flex-direction: row;
+    padding: 3rem;
+  }
+  
+  .instalacao-card:nth-child(even) {
+    flex-direction: row-reverse;
+  }
+}
+
+.instalacao-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 400px;
+}
+
+.instalacao-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  filter: drop-shadow(0 0 20px rgba(0, 195, 255, 0.2));
+  transition: transform 0.3s ease;
+}
+
+.instalacao-card:hover .instalacao-image img {
+  transform: scale(1.05);
+}
+
+.instalacao-content {
+  flex: 1;
+}
+
+.instalacao-content p {
+  color: var(--text-muted);
+  line-height: 1.6;
+}

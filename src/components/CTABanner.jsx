@@ -11,7 +11,7 @@ const CTABanner = () => {
           <video src={monitoramentoCelular} autoPlay loop muted playsInline className="cta-video" />
         </div>
         <div className="cta-content">
-          <h2 className="cta-title">FAÇA LOGIN E ACOMPANHE SEUS DADOS DA FLYBOX</h2>
+          <h2 className="cta-title">FAÇA LOGIN NO FLYHUB</h2>
           <p className="cta-text">
             Tenha controle total da sua operação. Acesse nossa plataforma para visualizar<br/>
             telemetria, rotas e métricas da sua aeronave em tempo real.
