@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Hero from './components/Hero';
+import Partners from './components/Partners';
 import Audience from './components/Audience';
 import Benefits from './components/Benefits';
 import TeamTimeline from './components/TeamTimeline';
@@ -20,6 +21,7 @@ const LandingPage = () => (
     <Header />
     <main>
       <Hero />
+      <Partners />
       <Audience />
       <Benefits />
       <TeamTimeline />

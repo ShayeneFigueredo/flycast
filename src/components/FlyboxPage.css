@@ -1,8 +1,12 @@
 /* FlyboxPage.css */
 
+.flybox-page-wrapper,
+.flybox-page-wrapper * {
+  font-family: 'Montserrat', sans-serif !important;
+}
+
 .flybox-page-wrapper {
   color: var(--text-primary);
-  font-family: var(--font-main);
   overflow-x: hidden;
 }
 
@@ -1247,4 +1251,162 @@
 .btn-back:hover {
   background: rgba(0, 136, 255, 0.1);
   box-shadow: 0 0 15px rgba(0, 136, 255, 0.2);
+}
+
+/* RESPONSIVIDADE MOBILE ADICIONAL */
+@media (max-width: 768px) {
+  /* Paddings Gerais */
+  .flybox-white-section, .flybox-realidade, .flybox-ecossistema, .flybox-arquitetura, .flybox-custo {
+    padding: 3rem 0 !important;
+  }
+
+  /* Hero e Vídeo */
+  .flybox-hero {
+    padding: 6rem 0 3rem 0 !important;
+    min-height: auto;
+  }
+  .flybox-hero-content {
+    gap: 2rem;
+  }
+  .flybox-title {
+    font-size: 1.5rem;
+  }
+  .flybox-title .title-bold {
+    font-size: 2.8rem;
+  }
+  .flybox-voo-video {
+    transform: translateY(0) !important;
+    margin-top: 2rem;
+  }
+
+  /* Tabela CIAC */
+  .ciac-row, .ciac-header-row {
+    flex-direction: column;
+  }
+  .ciac-col-desafio, .ciac-col-solucao {
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+  .ciac-cell {
+    border-right: none !important;
+  }
+  .ciac-cell:first-child {
+    border-right: none;
+  }
+
+  /* Estatísticas */
+  .circle-chart {
+    width: 90px;
+    height: 90px;
+  }
+  .circle-chart span {
+    font-size: 1.5rem;
+  }
+  .stats-row {
+    gap: 1.5rem;
+  }
+  .stat-circle {
+    min-width: 130px;
+  }
+
+  /* Títulos */
+  .ciac-left h2, .cta-left h2, .transicao-title {
+    font-size: 2rem !important;
+  }
+  
+  .ia-dashboard-placeholder {
+    min-height: 400px;
+  }
+}
+
+/* COLT 3D BANNER VIDEO */
+.colt-3d-banner {
+  width: 100%;
+  height: 450px; /* Fixa uma altura estilo banner horizontal */
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bg-dark);
+  margin-top: -1px;
+}
+
+.colt-3d-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Corta o vídeo mantendo a proporção correta para cobrir todo o banner */
+  pointer-events: none;
+}
+
+/* DESTAQUE INPAER */
+.inpaer-info-section {
+  background-color: var(--bg-dark);
+  padding: 4rem 0 2rem 0;
+  text-align: center;
+}
+
+.inpaer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  max-width: 1200px; /* Aumentado para o vídeo ter espaço */
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.inpaer-center-logo {
+  height: 80px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+}
+
+.inpaer-description {
+  color: var(--text-secondary);
+  font-size: 1.15rem;
+  line-height: 1.6;
+  font-weight: 300;
+  margin: 0;
+  max-width: 800px; /* Limita apenas o texto */
+}
+
+.inpaer-description strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.inpaer-video-container {
+  width: 100%;
+  max-width: 100%; /* Permite crescer até o limite do inpaer-container (1200px) */
+  margin: 1.5rem auto 0 auto;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+}
+
+.inpaer-video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .colt-3d-banner {
+    height: 300px; /* Mais fino no mobile para não ocupar muita tela */
+  }
+  
+  .inpaer-info-section {
+    padding: 3rem 1rem 1rem 1rem;
+  }
+  
+  .inpaer-center-logo {
+    height: 60px;
+  }
+  
+  .inpaer-description {
+    font-size: 1rem;
+  }
+  
+  .desktop-break {
+    display: none;
+  }
 }

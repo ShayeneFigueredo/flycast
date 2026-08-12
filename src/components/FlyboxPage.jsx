@@ -2,16 +2,24 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, User, Target, Clock, Settings, TrendingDown, Users, ShieldAlert, Cpu, Cloud, BarChart3, PlaySquare, Plane, Mail, MessageCircle } from 'lucide-react';
 import Header from './Header';
+import Partners from './Partners';
 import './FlyboxPage.css';
 
 import flyboxImg from '../assets/flybox-gg.png';
-import flyboxVoo from '../assets/flybox-voo.mp4';
 import ecossistemaImg from '../assets/ecossistema.png';
+import diagramaImg from '../assets/diagrama-ecossistema.png';
+import appMocImg from '../assets/page-flycast.png';
+import jpcaPeople from '../assets/jpca-people.png';
+import pageFlycast from '../assets/page-flycast.png';
+import inpaerLogo from '../assets/inpaer.png';
+
+// Vídeos Flybox
+import flyboxVoo from '../assets/flybox-voo.mp4';
+import materiaFlycast from '../assets/materia-colt.mp4';
 import imagensFlyboxVoo from '../assets/imagens-flybox.mp4';
 import flyboxFlycast from '../assets/FLYBOX-FLYCAST.mp4';
-import jpcaPeople from '../assets/jpca-people.png';
 import paolaFlybox from '../assets/paola-flybox.mp4';
-import pageFlycast from '../assets/page-flycast.png';
+import colt3dVideo from '../assets/colt-3d.mp4';
 
 const FlyboxPage = () => {
   const consequenciasRef = useRef(null);
@@ -125,6 +133,9 @@ const FlyboxPage = () => {
           </div>
         </div>
       </section>
+
+      {/* PARCEIROS */}
+      <Partners />
 
       {/* 2. CUSTO SECTION */}
       <section className="flybox-custo">
@@ -435,6 +446,39 @@ const FlyboxPage = () => {
           </div>
         </div>
       </section>
+      {/* VÍDEO 3D COLT BANNER */}
+      <section className="colt-3d-banner">
+        <video 
+          src={colt3dVideo} 
+          autoPlay 
+          loop 
+          muted 
+          playsInline
+          className="colt-3d-video"
+        />
+      </section>
+
+      {/* DESTAQUE INPAER COLT */}
+      <section className="inpaer-info-section">
+        <div className="container inpaer-container">
+          <img src={inpaerLogo} alt="Inpaer" className="inpaer-center-logo" />
+          <p className="inpaer-description">
+            A <strong>INPAER</strong> é a fabricante da aeronave <strong>Colt</strong>, sendo referência em qualidade e segurança no Brasil, América Latina e Estados Unidos. 
+            <br className="desktop-break" />O Colt já sai homologado de fábrica com a tecnologia <strong>Flybox</strong> embarcada.
+          </p>
+          <div className="inpaer-video-container">
+            <video 
+              src={materiaFlycast} 
+              autoPlay 
+              loop 
+              muted 
+              playsInline
+              className="inpaer-video"
+            />
+          </div>
+        </div>
+      </section>
+
       {/* 6. TRANSIÇÃO DIGITAL / OPÇÕES DE ADOÇÃO */}
       <section className="flybox-white-section transicao-section">
         <div className="container">
