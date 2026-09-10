@@ -1,5 +1,4 @@
 import React from 'react';
-import { ArrowRight } from 'lucide-react';
 import logoHorizontal from '../assets/LOGO-HORIZONTAL.png';
 import { Link } from 'react-router-dom';
 import './Header.css';
@@ -26,10 +25,6 @@ const Header = () => {
           </div>
           <Link to="/sobre-nos">Sobre Nós</Link>
         </nav>
-
-        <Link to="/login" target="_blank" className="btn-outline">
-          Login <ArrowRight size={16} />
-        </Link>
       </div>
     </header>
   );

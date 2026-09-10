@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import monitoramentoCelular from '../assets/monitoramento-celular.mp4';
 import './CTABanner.css';
 
@@ -16,9 +15,6 @@ const CTABanner = () => {
             Tenha controle total da sua operação. Acesse nossa plataforma para visualizar<br/>
             telemetria, rotas e métricas da sua aeronave em tempo real.
           </p>
-          <Link to="/login" target="_blank" className="btn-primary cta-btn" style={{ textDecoration: 'none' }}>
-            FAZER LOGIN
-          </Link>
         </div>
       </div>
     </section>

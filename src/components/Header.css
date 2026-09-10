@@ -3,13 +3,14 @@
   top: 0;
   left: 0;
   width: 100%;
-  padding: 24px 0;
+  padding: 16px 0;
   z-index: 100;
-  background: transparent;
-  transition: background 0.3s ease;
-  backdrop-filter: blur(10px); /* Add a little blur so it stays legible */
-  -webkit-backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(255,255,255,0.05);
+  background: rgba(2, 6, 23, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(0, 136, 255, 0.15);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease;
 }
 
 .header.container {
@@ -41,8 +42,8 @@
     display: flex;
     gap: 32px;
     align-items: center;
-    justify-content: center;
-    flex: 1; /* Pushes the button to the right if we use flex */
+    justify-content: flex-end;
+    flex: 1;
   }
 }
 
