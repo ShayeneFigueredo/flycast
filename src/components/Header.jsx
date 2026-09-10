@@ -9,11 +9,13 @@ const Header = () => {
     <header className="header">
       <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <div className="logo-container">
-          <img src={logoHorizontal} alt="Flycast Logo" className="logo" />
+          <Link to="/">
+            <img src={logoHorizontal} alt="Flycast Logo" className="logo" />
+          </Link>
         </div>
         
         <nav className="nav-links">
-          <a href="/#home">Home</a>
+          <Link to="/">Home</Link>
           <div className="nav-dropdown">
             <a href="/#solucoes">Soluções</a>
             <div className="dropdown-content">
@@ -22,9 +24,7 @@ const Header = () => {
               <Link to="/solucoes/instalacao-cameras">Instalação de Câmeras</Link>
             </div>
           </div>
-          <a href="/#sobre">Sobre Nós</a>
-          <a href="/#features">Features</a>
-          <a href="/#blog">Blog</a>
+          <Link to="/sobre-nos">Sobre Nós</Link>
         </nav>
 
         <Link to="/login" target="_blank" className="btn-outline">

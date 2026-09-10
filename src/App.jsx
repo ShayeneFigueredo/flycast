@@ -15,6 +15,7 @@ import Login from './components/Login';
 import TransmissaoAerea from './components/TransmissaoAerea';
 import InstalacaoCameras from './components/InstalacaoCameras';
 import FlyboxPage from './components/FlyboxPage';
+import SobreNos from './components/SobreNos';
 
 const LandingPage = () => (
   <>
@@ -40,6 +41,7 @@ function App() {
       <div className="app-container">
         <Routes>
           <Route path="/" element={<LandingPage />} />
+          <Route path="/sobre-nos" element={<SobreNos />} />
           <Route path="/login" element={<Login />} />
           <Route path="/solucoes/transmissao-aerea" element={<TransmissaoAerea />} />
           <Route path="/solucoes/instalacao-cameras" element={<InstalacaoCameras />} />

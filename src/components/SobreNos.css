@@ -1,0 +1,265 @@
+.sobre-nos-page {
+  padding-top: 100px;
+  min-height: 100vh;
+  background: radial-gradient(circle at 50% 0%, #031433 0%, #000000 70%);
+  color: var(--text-primary);
+}
+
+.btn-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  margin-bottom: 24px;
+}
+
+.btn-back:hover {
+  color: var(--neon-blue-light);
+  transform: translateX(-4px);
+}
+
+.sobre-hero {
+  text-align: center;
+  padding: 40px 0 60px 0;
+  position: relative;
+}
+
+.badge-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  border-radius: 20px;
+  background: rgba(0, 136, 255, 0.1);
+  border: 1px solid var(--border-color);
+  color: var(--neon-blue-light);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.sobre-hero .hero-title {
+  font-size: 3.2rem;
+  font-weight: 800;
+  line-height: 1.2;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.sobre-hero .subtitle-text {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  max-width: 780px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* About Grid / Quem Somos */
+.about-intro-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+@media (min-width: 992px) {
+  .about-intro-grid {
+    grid-template-columns: 1.2fr 0.8fr;
+  }
+}
+
+.about-intro-text p {
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.about-intro-text strong {
+  color: #ffffff;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.stat-card {
+  padding: 24px;
+  text-align: center;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--neon-blue);
+}
+
+.stat-number {
+  font-size: 2.4rem;
+  font-weight: 900;
+  color: var(--neon-blue-light);
+  margin-bottom: 8px;
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+}
+
+/* Mission, Vision, Values */
+.mvv-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+}
+
+@media (min-width: 768px) {
+  .mvv-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.mvv-card {
+  padding: 36px 28px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.mvv-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(0, 136, 255, 0.5);
+  box-shadow: 0 12px 40px rgba(0, 136, 255, 0.2);
+}
+
+.mvv-icon-wrapper {
+  width: 60px;
+  height: 60px;
+  border-radius: 14px;
+  background: rgba(0, 136, 255, 0.12);
+  border: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  color: var(--neon-blue-light);
+}
+
+.mvv-card h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: #ffffff;
+}
+
+.mvv-card p {
+  color: var(--text-secondary);
+  font-size: 0.98rem;
+  line-height: 1.7;
+}
+
+/* Tech Pillars Grid */
+.pillars-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+@media (min-width: 768px) {
+  .pillars-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.pillar-card {
+  padding: 30px;
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  transition: all 0.3s ease;
+}
+
+.pillar-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--neon-blue-light);
+}
+
+.pillar-icon {
+  width: 50px;
+  height: 50px;
+  min-width: 50px;
+  border-radius: 12px;
+  background: rgba(0, 136, 255, 0.15);
+  border: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--neon-blue-light);
+}
+
+.pillar-content h4 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 8px;
+}
+
+.pillar-content p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Culture & Banner Section */
+.culture-banner {
+  padding: 60px 40px;
+  border-radius: 20px;
+  text-align: center;
+  background: linear-gradient(135deg, rgba(3, 20, 51, 0.9) 0%, rgba(2, 6, 23, 0.95) 100%);
+  border: 1px solid var(--border-color);
+  position: relative;
+  overflow: hidden;
+}
+
+.culture-banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--neon-blue-light), transparent);
+}
+
+.cta-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+/* Footer */
+.sobre-footer {
+  margin-top: 100px;
+  padding: 40px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
