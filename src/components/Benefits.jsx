@@ -1,5 +1,5 @@
 import React from 'react';
-import ecossistema from '../assets/ecossistema.png';
+import fonteDadosImg from '../assets/FONTE DE DADOS - flycast.png';
 import './Benefits.css';
 
 const Benefits = () => {
@@ -9,7 +9,7 @@ const Benefits = () => {
         {/* Title removed per user request */}
         
         <div className="benefits-diagram">
-          <img src={ecossistema} alt="Ecossistema Estratégico" className="ecossistema-img" />
+          <img src={fonteDadosImg} alt="Fonte de Dados Flycast" className="ecossistema-img" />
         </div>
       </div>
     </section>

@@ -16,20 +16,22 @@ import TransmissaoAerea from './components/TransmissaoAerea';
 import InstalacaoCameras from './components/InstalacaoCameras';
 import FlyboxPage from './components/FlyboxPage';
 import SobreNos from './components/SobreNos';
+import SetoresAtendidos from './components/SetoresAtendidos';
+import Footer from './components/Footer';
 
 const LandingPage = () => (
   <>
     <Header />
     <main>
       <Hero />
-      <Partners />
       <Audience />
+      <Solutions />
       <Benefits />
       <TeamTimeline />
-      <Solutions />
       <CTABanner />
       <Comparison />
       <Process />
+      <Partners />
       <FAQ />
     </main>
   </>
@@ -44,9 +46,14 @@ function App() {
           <Route path="/sobre-nos" element={<SobreNos />} />
           <Route path="/login" element={<Login />} />
           <Route path="/solucoes/transmissao-aerea" element={<TransmissaoAerea />} />
+          <Route path="/solucoes/helicopteros" element={<TransmissaoAerea />} />
+          <Route path="/solucoes/servicos-integrados" element={<InstalacaoCameras />} />
           <Route path="/solucoes/instalacao-cameras" element={<InstalacaoCameras />} />
+          <Route path="/solucoes/setores-atendidos" element={<SetoresAtendidos />} />
           <Route path="/solucoes/flybox" element={<FlyboxPage />} />
+          <Route path="/solucoes/avioes-ciacs" element={<FlyboxPage />} />
         </Routes>
+        <Footer />
       </div>
     </BrowserRouter>
   );

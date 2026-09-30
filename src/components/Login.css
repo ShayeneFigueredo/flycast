@@ -4,18 +4,17 @@
   align-items: center;
   justify-content: center;
   background-color: var(--bg-dark);
-  background-image: radial-gradient(circle at 50% 50%, rgba(0, 136, 255, 0.1) 0%, var(--bg-dark) 80%);
   padding: 2rem;
 }
 
 .login-container {
   width: 100%;
   max-width: 450px;
-  background: rgba(2, 6, 23, 0.8);
+  background: rgba(3, 10, 26, 0.9);
   padding: 3rem 2.5rem;
   border-radius: 16px;
-  border: 1px solid rgba(0, 136, 255, 0.3);
-  box-shadow: 0 0 40px rgba(0, 136, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7);
   backdrop-filter: blur(10px);
 }
 
@@ -66,13 +65,12 @@
   border-radius: 8px;
   color: var(--text-primary);
   font-size: 1rem;
-  transition: all 0.3s ease;
+  transition: all 0.25s ease;
 }
 
 .input-group input:focus {
   outline: none;
-  border-color: var(--neon-blue);
-  box-shadow: 0 0 10px rgba(0, 136, 255, 0.2);
+  border-color: var(--accent-blue);
   background: rgba(255, 255, 255, 0.08);
 }
 
@@ -83,11 +81,11 @@
 
 .forgot-password a {
   color: var(--text-secondary);
-  transition: color 0.3s;
+  transition: color 0.25s;
 }
 
 .forgot-password a:hover {
-  color: var(--neon-blue);
+  color: var(--accent-blue);
 }
 
 .login-btn {
@@ -115,10 +113,20 @@
   margin-left: 0.5rem;
   cursor: pointer;
   padding: 0;
-  transition: color 0.3s;
+  transition: color 0.25s;
 }
 
 .toggle-btn:hover {
   text-decoration: underline;
-  color: var(--neon-blue-light);
+  color: var(--accent-blue);
+}
+
+@media (max-width: 480px) {
+  .login-page {
+    padding: 1rem;
+  }
+
+  .login-container {
+    padding: 2rem 1.25rem;
+  }
 }

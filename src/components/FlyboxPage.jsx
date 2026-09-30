@@ -1,99 +1,71 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, User, Target, Clock, Settings, TrendingDown, Users, ShieldAlert, Cpu, Cloud, BarChart3, PlaySquare, Plane, Mail, MessageCircle } from 'lucide-react';
+import { 
+  ArrowLeft, 
+  Plane, 
+  Cpu, 
+  Smartphone, 
+  Cloud, 
+  BarChart3, 
+  Sparkles, 
+  CheckCircle2, 
+  XCircle,
+  AlertTriangle, 
+  Layers, 
+  Database, 
+  Server, 
+  ShieldCheck, 
+  ArrowRight, 
+  MessageCircle, 
+  HelpCircle,
+  Clock,
+  Settings,
+  TrendingDown,
+  TrendingUp,
+  Users,
+  Activity,
+  Award,
+  Zap,
+  Mail,
+  Phone
+} from 'lucide-react';
 import Header from './Header';
 import Partners from './Partners';
 import './FlyboxPage.css';
 
 import flyboxImg from '../assets/flybox-gg.png';
-import ecossistemaImg from '../assets/ecossistema.png';
-import diagramaImg from '../assets/diagrama-ecossistema.png';
-import appMocImg from '../assets/page-flycast.png';
-import jpcaPeople from '../assets/jpca-people.png';
+import flyhubImg from '../assets/flyhub.png';
+import flyhubSolucoes from '../assets/solucoes/flyhub.png';
+import inpaerLogo from '../assets/clientes/inpaer.png';
+import coltImg from '../assets/colt.png';
 import pageFlycast from '../assets/page-flycast.png';
-import inpaerLogo from '../assets/inpaer.png';
+import fonteDadosImg from '../assets/FONTE DE DADOS - flycast.png';
+import telaFlyhubImg from '../assets/tela-flyhub.png';
 
 // Vídeos Flybox
 import flyboxVoo from '../assets/flybox-voo.mp4';
 import materiaFlycast from '../assets/materia-colt.mp4';
 import imagensFlyboxVoo from '../assets/imagens-flybox.mp4';
-import flyboxFlycast from '../assets/FLYBOX-FLYCAST.mp4';
-import paolaFlybox from '../assets/paola-flybox.mp4';
 import colt3dVideo from '../assets/colt-3d.mp4';
+import paolaFlybox from '../assets/paola-flybox.mp4';
+import videoColtBanner from '../assets/video-colt-banner.mp4';
 
 const FlyboxPage = () => {
-  const consequenciasRef = useRef(null);
+  const [capturaTab, setCapturaTab] = useState('flybox'); // 'flybox' | 'flyrecord'
 
   useEffect(() => {
     window.scrollTo(0, 0);
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    if (consequenciasRef.current) {
-      observer.observe(consequenciasRef.current);
-    }
-
-    return () => {
-      if (consequenciasRef.current) observer.unobserve(consequenciasRef.current);
-    };
-  }, []);
-
-  const [scrollProgress, setScrollProgress] = useState(0);
-  const statsRef = useRef(null);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (!statsRef.current) return;
-      const rect = statsRef.current.getBoundingClientRect();
-      const windowHeight = window.innerHeight;
-      
-      const start = windowHeight * 0.9; // Starts animating when 90% down the screen
-      const end = windowHeight * 0.4;   // Finishes when 40% down the screen
-      
-      if (rect.top > start) {
-        setScrollProgress(0);
-      } else if (rect.top < end) {
-        setScrollProgress(1);
-      } else {
-        const progress = 1 - ((rect.top - end) / (start - end));
-        setScrollProgress(progress);
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    handleScroll();
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  // Rotating text
-  const words = ['inteligência', 'segurança', 'tecnologia', 'informação', 'controle'];
-  const [wordIndex, setWordIndex] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setWordIndex((prev) => (prev + 1) % words.length);
-    }, 2000);
-    return () => clearInterval(interval);
   }, []);
 
   return (
     <div className="flybox-page-wrapper">
       <Header />
-      
-      {/* 1. HERO SECTION */}
+
+      {/* 1. HERO SECTION — A NOVA ERA DA INSTRUÇÃO */}
       <section className="flybox-hero">
         <div className="hero-video-bg">
           <video 
-            src={`${flyboxVoo}#1`}
+            src={videoColtBanner}
             autoPlay
             loop
             muted
@@ -104,569 +76,362 @@ const FlyboxPage = () => {
         </div>
 
         <div className="container hero-content-container">
-          <Link to="/#solucoes" className="btn-back mt-5">
-            <ArrowLeft size={20} /> Voltar
+          <Link to="/" className="btn-back">
+            <ArrowLeft size={18} /> Voltar ao Início
           </Link>
+
           <div className="flybox-hero-content">
-            <div className="flybox-hero-text">
-              <h1 className="flybox-title">
-                A NOVA ERA DA<br />
-                <span className="title-bold">INSTRUÇÃO</span>
-              </h1>
-              
-              <h2 className="flybox-subtitle">
-                Transformar cada voo em <span className="rotating-word">{words[wordIndex]}</span>.
-              </h2>
-              
-              <p className="flybox-desc">
-                Eleve o padrão da sua escola, acelere o aprendizado dos alunos e aumente a lucratividade da sua frota com uma plataforma integrada de gestão.
-              </p>
-              
-              <div className="flybox-logo-text mt-5">
-                <strong className="flybox-brand-name">F L Y B O X</strong>
-                <div className="reveal-container">
-                  <Plane className="airplane-icon" size={16} />
-                  <span className="small-text reveal-text">DADOS QUE VOAM, DECISÕES QUE PROTEGEM.</span>
-                </div>
-              </div>
+            <h1 className="flybox-title">
+              A Nova Era da <br />
+              <span className="title-bold text-accent glow-text">Instrução de Voo</span>
+            </h1>
+
+            <p className="flybox-desc">
+              Transforme cada voo em dados operacionais. Eleve o padrão da sua escola, acelere o aprendizado dos alunos e aumente a rentabilidade da sua frota com uma plataforma de gestão integrada.
+            </p>
+
+            <div className="hero-cta-row">
+              <a 
+                href="https://wa.me/553499793418?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20demonstra%C3%A7%C3%A3o%20do%20FlyHub."
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="btn-primary"
+              >
+                <MessageCircle size={18} />
+                Solicite uma Demonstração do FlyHub
+              </a>
+              <a href="#como-funciona" className="btn-outline">
+                Ver Como Funciona
+              </a>
             </div>
           </div>
         </div>
       </section>
 
-      {/* PARCEIROS */}
-      <Partners />
-
-      {/* 2. CUSTO SECTION */}
-      <section className="flybox-custo">
-        <div className="container">
-          <div className="section-header-left">
-            <span className="section-tag text-accent">O CUSTO</span>
-            <h2 className="section-title-dark">
-              O custo da<br /><span className="text-accent">subjetividade</span><br />na formação de pilotos.
-            </h2>
-          </div>
-          
-          <div className="custo-grid mt-5">
-            <div className="custo-left">
-              <div className="custo-intro-item">
-                <p><strong>A instrução ainda depende da percepção do instrutor.</strong></p>
-              </div>
-              <div className="custo-intro-item">
-                <p>Sem dados objetivos, cada debriefing gera <strong className="text-accent">interpretações diferentes</strong>, comprometendo a padronização e o aprendizado.</p>
-              </div>
-              
-              <div className="consequencias mt-5" ref={consequenciasRef}>
-                <h4 className="text-accent mb-4">CONSEQUÊNCIAS</h4>
-                <div className="consequencia-list">
-                  <div className="cons-item">
-                    <div className="cons-icon"><Clock size={40} /></div>
-                    <div>
-                      <strong>Mais horas de voo.</strong>
-                      <p>Mais tempo e custo para corrigir os mesmos erros.</p>
-                    </div>
-                  </div>
-                  <div className="cons-item">
-                    <div className="cons-icon"><Users size={40} /></div>
-                    <div>
-                      <strong>Menor padronização.</strong>
-                      <p>Diferenças entre instrutores e unidades.</p>
-                    </div>
-                  </div>
-                  <div className="cons-item">
-                    <div className="cons-icon"><Settings size={40} /></div>
-                    <div>
-                      <strong>Mais custos de manutenção.</strong>
-                      <p>Técnicas inadequadas geram desgaste e falhas.</p>
-                    </div>
-                  </div>
-                  <div className="cons-item">
-                    <div className="cons-icon"><TrendingDown size={40} /></div>
-                    <div>
-                      <strong>Menos controle operacional.</strong>
-                      <p>Pouca rastreabilidade para gestão e segurança.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <div className="custo-right">
-               <video 
-                 src={`${flyboxVoo}#2`}
-                 autoPlay
-                 loop
-                 muted
-                 playsInline
-                 className="flybox-voo-video"
-               />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 3. REALIDADE CENIPA SECTION */}
-      <section className="flybox-realidade">
-        <div className="container">
-          <div className="section-header-left">
-            <span className="section-tag text-accent">A REALIDADE (DADOS CENIPA)</span>
-            <h2 className="section-title-dark">
-              Onde sua escola perde<br />dinheiro e segurança.
-            </h2>
-          </div>
-          
-          <div className="realidade-grid mt-5">
-            <div className="cenipa-card glow-box">
-              <p>Dados do CENIPA (2016-2026) mostram que a maioria dos acidentes está relacionada ao <strong className="text-accent">fator humano.</strong></p>
-            </div>
-            
-            <div className="stats-row mt-5" ref={statsRef}>
-              <div className="stat-circle">
-                <div className="circle-chart" style={{'--p': Math.round(58 * scrollProgress)}}><span>{Math.round(58 * scrollProgress)}%</span></div>
-                <strong>Erros de julgamento de pilotagem.</strong>
-              </div>
-              <div className="stat-circle">
-                <div className="circle-chart" style={{'--p': Math.round(51 * scrollProgress)}}><span>{Math.round(51 * scrollProgress)}%</span></div>
-                <strong>Aplicação incorreta de comandos.</strong>
-              </div>
-              <div className="stat-circle">
-                <div className="circle-chart" style={{'--p': Math.round(42 * scrollProgress)}}><span>{Math.round(42 * scrollProgress)}%</span></div>
-                <strong>Falhas na supervisão gerencial.</strong>
-              </div>
-            </div>
-            
-            <div className="conclusao-card glow-box mt-5">
-              <div className="conclusao-alert">
-                <ShieldAlert size={48} className="text-accent" />
-                <div>
-                  <span className="text-accent font-bold">CONCLUSÃO</span>
-                  <h3>A falta de dados objetivos gera <span className="text-accent">riscos operacional.</span></h3>
-                </div>
-              </div>
-              <p className="mt-4 text-center text-muted">A aviação evoluiu em tecnologia, mas a forma como <strong className="text-accent">analisamos e aprendemos não.</strong></p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 4. ECOSSISTEMA CONECTADO E MERCADOS */}
-      <section className="flybox-ecossistema">
-        <div className="container">
-          <div className="section-header-left">
-            <span className="section-tag text-accent">UM ECOSSISTEMA CONECTADO</span>
-            <h2 className="section-title-dark">
-              A FlyBox não entrega apenas dados.<br />
-              <span className="text-accent">Ela conecta todos os participantes da operação.</span>
-            </h2>
-            <p className="text-muted mt-3">Uma única plataforma integra toda a cadeia da aviação leve.</p>
-          </div>
-          
-          {/* Timeline / Flow */}
-          <div className="ecossistema-flow mt-5">
-            <div className="flow-step">
-              <strong>01</strong>
-              <h4>FlyBox</h4>
-              <p>captura as informações.</p>
-            </div>
-            <div className="flow-step">
-              <strong>02</strong>
-              <h4>FlyHub</h4>
-              <p>organiza e disponibiliza os dados.</p>
-            </div>
-            <div className="flow-step">
-              <strong>03</strong>
-              <h4>Instrutores</h4>
-              <p>realizam debriefings objetivos.</p>
-            </div>
-            <div className="flow-step">
-              <strong>04</strong>
-              <h4>Alunos</h4>
-              <p>têm processo de aprendizagem catalisado.</p>
-            </div>
-            <div className="flow-step">
-              <strong>05</strong>
-              <h4>Gestores</h4>
-              <p>acompanham indicadores operacionais.</p>
-            </div>
-            <div className="flow-step">
-              <strong>06</strong>
-              <h4>Proprietários</h4>
-              <p>têm visão clara da performance e dos resultados.</p>
-            </div>
-            <div className="flow-step">
-              <strong>07</strong>
-              <h4>Fabricantes</h4>
-              <p>utilizam dados reais para evolução de seus produtos.</p>
-            </div>
-          </div>
-          <hr style={{ margin: '8rem 0', borderColor: 'rgba(255, 255, 255, 0.1)' }} />
-
-          {/* Mercados Atendidos */}
-          <div className="mercados-section" style={{ backgroundColor: 'rgba(0, 136, 255, 0.1)', padding: '4rem', borderRadius: '24px', margin: '2rem 0' }}>
-            <div className="section-header-left">
-              <span className="section-tag text-accent">MERCADOS ATENDIDOS</span>
-              <h2 className="section-title-dark">
-                A plataforma foi desenvolvida para atender diferentes segmentos da aviação leve.
-              </h2>
-            </div>
-            
-            <div className="mercados-grid mt-4">
-              <div className="mercado-card">
-                <div className="mercado-icon"><Users size={28}/></div>
-                <h4>Escolas de Aviação</h4>
-                <p>Padronização do treinamento e melhoria do desempenho dos alunos.</p>
-              </div>
-              <div className="mercado-card">
-                <div className="mercado-icon"><User size={28}/></div>
-                <h4>Proprietários</h4>
-                <p>Visão completa da operação, segurança e performance da aeronave.</p>
-              </div>
-              <div className="mercado-card">
-                <div className="mercado-icon"><Settings size={28}/></div>
-                <h4>Fabricantes</h4>
-                <p>Dados reais de utilização para desenvolvimento e evolução de aeronaves e componentes.</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Quote Section */}
-          <div style={{ margin: '10rem auto 4rem', display: 'flex', justifyContent: 'center' }}>
-            <div style={{ textAlign: 'left', padding: '0 20px' }}>
-              <h2 style={{ fontSize: 'clamp(2.5rem, 5vw, 4.5rem)', fontWeight: '800', lineHeight: '1.2', color: 'var(--text-primary)', letterSpacing: '-1px' }}>
-                <span className="text-accent">&ldquo;</span>O que <span className="text-accent">não pode ser</span><br />
-                <span className="text-accent">medido,</span> não pode ser<br />
-                <span className="text-accent">melhorado.&rdquo;</span>
-              </h2>
-              <div style={{ width: '80px', height: '6px', backgroundColor: 'var(--neon-blue)', marginTop: '2rem' }}></div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 5. ARQUITETURA / PASSO A PASSO */}
-      <section className="flybox-arquitetura">
+      {/* 2. O PROBLEMA DA INSTRUÇÃO SUBJETIVA */}
+      <section className="subjetividade-section section-padding">
         <div className="container">
           <div className="text-center mb-5">
-            <h2 className="section-title">ECOSSISTEMA <span className="text-accent">FLYBOX</span></h2>
-            <p className="text-muted">Da aeronave à inteligência operacional.</p>
+            <h2 className="section-title">
+              O Custo Oculto da <span className="text-accent glow-text">Subjetividade na Instrução</span>
+            </h2>
+            <p className="section-subtitle">
+              A instrução tradicional depende fortemente da percepção humana. Sem dados objetivos, o debriefing fica sujeito a interpretações diferentes, o que reduz a padronização, gera retrabalho e aumenta o número de horas de voo improdutivas.
+            </p>
           </div>
-          
-          <div className="arquitetura-cards">
-            <div className="arq-card glow-box">
-              <div className="arq-badge">1</div>
-              <h3>HARDWARE FLYBOX</h3>
-              <img src={flyboxImg} alt="Hardware Flybox" className="arq-img" />
-              <p className="text-sm">Dispositivo embarcado responsável pela captura de toda a operação da aeronave.</p>
-              <ul className="arq-list">
-                <li>Vídeo do cockpit</li>
-                <li>Áudio da cabine</li>
-                <li>Telemetria da aeronave</li>
-                <li>GPS</li>
-                <li>Conectividade LTE / Wi-Fi</li>
-                <li>Armazenamento local</li>
-              </ul>
-              <div className="arq-footer text-accent font-bold">Captura todos os dados do voo em tempo real.</div>
-            </div>
-            
-            <div className="arq-arrow"><ArrowRight size={32} className="text-accent"/></div>
-            
-            <div className="arq-card glow-box">
-              <div className="arq-badge">2</div>
-              <h3>APP FLY RECORD</h3>
-              <div className="arq-img-placeholder phone-shape" style={{ overflow: 'hidden', padding: 0, position: 'relative', background: 'transparent' }}>
-                <video 
-                  src={`${flyboxVoo}#3`} 
-                  autoPlay 
-                  loop 
-                  muted 
-                  playsInline 
-                  style={{ width: '100%', height: '100%', objectFit: 'cover', position: 'absolute', top: 0, left: 0, borderRadius: 'inherit' }}
-                />
-              </div>
-              <p className="text-sm">Aplicativo utilizado para visualizar, sincronizar e enviar os registros do voo para a plataforma FlyHub.</p>
-              <div className="arq-footer text-accent font-bold">O elo entre a aeronave e a nuvem.</div>
-            </div>
-            
-            <div className="arq-arrow"><ArrowRight size={32} className="text-accent"/></div>
-            
-            <div className="arq-card glow-box">
-              <div className="arq-badge">3</div>
-              <h3>FLYHUB</h3>
-              <div className="arq-img-placeholder laptop-shape" style={{ overflow: 'hidden', padding: 0, position: 'relative', background: 'transparent' }}>
-                <video 
-                  src={imagensFlyboxVoo} 
-                  autoPlay 
-                  loop 
-                  muted 
-                  playsInline 
-                  style={{ width: '100%', height: '100%', objectFit: 'cover', position: 'absolute', top: 0, left: 0, borderRadius: 'inherit' }}
-                />
-              </div>
-              <p className="text-sm">Plataforma web para armazenamento, análise, replay e gestão operacional dos voos.</p>
-              <div className="arq-footer text-accent font-bold">Os dados transformados em inteligência operacional.</div>
-            </div>
-          </div>
-          
-          <div className="text-center mt-5">
-            <img src={ecossistemaImg} alt="Ecossistema Flybox" style={{ maxWidth: '100%', height: 'auto', borderRadius: '12px' }} />
-          </div>
-          
-          <div className="dados-inteligencia glow-box mt-5">
-            <div className="text-center mb-4"><span className="text-accent font-bold">DADOS &rarr; INTELIGÊNCIA</span></div>
-            <div className="di-steps">
-              <div className="di-step">
-                <Cpu className="text-accent" size={32}/>
-                <div>
-                  <strong>1 Captura</strong>
-                  <p>Hardware registra toda a operação.</p>
+
+          <div className="erros-container">
+            <h3 className="erros-heading text-center">Principais Erros</h3>
+            <div className="erros-grid">
+              <div className="erro-card">
+                <div className="erro-icon-box">
+                  <Users size={28} />
                 </div>
+                <h3>Erros de Julgamento de Pilotagem</h3>
+                <p>
+                  Dificuldade em identificar a causa raiz de aproximações desestabilizadas e arredondamentos imprecisos sem dados de telemetria e vídeo sincronizados.
+                </p>
               </div>
-              <div className="di-step">
-                <Cloud className="text-accent" size={32}/>
-                <div>
-                  <strong>2 Sincronização</strong>
-                  <p>Os dados são enviados automaticamente para o FlyHub.</p>
+
+              <div className="erro-card">
+                <div className="erro-icon-box">
+                  <Settings size={28} />
                 </div>
+                <h3>Aplicação Incorreta de Comandos</h3>
+                <p>
+                  Variações sutis no uso de manche, leme e potência passam despercebidas pelo olho nu do instrutor, gerando desgaste mecânico e vícios de pilotagem.
+                </p>
               </div>
-              <div className="di-step">
-                <BarChart3 className="text-accent" size={32}/>
-                <div>
-                  <strong>3 Análise</strong>
-                  <p>Todos os registros ficam organizados em uma linha do tempo sincronizada.</p>
+
+              <div className="erro-card">
+                <div className="erro-icon-box">
+                  <TrendingDown size={28} />
                 </div>
-              </div>
-              <div className="di-step">
-                <PlaySquare className="text-accent" size={32}/>
-                <div>
-                  <strong>4 Debriefing Inteligente</strong>
-                  <p>Replay completo do voo com vídeo, áudio, telemetria, GPS e instrumentos sincronizados.</p>
-                </div>
+                <h3>Falhas na Supervisão Gerencial</h3>
+                <p>
+                  Falta de visibilidade centralizada sobre o desempenho real de cada instrutor e turma, impedindo a padronização e o controle de segurança operacional.
+                </p>
               </div>
             </div>
           </div>
         </div>
       </section>
-      {/* VÍDEO 3D COLT BANNER */}
-      <section className="colt-3d-banner">
-        <video 
-          src={colt3dVideo} 
-          autoPlay 
-          loop 
-          muted 
-          playsInline
-          className="colt-3d-video"
-        />
-      </section>
 
-      {/* DESTAQUE INPAER COLT */}
-      <section className="inpaer-info-section">
-        <div className="container inpaer-container">
-          <img src={inpaerLogo} alt="Inpaer" className="inpaer-center-logo" />
-          <p className="inpaer-description">
-            A <strong>INPAER</strong> é a fabricante da aeronave <strong>Colt</strong>, sendo referência em qualidade e segurança no Brasil, América Latina e Estados Unidos. 
-            <br className="desktop-break" />O Colt já sai homologado de fábrica com a tecnologia <strong>Flybox</strong> embarcada.
-          </p>
-          <div className="inpaer-video-container">
-            <video 
-              src={materiaFlycast} 
-              autoPlay 
-              loop 
-              muted 
-              playsInline
-              className="inpaer-video"
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* 6. TRANSIÇÃO DIGITAL / OPÇÕES DE ADOÇÃO */}
-      <section className="flybox-white-section transicao-section">
+      {/* 3. ECOSSISTEMA FLYHUB: COMO FUNCIONA (FLUXO 3 ETAPAS) */}
+      <section className="fluxo-section section-padding" id="como-funciona">
         <div className="container">
-          <div className="transicao-header">
-            <span className="text-accent uppercase font-bold text-sm">O FUTURO DO TREINAMENTO: IA MULTIMODAL</span>
-            <h2 className="transicao-title">Flexibilidade total para<br/>entrar na transição digital.</h2>
+          <div className="text-center mb-5">
+            <h2 className="section-title text-white">
+              Da aeronave à inteligência operacional.
+            </h2>
+            <p className="section-subtitle fluxo-desc-intro">
+              Substituímos as várias telas explicativas por um fluxo simples de três etapas: <strong>Captura</strong> &rarr; <strong>Sincronização</strong> &rarr; <strong>Análise</strong>.
+            </p>
           </div>
-          
-          <div className="opcoes-adocao mt-5">
-            <div className="opcoes-label">OPÇÕES DE ADOÇÃO NA SUA FROTA</div>
-            
-            <div className="opcoes-cards-container">
-              
-              <div className="opcao-card hw-card">
-                <div className="opcao-header">
-                  <h3>Hardware <span className="text-accent">FlyBox</span></h3>
-                </div>
-                <div className="opcao-body">
-                  <div className="opcao-img-container">
-                    <img src={flyboxImg} alt="Hardware Flybox" />
-                  </div>
-                  <ul className="opcao-list">
-                    <li><span className="dot">•</span> Instalação física autônoma</li>
-                    <li><span className="dot">•</span> +100 parâmetros lidos</li>
-                    <li><span className="dot">•</span> Autonomia de 2.000h</li>
-                    <li><span className="dot">•</span> Proteção física imune a pane</li>
-                  </ul>
+
+          <div className="etapas-fluxo-grid">
+            {/* ETAPA 1: CAPTURA */}
+            <div className="etapa-flow-card">
+              <div className="etapa-card-header">
+                <span className="etapa-badge-number">01</span>
+                <div>
+                  <h3 className="etapa-title">Etapa 1 — Captura</h3>
+                  <p className="etapa-subtitle">Hardware ou aplicativo</p>
                 </div>
               </div>
 
-              <div className="opcao-card app-card">
-                <div className="opcao-header">
-                  <h3>App <span className="text-accent">Fly Record</span></h3>
+              {/* Chave Seletora / Abas */}
+              <div className="captura-toggle-pill">
+                <button 
+                  type="button"
+                  className={`toggle-btn ${capturaTab === 'flybox' ? 'active' : ''}`}
+                  onClick={() => setCapturaTab('flybox')}
+                >
+                  <Cpu size={15} />
+                  FlyBox
+                </button>
+                <button 
+                  type="button"
+                  className={`toggle-btn ${capturaTab === 'flyrecord' ? 'active' : ''}`}
+                  onClick={() => setCapturaTab('flyrecord')}
+                >
+                  <Smartphone size={15} />
+                  Fly Record
+                </button>
+              </div>
+
+              {/* Conteúdo Aba FlyBox */}
+              {capturaTab === 'flybox' && (
+                <div className="captura-tab-panel">
+                  <div className="etapa-image-clean">
+                    <img src={flyboxImg} alt="FlyBox — hardware embarcado" className="etapa-media-img" />
+                  </div>
+                  <div className="captura-tab-desc">
+                    <h4>FlyBox — hardware embarcado</h4>
+                    <p>
+                      Solução física autônoma que registra mais de 100 parâmetros, incluindo telemetria, GPS, vídeo e áudio. Possui alimentação independente e mantém a captura mesmo diante de falhas na alimentação elétrica da aeronave.
+                    </p>
+                  </div>
                 </div>
-                <div className="opcao-body">
-                  <div className="opcao-placeholder-img" style={{ padding: 0, overflow: 'hidden' }}>
+              )}
+
+              {/* Conteúdo Aba Fly Record */}
+              {capturaTab === 'flyrecord' && (
+                <div className="captura-tab-panel">
+                  <div className="etapa-video-clean">
                     <video 
                       src={imagensFlyboxVoo} 
                       autoPlay 
                       loop 
                       muted 
                       playsInline 
-                      style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                      className="tab-preview-video"
                     />
                   </div>
-                  <ul className="opcao-list">
-                    <li><span className="dot">•</span> Solução em celular/tablet</li>
-                    <li><span className="dot">•</span> Captura áudio, vídeo e GPS</li>
-                    <li><span className="dot">•</span> Zero custo de hardware</li>
-                    <li><span className="dot">•</span> Ideal para iniciar hoje mesmo</li>
-                  </ul>
+                  <div className="captura-tab-desc">
+                    <h4>Fly Record — aplicativo</h4>
+                    <p>
+                      Solução para tablet ou celular que captura áudio, vídeo e GPS, permitindo iniciar a digitalização da instrução sem investimento inicial em hardware embarcado.
+                    </p>
+                  </div>
                 </div>
-              </div>
-
+              )}
             </div>
 
-            <div className="plataforma-card">
-              <div className="plat-left">
-                <div className="opcao-header">
-                  <h3>Plataforma <span className="text-accent">FlyHub</span></h3>
+            {/* ETAPA 2: SINCRONIZAÇÃO */}
+            <div className="etapa-flow-card">
+              <div className="etapa-card-header">
+                <span className="etapa-badge-number">02</span>
+                <div>
+                  <h3 className="etapa-title">Etapa 2 — Sincronização</h3>
+                  <p className="etapa-subtitle">Nuvem e segurança</p>
                 </div>
-                <p>Ambas as soluções sincronizam automaticamente na nuvem ao pousar, centralizando todos os alunos e aeronaves no mesmo painel web.</p>
               </div>
-              <div className="plat-center">
-                <div className="cloud-logo">FLYHUB</div>
-              </div>
-              <div className="plat-right">
-                <div className="plat-dashboard-placeholder" style={{ padding: 0, overflow: 'hidden' }}>
-                  <video 
-                    src={flyboxFlycast} 
-                    autoPlay 
-                    loop 
-                    muted 
-                    playsInline 
-                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                  />
+
+              <div className="etapa-sync-content">
+                <div className="etapa-image-clean">
+                  <img src={flyhubSolucoes} alt="FlyHub Sincronização" className="etapa-media-img" />
                 </div>
-                <div className="plat-features">
-                  <div className="plat-feat-item"><Users size={16} className="text-accent"/> Todos os alunos em um só lugar</div>
-                  <div className="plat-feat-item"><Plane size={16} className="text-accent"/> Todas as aeronaves monitoradas</div>
-                  <div className="plat-feat-item"><BarChart3 size={16} className="text-accent"/> Dados que geram decisões</div>
-                  <div className="plat-feat-item"><ShieldAlert size={16} className="text-accent"/> Mais segurança, menos custos</div>
+
+                <div className="captura-tab-desc text-center">
+                  <h4>Envio Automático Pós-Pouso</h4>
+                  <p>
+                    Após o pouso, os dados capturados são enviados automaticamente e com segurança para os servidores, conectando a aeronave à plataforma.
+                  </p>
                 </div>
               </div>
             </div>
 
-          </div>
-        </div>
-      </section>
-
-      {/* 7. IA MULTIMODAL */}
-      <section className="flybox-white-section ia-multimodal-section">
-        <div className="container">
-          <div className="ia-split-layout">
-            <div className="ia-left">
-              <span className="text-accent uppercase font-bold text-sm">IA MULTIMODAL<br/>O FUTURO DO DEBRIEFING</span>
-              
-              <div className="ia-text-block mt-4">
-                <h2>Cada voo termina.<br/><span className="text-accent">O aprendizado começa.</span></h2>
-                <p>A FlyHub utiliza Inteligência Artificial Multimodal para analisar automaticamente vídeo, áudio, telemetria e GPS, gerando relatórios objetivos e recomendações personalizadas poucos segundos após o pouso.</p>
+            {/* ETAPA 3: ANÁLISE CENTRALIZADA */}
+            <div className="etapa-flow-card">
+              <div className="etapa-card-header">
+                <span className="etapa-badge-number">03</span>
+                <div>
+                  <h3 className="etapa-title">Etapa 3 — Análise centralizada</h3>
+                  <p className="etapa-subtitle">Plataforma FlyHub</p>
+                </div>
               </div>
 
-              <div className="ia-divider"></div>
+              <div className="etapa-analise-content">
+                {/* REALISTIC TABLET MOCKUP RESTAURADO */}
+                <div className="realistic-tablet-frame">
+                  <div className="tablet-chassis">
+                    <div className="tablet-camera-notch"></div>
+                    <div className="tablet-screen-display">
+                      <img src={flyhubImg} alt="FlyHub na tela do Tablet" className="tablet-screen-asset" />
+                      <div className="tablet-glare-reflection"></div>
+                    </div>
+                  </div>
+                </div>
 
-              <div className="ia-text-block">
-                <h2>O instrutor analisa.<br/><span className="text-accent">A IA potencializa.</span></h2>
-                <p>A inteligência artificial interpreta milhares de dados simultaneamente e entrega uma análise que seria impossível realizar manualmente.</p>
+                <div className="captura-tab-desc text-center mt-3">
+                  <h4>Plataforma FlyHub</h4>
+                  <p>
+                    O FlyHub organiza vídeo, áudio, instrumentos e eventos de voo em uma linha do tempo sincronizada, acessível a alunos, instrutores e gestores.
+                  </p>
+                </div>
               </div>
-            </div>
-            <div className="ia-right">
-              <img 
-                src={pageFlycast} 
-                alt="IA Report Screenshot" 
-                style={{ width: '100%', height: 'auto', borderRadius: '16px', boxShadow: '0 20px 50px rgba(0,0,0,0.3)' }} 
-              />
             </div>
           </div>
         </div>
       </section>
 
-      {/* 8. RENTABILIDADE CIAC */}
-      <section className="flybox-white-section ciac-section">
+      {/* 4. INTELIGÊNCIA ARTIFICIAL MULTIMODAL */}
+      <section className="ia-section section-padding" id="ia-multimodal">
         <div className="container">
-          <div className="ciac-split">
-            <div className="ciac-left">
-              <h2>Como a FlyBox aumenta a <span className="text-accent">rentabilidade</span> do seu CIAC.</h2>
-              <div className="ciac-divider"></div>
-              <p>A <span className="text-accent">FlyHub</span> utiliza <span className="text-accent">Inteligência Artificial Multimodal</span> para analisar automaticamente <span className="text-accent">vídeo, áudio, telemetria e GPS</span>, gerando <span className="text-accent">relatórios objetivos e recomendações</span> personalizadas poucos segundos após o pouso.</p>
+          <div className="ia-split-grid">
+            <div className="ia-text-column">
+              <h2 className="ia-title">
+                O instrutor analisa. <br />
+                <span className="text-accent glow-text">A Inteligência Artificial potencializa.</span>
+              </h2>
+              <p className="ia-description">
+                O FlyHub utiliza <strong>Inteligência Artificial Multimodal</strong> para analisar gravações, telemetria e dados de GPS logo após o corte do motor, transformando os registros do voo em informações úteis para o debriefing.
+              </p>
             </div>
-            
-            <div className="ciac-right">
-              <div className="ciac-table">
-                <div className="ciac-header-row">
-                  <div className="ciac-col-desafio"><span className="circle-x">X</span> DESAFIO</div>
-                  <div className="ciac-col-solucao"><span className="circle-check">✓</span> SOLUÇÃO FLYBOX</div>
+
+            <div className="ia-image-column">
+              {/* MOCKUP DO TABLET COM A TELA FLYHUB */}
+              <div className="ia-tablet-mockup-wrapper">
+                <div className="ia-tablet-chassis">
+                  <div className="ia-tablet-camera-notch"></div>
+                  
+                  <div className="flyhub-panel-screen">
+                    <img 
+                      src={telaFlyhubImg} 
+                      alt="Tela FlyHub - IA e Painel de Instrução" 
+                      className="ia-tablet-screen-img"
+                    />
+                  </div>
                 </div>
-                
-                <div className="ciac-row">
-                  <div className="ciac-cell">
-                    <strong>Aulas repetidas</strong>
+              </div>
+            </div>
+          </div>
+
+          {/* CARDS ABAIXO COBRINDO TODA A LARGURA */}
+          <div className="ia-features-list">
+            <div className="ia-feature-card">
+              <h4>Score de voo</h4>
+              <p>Pontuação automatizada baseada em parâmetros operacionais previamente definidos.</p>
+            </div>
+
+            <div className="ia-feature-card">
+              <h4>Detecção de eventos críticos</h4>
+              <p>Identificação de eventos como hard landing, overspeed e variações anormais.</p>
+            </div>
+
+            <div className="ia-feature-card">
+              <h4>Pontos fortes e oportunidades de melhoria</h4>
+              <p>Indicação dos momentos em que o aluno atingiu o padrão esperado e daqueles que exigem correção.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 5. IMPACTO PARA O CIAC (COMPARAÇÃO B2B MODERNA) */}
+      <section className="ciac-impacto-section section-padding" id="ciac">
+        <div className="container">
+          <div className="text-center mb-5">
+            <h2 className="section-title">
+              Impacto direto na <span className="text-accent glow-text">rentabilidade do seu CIAC.</span>
+            </h2>
+            <p className="section-subtitle">
+              Uma comparação direta entre os desafios operacionais tradicionais e as respostas inteligentes oferecidas pelo FlyHub.
+            </p>
+          </div>
+
+          <div className="ciac-b2b-table-container">
+            <div className="ciac-b2b-table">
+              {/* Header da Tabela */}
+              <div className="ciac-table-header">
+                <div className="ciac-th-col ciac-th-desafio">
+                  <XCircle size={18} className="th-icon-desafio" />
+                  <span>DESAFIO</span>
+                </div>
+                <div className="ciac-th-col ciac-th-solucao">
+                  <CheckCircle2 size={18} className="th-icon-solucao" />
+                  <span>SOLUÇÃO FLYBOX</span>
+                </div>
+              </div>
+
+              {/* Linhas da Tabela */}
+              <div className="ciac-table-body">
+                {/* Linha 1 */}
+                <div className="ciac-table-row">
+                  <div className="ciac-cell ciac-cell-desafio">
+                    <h4>Aulas repetidas</h4>
                     <p>Alunos repetem voos por falta de clareza e análise ineficiente.</p>
                   </div>
-                  <div className="ciac-cell bg-blue-highlight">
-                    <strong>Debriefing cirúrgico</strong>
+                  <div className="ciac-cell ciac-cell-solucao">
+                    <h4>Debriefing cirúrgico</h4>
                     <p>Análise objetiva e precisa que acelera o aprendizado e aumenta a taxa de aprovação.</p>
                   </div>
                 </div>
 
-                <div className="ciac-row">
-                  <div className="ciac-cell">
-                    <strong>Aeronaves paradas</strong>
+                {/* Linha 2 */}
+                <div className="ciac-table-row">
+                  <div className="ciac-cell ciac-cell-desafio">
+                    <h4>Aeronaves paradas</h4>
                     <p>Manutenção corretiva inesperada gera custos e reduz disponibilidade.</p>
                   </div>
-                  <div className="ciac-cell bg-blue-highlight">
-                    <strong>Manutenção preditiva</strong>
+                  <div className="ciac-cell ciac-cell-solucao">
+                    <h4>Manutenção preditiva</h4>
                     <p>Monitoramento contínuo e alertas inteligentes antecipam falhas e programam manutenções.</p>
                   </div>
                 </div>
 
-                <div className="ciac-row">
-                  <div className="ciac-cell">
-                    <strong>Custo de seguro alto</strong>
+                {/* Linha 3 */}
+                <div className="ciac-table-row">
+                  <div className="ciac-cell ciac-cell-desafio">
+                    <h4>Custo de seguro alto</h4>
                     <p>Falta de histórico confiável e auditável aumenta o risco percebido.</p>
                   </div>
-                  <div className="ciac-cell bg-blue-highlight">
-                    <strong>Histórico auditável</strong>
+                  <div className="ciac-cell ciac-cell-solucao">
+                    <h4>Histórico auditável</h4>
                     <p>Dados objetivos e rastreáveis que reduzem o risco e o custo do seguro.</p>
                   </div>
                 </div>
 
-                <div className="ciac-row">
-                  <div className="ciac-cell">
-                    <strong>Dificuldade em atrair novos alunos</strong>
+                {/* Linha 4 */}
+                <div className="ciac-table-row">
+                  <div className="ciac-cell ciac-cell-desafio">
+                    <h4>Dificuldade em atrair novos alunos</h4>
                     <p>Escolas sem diferencial perdem oportunidades.</p>
                   </div>
-                  <div className="ciac-cell bg-blue-highlight">
-                    <strong>Tecnologia que vende</strong>
+                  <div className="ciac-cell ciac-cell-solucao">
+                    <h4>Tecnologia que vende</h4>
                     <p>Inovação e dados em voo como diferencial que atraem e fidelizam novos alunos.</p>
                   </div>
                 </div>
 
-                <div className="ciac-row">
-                  <div className="ciac-cell border-0">
-                    <strong>Baixa rentabilidade</strong>
+                {/* Linha 5 */}
+                <div className="ciac-table-row">
+                  <div className="ciac-cell ciac-cell-desafio">
+                    <h4>Baixa rentabilidade</h4>
                     <p>Processos manuais, retrabalho e falta de dados limitam o lucro.</p>
                   </div>
-                  <div className="ciac-cell bg-blue-highlight border-0">
-                    <strong>Mais lucro</strong>
+                  <div className="ciac-cell ciac-cell-solucao">
+                    <h4>Mais lucro</h4>
                     <p>Decisões baseadas em dados aumentam a performance e a satisfação dos alunos.</p>
                   </div>
                 </div>
@@ -676,53 +441,178 @@ const FlyboxPage = () => {
         </div>
       </section>
 
-      {/* 9. CTA ERA DA INSTRUÇÃO */}
-      <section className="flybox-white-section cta-section">
+      {/* 6. ARQUITETURA TÉCNICA DO ECOSSISTEMA */}
+      <section className="arquitetura-linear-section section-padding">
         <div className="container">
-          <div className="cta-split">
-            <div className="cta-left">
-              <h2>Leve a sua escola para a <span className="text-accent">era da instrução baseada em dados.</span></h2>
-              <div className="cta-divider"></div>
-              <p>A FlyHub transforma cada voo em <span className="text-accent">informação estratégica</span> para melhorar o <span className="text-accent">aprendizado</span>, a <span className="text-accent">segurança</span> e a <span className="text-accent">performance</span> da sua escola.</p>
-              
-              <div className="cta-contacts mt-5" style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-                <a href="https://wa.me/5534999793418" target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', backgroundColor: '#25D366', borderColor: '#25D366', color: '#fff', textDecoration: 'none' }}>
-                  <MessageCircle size={20} />
-                  +55 34 99979-3418
-                </a>
-                <a href="mailto:joao@jpca.tv" className="btn btn-primary" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', textDecoration: 'none' }}>
-                  <Mail size={20} />
-                  joao@jpca.tv
-                </a>
+          <div className="text-center mb-5">
+            <h2 className="section-title">
+              Arquitetura Técnica do <span className="text-accent glow-text">Ecossistema</span>
+            </h2>
+            <p className="section-subtitle">
+              Cinco níveis de leitura linear que estruturam o fluxo de dados desde a aeronave até as tomadas de decisão.
+            </p>
+          </div>
+
+          <div className="arquitetura-split-grid">
+            {/* Coluna Esquerda: Cards na Vertical */}
+            <div className="arch-vertical-list">
+              <div className="arch-step-vertical">
+                <div className="arch-step-top">
+                  <span className="arch-num-badge">1</span>
+                  <h4>Aquisição</h4>
+                </div>
+                <p>AirBind, FlyBox e importação direta de arquivos.</p>
+              </div>
+
+              <div className="arch-step-vertical">
+                <div className="arch-step-top">
+                  <span className="arch-num-badge">2</span>
+                  <h4>Processamento</h4>
+                </div>
+                <p>Algoritmos analíticos de FOQA aeronáutico.</p>
+              </div>
+
+              <div className="arch-step-vertical">
+                <div className="arch-step-top">
+                  <span className="arch-num-badge">3</span>
+                  <h4>Base de Dados</h4>
+                </div>
+                <p>Flight Database centralizado, criptografado e seguro.</p>
+              </div>
+
+              <div className="arch-step-vertical">
+                <div className="arch-step-top">
+                  <span className="arch-num-badge">4</span>
+                  <h4>Plataforma</h4>
+                </div>
+                <p>FlyHub Web com IA Multimodal e Replay 3D.</p>
+              </div>
+
+              <div className="arch-step-vertical">
+                <div className="arch-step-top">
+                  <span className="arch-num-badge">5</span>
+                  <h4>Aplicações</h4>
+                </div>
+                <p>Pilotos & CIACs, Gestores Operacionais e Fabricantes.</p>
               </div>
             </div>
-            
-            <div className="cta-right">
-              <div className="ia-dashboard-placeholder" style={{ padding: 0, overflow: 'hidden', position: 'relative' }}>
-                <video 
-                  src={paolaFlybox} 
-                  autoPlay 
-                  loop 
-                  muted 
-                  playsInline 
-                  style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: 'inherit' }}
+
+            {/* Coluna Direita: Imagem Inteira Fonte de Dados */}
+            <div className="arch-image-column">
+              <div className="arch-image-card">
+                <img 
+                  src={fonteDadosImg} 
+                  alt="Arquitetura Fonte de Dados do Ecossistema FlyCast" 
+                  className="arch-full-image" 
                 />
               </div>
             </div>
           </div>
         </div>
       </section>
-      
+
+      {/* 7. ENDOSSO DA INDÚSTRIA — INPAER COLT */}
+      <section className="inpaer-endorsement-section section-padding" id="inpaer">
+        <div className="container">
+          <div className="inpaer-banner dark-blue-box">
+            <div className="inpaer-text-col">
+              <div className="inpaer-brand-row">
+                <img src={inpaerLogo} alt="Inpaer" className="inpaer-logo-img" />
+                <span className="endorsement-tag">HOMOLOGAÇÃO DE FÁBRICA</span>
+              </div>
+              <h2 className="inpaer-title">Tecnologia integrada de fábrica pela Inpaer.</h2>
+              <p className="inpaer-desc">
+                O <strong>Inpaer Colt</strong>, referência em qualidade e segurança nas Américas, pode sair de fábrica com a tecnologia de captura e telemetria <strong>FlyBox</strong> integrada à aeronave.
+              </p>
+              
+              <div className="inpaer-cta-box mt-4">
+                <p className="cta-lead-text">Pronto para basear sua instrução em dados?</p>
+                <a 
+                  href="https://wa.me/553499793418?text=Ol%C3%A1!%20Gostaria%20de%20falar%20com%20um%20consultor%20sobre%20a%20FlyBox%20e%20FlyHub."
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="btn-primary inpaer-btn-cta"
+                >
+                  <MessageCircle size={18} />
+                  Fale com um consultor
+                </a>
+              </div>
+            </div>
+
+            <div className="inpaer-media-col">
+              <img 
+                src={coltImg} 
+                alt="Inpaer Colt com FlyBox integrada de fábrica" 
+                className="colt-right-borderless-img" 
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 8. SEÇÃO FINAL / CONTATO — LEVE SUA ESCOLA PARA A ERA DOS DADOS */}
+      <section className="flybox-final-cta-section section-padding" id="contato">
+        <div className="container">
+          <div className="final-cta-split-grid">
+            <div className="final-cta-text-col">
+              <h2 className="final-cta-title">
+                Leve a sua escola <br />
+                para a <span className="text-accent glow-text">era da instrução baseada em dados.</span>
+              </h2>
+
+              <div className="final-cta-decor-line"></div>
+
+              <p className="final-cta-desc">
+                A <strong>FlyHub</strong> transforma cada voo em <span className="highlight-cyan">informação estratégica</span> para melhorar o <span className="highlight-cyan">aprendizado</span>, a <span className="highlight-cyan">segurança</span> e a <span className="highlight-cyan">performance</span> da sua escola.
+              </p>
+
+              <div className="final-cta-buttons-stack">
+                <a 
+                  href="https://wa.me/5534999793418?text=Ol%C3%A1!%20Gostaria%20de%20levar%20o%20FlyHub%20para%20minha%20escola."
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="btn-primary final-btn-pill"
+                >
+                  <MessageCircle size={20} />
+                  +55 34 99979-3418
+                </a>
+
+                <a 
+                  href="mailto:joao@jpca.tv" 
+                  className="btn-primary final-btn-pill"
+                >
+                  <Mail size={20} />
+                  JOAO@JPCA.TV
+                </a>
+              </div>
+            </div>
+
+            <div className="final-cta-phone-col">
+              <div className="phone-mockup-wrapper">
+                <div className="phone-mockup-chassis">
+                  <div className="phone-camera-notch"></div>
+                  <div className="phone-screen-display">
+                    <video 
+                      src={paolaFlybox}
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      className="phone-video-media"
+                    />
+                    <div className="phone-glare-overlay"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CLIENTES */}
+      <Partners />
     </div>
   );
 };
-
-// Simple ArrowRight component since it's not imported at the top
-const ArrowRight = ({size, className}) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
-    <path d="M5 12h14"></path>
-    <path d="m12 5 7 7-7 7"></path>
-  </svg>
-)
 
 export default FlyboxPage;

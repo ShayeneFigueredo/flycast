@@ -1,113 +1,209 @@
-.partners-section {
-  background-color: transparent; /* Será mesclado com o fundo da página ou usa bg-dark */
-  padding: 2rem 0 4rem 0;
+/* Partners.css — Nossos Clientes Showcase Dual Marquee */
+
+.clientes-showcase-section {
   position: relative;
-  z-index: 10;
-}
-
-.partners-container {
-  background-color: transparent;
-  width: 100%;
-  padding: 2rem 0;
-  overflow: hidden;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-  background: rgba(2, 6, 23, 0.5); /* Azul escuro semi-transparente como nas outras seções */
-}
-
-.partners-title {
-  text-align: center;
-  font-family: var(--font-title);
-  color: var(--text-secondary);
-  font-size: 0.9rem;
-  font-weight: 700;
-  letter-spacing: 2px;
-  margin-bottom: 2.5rem;
-  text-transform: uppercase;
-}
-
-/* Container do Marquee */
-.partners-marquee {
-  width: 100%;
-  overflow: hidden;
-  position: relative;
-  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-}
-
-.partners-grid {
+  background-color: #000208;
+  padding: 110px 0;
+  min-height: 300px;
   display: flex;
-  width: max-content;
   align-items: center;
-  gap: 5rem;
-  padding: 0 2.5rem;
-  /* Animação infinita */
-  animation: scroll 15s linear infinite;
+  overflow: hidden;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-/* Pausa no hover */
-.partners-marquee:hover .partners-grid {
+.marquee-outer-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 38px;
+  width: 100%;
+  padding: 24px 0;
+  overflow: hidden;
+}
+
+/* Rows and Tracks */
+.marquee-row {
+  width: 100%;
+  display: flex;
+  overflow: hidden;
+  user-select: none;
+  position: relative;
+  z-index: 1;
+}
+
+.marquee-track {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  width: max-content;
+  flex-shrink: 0;
+}
+
+/* Row 1: Left Scroll */
+.track-left {
+  animation: marqueeToLeft 24s linear infinite;
+}
+
+/* Row 2: Right Scroll */
+.track-right {
+  animation: marqueeToRight 24s linear infinite;
+}
+
+.marquee-track:hover {
   animation-play-state: paused;
 }
 
-@keyframes scroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+@keyframes marqueeToLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
-.partner-logo {
+@keyframes marqueeToRight {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Logo Cards: Clean floating clickable logos without border/card background */
+.client-logo-item {
+  width: auto;
+  min-width: 155px;
+  height: 60px;
   display: flex;
   align-items: center;
   justify-content: center;
-  filter: grayscale(100%) opacity(60%) brightness(200%);
-  transition: all 0.4s ease;
-  height: 60px;
+  flex-shrink: 0;
+  padding: 0 14px;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  text-decoration: none;
   cursor: pointer;
+  opacity: 0.85;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease, filter 0.25s ease;
 }
 
-.partner-logo.logo-large {
-  height: 85px; /* Aumentar Inpaer e i9 */
+.client-logo-item:hover {
+  transform: scale(1.12);
+  opacity: 1;
+  filter: drop-shadow(0 0 12px rgba(0, 180, 255, 0.4));
 }
 
-.partner-logo:hover {
-  filter: grayscale(0%) opacity(100%) brightness(100%);
-  transform: scale(1.05);
-}
-
-.partner-logo img {
-  max-height: 100%;
-  max-width: 220px;
+.client-logo-img {
+  max-height: 46px;
+  max-width: 140px;
+  width: auto;
+  height: auto;
   object-fit: contain;
+  display: block;
 }
 
-/* Placeholder para i9hub */
-.i9hub-placeholder {
+.client-logo-img.logo-white {
+  filter: brightness(0) invert(1) !important;
+}
+
+.client-logo-img.logo-emblem {
+  max-height: 52px;
+  max-width: 70px;
+}
+
+/* Center Emblem Badge: Translucent dark blue with background blur */
+.center-client-badge {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  pointer-events: none;
+}
+
+.center-badge-circle {
+  position: relative;
+  z-index: 2;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: rgba(2, 8, 28, 0.45); /* Low opacity to see blurred logos passing behind */
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.65), inset 0 0 20px rgba(255, 255, 255, 0.08);
   display: flex;
   align-items: center;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.8rem;
-  font-weight: 800;
-  color: #fff;
+  justify-content: center;
+  text-align: center;
+  padding: 16px;
 }
 
-.i9-text {
-  color: #ff6600;
+.center-badge-text {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.85rem;
+  font-weight: 400;
+  color: #ffffff;
+  letter-spacing: 2.2px;
+  text-transform: uppercase;
+  line-height: 1.1;
+  display: block;
+  max-width: 135px;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
 }
 
-.hub-text {
-  color: #ccc;
+/* Fade gradients on sides */
+.marquee-fade-left,
+.marquee-fade-right {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 140px;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.marquee-fade-left {
+  left: 0;
+  background: linear-gradient(to right, #000208 0%, rgba(0, 2, 8, 0) 100%);
+}
+
+.marquee-fade-right {
+  right: 0;
+  background: linear-gradient(to left, #000208 0%, rgba(0, 2, 8, 0) 100%);
 }
 
 @media (max-width: 768px) {
-  .partners-container {
-    padding: 2rem 0;
+  .clientes-showcase-section {
+    padding: 70px 0;
+    min-height: 220px;
   }
-  
-  .partners-grid {
-    gap: 3rem;
+
+  .center-badge-circle {
+    width: 130px;
+    height: 130px;
   }
-  
-  .partner-logo {
-    height: 40px;
+
+  .center-badge-text {
+    font-size: 1.25rem;
+    max-width: 95px;
+  }
+
+  .client-logo-item {
+    min-width: 110px;
+    height: 48px;
+  }
+
+  .client-logo-img {
+    max-height: 36px;
+    max-width: 100px;
+  }
+
+  .marquee-track {
+    gap: 36px;
   }
 }

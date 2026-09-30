@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 70" fill="none">
+  <g fill="#D4AF37">
+    <path d="M40 35 L15 15 L25 35 L15 55 Z" opacity="0.85"/>
+    <path d="M42 35 L67 15 L57 35 L67 55 Z" opacity="0.85"/>
+    <circle cx="41" cy="35" r="7" fill="#F3E5AB"/>
+    <path d="M35 35 L41 20 L47 35 L41 50 Z" fill="#FFFFFF"/>
+  </g>
+  <text x="80" y="38" font-family="'Montserrat', 'Arial', sans-serif" font-weight="800" font-size="22" fill="#FFFFFF" letter-spacing="3">GOLDEN FLY</text>
+  <text x="82" y="52" font-family="'Montserrat', 'Arial', sans-serif" font-weight="500" font-size="10" fill="#D4AF37" letter-spacing="4">ESCOLA DE AVIAÇÃO</text>
+</svg>

@@ -1,15 +1,30 @@
 :root {
-  --bg-dark: #000000;
-  --bg-dark-blue: #020617;
-  --neon-blue: #0088ff;
-  --neon-blue-light: #4db8ff;
-  --text-primary: #ffffff;
-  --text-secondary: #94a3b8;
-  --border-color: rgba(0, 136, 255, 0.2);
-  --glow-shadow: 0 0 20px rgba(0, 136, 255, 0.5);
+  --bg-dark: #000208;
+  --bg-dark-blue: #020614;
+  --bg-card: rgba(3, 10, 26, 0.9);
+  --bg-card-hover: rgba(5, 16, 40, 0.95);
   
-  --font-main: 'Montserrat', sans-serif;
-  --font-title: 'Montserrat', sans-serif;
+  /* Solid Light Blue (sem neon e sem degradê) */
+  --accent-blue: #38bdf8;
+  --accent-blue-light: #7dd3fc;
+  --accent-blue-dark: #0284c7;
+  
+  --text-primary: #ffffff;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+  
+  --border-color: rgba(255, 255, 255, 0.12);
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-accent: rgba(56, 189, 248, 0.4);
+  
+  --font-main: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-title: 'Bebas Neue', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  max-width: 100vw;
 }
 
 * {
@@ -21,13 +36,37 @@
 body {
   font-family: var(--font-main);
   background-color: var(--bg-dark);
-  background-image: radial-gradient(circle at 50% 0%, #031433 0%, #000000 60%);
-  background-attachment: fixed;
   color: var(--text-primary);
-  line-height: 1.6;
+  line-height: 1.65;
+  font-weight: 300;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
+  position: relative;
+}
+
+img, video, iframe, svg, canvas {
+  max-width: 100%;
+  height: auto;
+}
+
+p, h1, h2, h3, h4, h5, h6, span, a, li {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+p {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-title);
+  font-weight: 400;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
 }
 
 a {
@@ -44,104 +83,182 @@ button {
 
 /* Utilities */
 .container {
-  max-width: 1200px;
+  width: 100%;
+  max-width: 1240px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 40px;
+}
+
+@media (max-width: 992px) {
+  .container {
+    padding: 0 34px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 24px;
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mb-5 {
+  margin-bottom: 3rem;
+}
+
+.mt-5 {
+  margin-top: 3rem;
 }
 
 .text-accent {
-  color: var(--neon-blue-light);
-  text-shadow: 0 0 10px rgba(77, 184, 255, 0.4);
+  color: var(--accent-blue);
 }
 
 .text-gradient {
-  background: linear-gradient(90deg, #fff, var(--neon-blue-light));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: var(--accent-blue);
 }
 
 .section-padding {
-  padding: 100px 0;
+  padding: 90px 0;
 }
 
-/* Buttons */
+@media (max-width: 768px) {
+  .section-padding {
+    padding: 60px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-padding {
+    padding: 45px 0;
+  }
+}
+
+/* Buttons (Solid colors, no gradient, no neon glow) */
 .btn-primary {
-  background: linear-gradient(90deg, #0073e6 0%, #00a2ff 100%);
-  color: white;
-  padding: 16px 32px;
+  font-family: var(--font-title);
+  background: var(--accent-blue-dark);
+  color: #ffffff;
+  padding: 14px 28px;
   border-radius: 8px;
-  font-weight: 700;
-  font-size: 1rem;
+  font-weight: 400;
+  font-size: 1.25rem;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
-  transition: all 0.3s ease;
+  letter-spacing: 1.2px;
+  transition: all 0.25s ease;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  box-shadow: 0 4px 15px rgba(0, 136, 255, 0.3);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .btn-primary:hover {
+  background: var(--accent-blue);
+  color: #000208;
   transform: translateY(-2px);
-  box-shadow: 0 6px 25px rgba(0, 136, 255, 0.6);
-  background: linear-gradient(90deg, #0088ff 0%, #33b5ff 100%);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.6);
 }
 
 .btn-outline {
+  font-family: var(--font-title);
   background: transparent;
-  color: white;
-  padding: 16px 32px;
+  color: #ffffff;
+  padding: 14px 28px;
   border-radius: 8px;
-  font-weight: 600;
-  font-size: 1rem;
-  border: 1px solid var(--neon-blue);
-  transition: all 0.3s ease;
-  box-shadow: 0 0 10px rgba(0, 136, 255, 0.2) inset;
+  font-weight: 400;
+  font-size: 1.25rem;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  transition: all 0.25s ease;
 }
 
 .btn-outline:hover {
-  background: rgba(0, 136, 255, 0.1);
-  box-shadow: 0 0 20px rgba(0, 136, 255, 0.4) inset, 0 0 20px rgba(0, 136, 255, 0.4);
+  background: rgba(56, 189, 248, 0.08);
+  border-color: var(--accent-blue);
+  color: var(--accent-blue);
+  transform: translateY(-2px);
 }
 
-/* Glowing Elements */
+/* Cards (Solid dark background, clean borders, no neon glow) */
 .glow-box {
-  background: rgba(2, 6, 23, 0.7);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  background: var(--bg-card);
   border: 1px solid var(--border-color);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
-  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  border-radius: 14px;
+  transition: border-color 0.25s ease, transform 0.25s ease;
+}
+
+.glow-box:hover {
+  border-color: var(--border-accent);
+  transform: translateY(-3px);
 }
 
 .glow-text {
-  text-shadow: 0 0 10px rgba(0, 136, 255, 0.6);
+  color: var(--accent-blue);
 }
 
 .section-title {
   font-family: var(--font-title);
-  letter-spacing: 1px;
-  font-size: 3rem;
-  font-weight: 700;
+  letter-spacing: 1.5px;
+  font-size: clamp(2.4rem, 5vw, 3.6rem);
+  font-weight: 400;
   text-transform: uppercase;
   text-align: center;
-  margin-bottom: 3rem;
-  line-height: 1.2;
+  margin-bottom: 2rem;
+  line-height: 1.15;
 }
 
 .section-title span,
 .section-title strong,
 .text-accent,
 .text-gradient {
-  font-weight: 900;
+  font-weight: 400;
 }
 
 .section-subtitle {
   font-size: 1.1rem;
   color: var(--text-secondary);
+  font-weight: 300;
   text-align: center;
-  margin-top: -2rem;
-  margin-bottom: 4rem;
+  margin-top: -1rem;
+  margin-bottom: 3.5rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
 }
+
+.vertical-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  background: rgba(56, 189, 248, 0.1);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  color: var(--accent-blue);
+  margin-bottom: 1rem;
+}
+
+

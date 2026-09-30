@@ -22,8 +22,7 @@
 
 .faq-item.open {
   background: rgba(2, 6, 23, 0.8);
-  border-color: var(--border-color);
-  box-shadow: 0 0 15px rgba(0, 136, 255, 0.15);
+  border-color: var(--border-accent);
 }
 
 .faq-question {
@@ -37,11 +36,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  transition: color 0.3s ease;
+  transition: color 0.2s ease;
 }
 
 .faq-question:hover {
-  color: var(--neon-blue-light);
+  color: var(--accent-blue);
 }
 
 .faq-answer-wrapper {
@@ -58,4 +57,13 @@
   border-top: 1px solid rgba(255, 255, 255, 0.05);
   margin-top: -0.5rem;
   padding-top: 1rem;
+}
+
+.faq-cta-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 3.5rem;
+  text-align: center;
 }

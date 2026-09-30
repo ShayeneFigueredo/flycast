@@ -12,8 +12,7 @@ const CTABanner = () => {
         <div className="cta-content">
           <h2 className="cta-title">FAÇA LOGIN NO FLYHUB</h2>
           <p className="cta-text">
-            Tenha controle total da sua operação. Acesse nossa plataforma para visualizar<br/>
-            telemetria, rotas e métricas da sua aeronave em tempo real.
+            Tenha controle total da sua operação. Acesse nossa plataforma para visualizar telemetria, rotas e métricas da sua aeronave em tempo real.
           </p>
         </div>
       </div>

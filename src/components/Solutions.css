@@ -1,102 +1,215 @@
 .solutions-section {
   position: relative;
-  overflow: hidden;
-  background: var(--bg-color); /* inheriting from global variables if any, otherwise standard dark bg */
+  background-color: #00479b;
 }
 
-.solutions-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  padding: 1rem 0;
-}
-
-.solution-card {
-  position: relative;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+.vertical-section-group {
+  background: rgba(3, 10, 26, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 20px;
-  padding: 2rem 1.5rem;
+  padding: 32px;
+  margin-bottom: 40px;
+}
+
+.vertical-group-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding-bottom: 24px;
+  margin-bottom: 28px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.vgh-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.vgh-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: rgba(56, 189, 248, 0.1);
+  color: var(--accent-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(56, 189, 248, 0.25);
+}
+
+.vgh-title {
+  font-family: var(--font-title);
+  font-size: 1.65rem;
+  font-weight: 400;
+  letter-spacing: 1.2px;
+  color: #ffffff;
+  line-height: 1.2;
+}
+
+.vgh-desc {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  font-weight: 300;
+  margin-top: 2px;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.vgh-link {
+  font-family: var(--font-title);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.15rem;
+  letter-spacing: 1px;
+  font-weight: 400;
+  color: var(--accent-blue);
+  padding: 8px 16px;
+  border-radius: 8px;
+  background: rgba(56, 189, 248, 0.08);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.vgh-link:hover {
+  background: rgba(56, 189, 248, 0.18);
+  transform: translateX(3px);
+  color: #ffffff;
+}
+
+/* Solutions Cards Grid */
+.solutions-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.solution-tech-card {
+  position: relative;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
-  overflow: hidden;
-  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), border-color 0.4s ease;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  z-index: 1;
+  padding: 24px;
+  border-radius: 16px;
+  transition: all 0.25s ease;
 }
 
-.solution-card:hover {
-  transform: translateY(-10px);
-  border-color: rgba(0, 240, 255, 0.3); /* Accent color border on hover */
+.solution-tech-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--border-accent);
 }
 
-.solution-glow {
+.stc-badge {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 150%;
-  height: 150%;
-  background: radial-gradient(circle, rgba(0, 240, 255, 0.1) 0%, rgba(0, 0, 0, 0) 70%);
-  transform: translate(-50%, -50%) scale(0.5);
-  opacity: 0;
-  transition: transform 0.6s ease, opacity 0.6s ease;
-  z-index: -1;
-  pointer-events: none;
-}
-
-.solution-card:hover .solution-glow {
-  transform: translate(-50%, -50%) scale(1);
-  opacity: 1;
-}
-
-.solution-image-container {
-  width: 140px;
-  height: 140px;
-  margin-bottom: 1.5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  z-index: 2;
-}
-
-.solution-image {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-  filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.3));
-  transition: transform 0.4s ease;
-}
-
-.solution-card:hover .solution-image {
-  transform: scale(1.1) rotate(-3deg);
-}
-
-.solution-content {
-  z-index: 2;
-}
-
-.solution-title {
-  font-size: 1.25rem;
+  top: 16px;
+  right: 16px;
+  font-size: 0.72rem;
   font-weight: 700;
-  margin-bottom: 1rem;
-  letter-spacing: 1px;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: var(--accent-blue);
+  background: rgba(56, 189, 248, 0.1);
+  padding: 4px 10px;
+  border-radius: 6px;
+  border: 1px solid rgba(56, 189, 248, 0.25);
 }
 
-.solution-desc {
+.stc-image-wrapper {
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 18px;
+}
+
+.stc-image {
+  max-height: 130px;
+  max-width: 100%;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.solution-tech-card:hover .stc-image {
+  transform: scale(1.06);
+}
+
+.stc-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.stc-title {
+  font-family: var(--font-title);
+  font-size: 1.5rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+.stc-desc {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+  margin-bottom: 16px;
+  flex: 1;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.stc-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding-top: 14px;
+}
+
+.stc-features li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.84rem;
+  color: #e2e8f0;
+}
+
+.stc-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 12px 18px;
+  border-radius: 8px;
+  background: #0284c7;
+  border: none;
+  color: #ffffff;
   font-size: 0.95rem;
-  color: rgba(255, 255, 255, 0.7);
-  line-height: 1.5;
-  margin: 0;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  margin-top: auto;
+  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.25);
+}
+
+.stc-link:hover {
+  background: #0369a1;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(2, 132, 199, 0.4);
 }
 
 @media (max-width: 768px) {
-  .solutions-grid {
-    grid-template-columns: 1fr;
-    max-width: 400px;
-    margin: 0 auto;
+  .vertical-section-group {
+    padding: 20px 16px;
+  }
+  .vgh-title {
+    font-size: 1.15rem;
   }
 }

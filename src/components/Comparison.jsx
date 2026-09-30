@@ -1,5 +1,5 @@
 import React from 'react';
-import { Activity, Mic, Cloud, Monitor, Database, Video, Camera, Radio, Link, Brain, Shield, Check, Minus } from 'lucide-react';
+import { Activity, Mic, Cloud, Monitor, Database, Video, Camera, Radio, Link, Brain, Shield, Check, Minus, MoveHorizontal } from 'lucide-react';
 import './Comparison.css';
 
 const Comparison = () => {
@@ -33,7 +33,11 @@ const Comparison = () => {
           </div>
 
           <div className="comparison-table-side">
-            <div className="table-container glow-box">
+            <div className="table-scroll-hint">
+              <MoveHorizontal size={14} /> Arraste para o lado
+            </div>
+            <div className="table-responsive-wrapper">
+              <div className="table-container glow-box">
               <div className="table-header">
                 <div className="col-feature text-accent">RECURSOS</div>
                 <div className="col-airbind text-accent">AIR BIND</div>
@@ -62,6 +66,7 @@ const Comparison = () => {
             </div>
           </div>
         </div>
+      </div>
       </div>
     </section>
   );

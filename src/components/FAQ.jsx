@@ -60,7 +60,7 @@ const FAQ = () => {
               </button>
               <div
                 className="faq-answer-wrapper"
-                style={{ maxHeight: openIndex === index ? '200px' : '0px' }}
+                style={{ maxHeight: openIndex === index ? '500px' : '0px' }}
               >
                 <div className="faq-answer">
                   {faq.answer}
@@ -70,15 +70,14 @@ const FAQ = () => {
           ))}
         </div>
 
-        <div className="text-center" style={{ marginTop: '4rem' }}>
+        <div className="faq-cta-wrapper">
           <a 
-            href="https://wa.me/553499793418" 
+            href="https://wa.me/553499793418?text=Ol%C3%A1!%20Gostaria%20de%20tirar%20d%C3%BAvidas%20sobre%20as%20solu%C3%A7%C3%B5es%20da%20Flycast." 
             target="_blank" 
             rel="noopener noreferrer" 
             className="btn-primary"
-            style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}
           >
-            FALE COM O CEO - JOÃO PAULO CRUZ ARAUJO
+            Falar com a Equipe de Engenharia e Soluções
           </a>
         </div>
       </div>

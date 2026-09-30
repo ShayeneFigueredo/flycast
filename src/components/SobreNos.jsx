@@ -14,44 +14,68 @@ import {
   ArrowRight, 
   Lock, 
   Server,
-  CheckCircle2
+  CheckCircle2,
+  Workflow,
+  Wrench,
+  Layers,
+  Plane,
+  Users,
+  Compass
 } from 'lucide-react';
 import Header from './Header';
 import Partners from './Partners';
 import './SobreNos.css';
+
+import flycastImg from '../assets/flycast.png';
 
 const SobreNos = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  const stats = [
-    { number: '+10 Anos', label: 'De inovação aeronáutica' },
-    { number: '100%', label: 'Conectividade e streaming contínuo' },
-    { number: '24/7', label: 'Suporte & Monitoramento ativo' },
-    { number: 'High-Res', label: 'Vídeo Full HD & Criptografia' }
+  const corePillars = [
+    {
+      icon: <Award size={28} />,
+      title: 'Trajetória & Experiência Técnica',
+      desc: 'Histórico consolidado no desenvolvimento de soluções de engenharia, acumulando anos de experiência técnica em operações de alta complexidade e missões críticas no setor aeroespacial.'
+    },
+    {
+      icon: <Workflow size={28} />,
+      title: 'Integração JPCA & Flycast',
+      desc: 'União estratégica entre a solidez operacional e competências consolidadas da JPCA com a capacidade de inovação ágil, desenvolvimento digital e engenharia avançada da Flycast.'
+    },
+    {
+      icon: <Radio size={28} />,
+      title: 'Aviação, Conectividade & Dados',
+      desc: 'Atuação especializada em sistemas de transmissão ao vivo de alta definição, agregação de conectividade (AirBind), telemetria em tempo real e inteligência operacional baseada em dados (FlyHub).'
+    },
+    {
+      icon: <Cpu size={28} />,
+      title: 'Soluções Embarcadas de Ponta a Ponta',
+      desc: 'Capacidade completa para projetar, desenvolver, integrar fisicamente e validar sistemas de hardware e software embarcados sob rigorosos padrões de segurança e homologação.'
+    }
   ];
 
-  const pillars = [
+  const capacidades = [
     {
-      icon: <Radio size={26} />,
-      title: 'Conectividade Híbrida AirBind',
-      desc: 'Agregação inteligente de múltiplas redes de telefonia celular e satélite para manter o sinal estável mesmo sob oscilações severas em voo.'
+      icon: <Cpu size={24} />,
+      title: 'Engenharia de Hardware e Software',
+      desc: 'Criação de soluções proprietárias como a FlyBox e AirBind, com inteligência artificial embarcada na borda (Edge AI).'
     },
     {
-      icon: <Cpu size={26} />,
-      title: 'Processamento Embarcado (Edge AI)',
-      desc: 'Hardware de alta densidade computacional que processa vídeo, áudio de cabine e dados de telemetria diretamente na aeronave.'
+      icon: <Wrench size={24} />,
+      title: 'Integração & Instalação Mecânica',
+      desc: 'Projetos e kits de instalação mecânica e elétrica customizados para aviões e helicópteros, preservando a integridade da aeronave.'
     },
     {
-      icon: <Lock size={26} />,
-      title: 'Criptografia & Segurança Militar',
-      desc: 'Transmissão ponta a ponta criptografada para proteger dados estratégicos, operacionais e de inteligência contra interceptações.'
+      icon: <ShieldCheck size={24} />,
+      title: 'Validação em Voo & Homologação',
+      desc: 'Testes de bancada, validação em voo real e assessoria para processos de homologação junto aos órgãos competentes da aviação.'
     },
     {
-      icon: <Activity size={26} />,
-      title: 'Telemetria & Gestão de Frota (FlyHub)',
-      desc: 'Painel centralizado em tempo real para controle operacional, rastreamento de rotas e diagnóstico preventivo do comportamento da aeronave.'
+      icon: <Activity size={24} />,
+      title: 'Plataforma de Dados & Telemetria',
+      desc: 'Sincronização em nuvem e análise preditiva de parâmetros FOQA para treinamento, segurança e suporte à decisão.'
     }
   ];
 
@@ -69,110 +93,82 @@ const SobreNos = () => {
           {/* Hero Section */}
           <section className="sobre-hero">
             <div className="badge-tag">
-              <Globe size={14} /> Ecossistema Conectado Flycast
+              <Compass size={14} /> Institucional & Engenharia
             </div>
             <h1 className="hero-title text-center">
-              Liderando a Revolução da <br />
-              <span className="text-accent glow-text">Conectividade Aeronáutica</span>
+              Tecnologia, Conectividade e <br />
+              <span className="text-accent glow-text">Inteligência Aeronáutica</span>
             </h1>
             <p className="subtitle-text">
-              Desenvolvemos a próxima geração de tecnologia em transmissão de vídeo ao vivo, telemetria e inteligência de dados para aviação comercial, segurança e missões críticas.
+              Transformamos a aviação através da integração de engenharia embarcada, transmissão em tempo real e inteligência baseada em dados.
             </p>
           </section>
 
-          {/* Intro Section - Quem Somos */}
-          <section className="section-padding" style={{ paddingTop: '20px' }}>
+          {/* Seção 1: Trajetória e Integração JPCA + Flycast */}
+          <section className="section-padding sobre-intro-section">
             <div className="about-intro-grid">
               <div className="about-intro-text">
-                <h2 className="section-title" style={{ textAlign: 'left', fontSize: '2.2rem', marginBottom: '1.5rem' }}>
-                  Quem Somos & <span className="text-accent glow-text">Nossa História</span>
+                <h2 className="section-title text-left">
+                  A Força da <span className="text-accent glow-text">Experiência Técnica</span>
                 </h2>
                 <p>
-                  A <strong>FLYCAST</strong> nasceu com a missão clara de transformar a maneira como aeronaves se comunicam com a terra. Durante anos, operações com aviões e helicópteros enfrentaram pontos cegos, falta de dados em tempo real e investigações baseadas em suposições após eventos críticos.
+                  A <strong>FLYCAST</strong> consolida anos de trajetória técnica e know-how de ponta na indústria aeronáutica. Nossa história é marcada pela busca contínua em solucionar desafios complexos de comunicação, telemetria e visibilidade operacional a bordo.
                 </p>
                 <p>
-                  Combinando engenharia aeronáutica de ponta, desenvolvimento de hardware embarcado e algoritmos proprietários de agregação de sinal, criamos um ecossistema completo que garante <strong>vídeo HD ao vivo, áudio cristalino e telemetria precisa</strong> sob qualquer condição de voo.
+                  A integração das competências apresentadas pela <strong>JPCA</strong> potencializa a Flycast com uma base operacional sólida, unindo a comprovada excelência em transmissão e infraestrutura aeroespacial a uma plataforma tecnológica moderna, ágil e escalável.
                 </p>
                 <p>
-                  Seja no combate a incêndios, patrulhamento aéreo, transmissão jornalística ou transporte VIP e agrícola, nossas soluções entregam visibilidade total e poder de decisão instantâneo para os gestores de frota.
+                  Hoje, conectamos aeronaves a centros de comando, escolas de aviação (CIACs), operadores executivos e forças de segurança, transformando horas de voo em dados estratégicos e inteligência de missão.
                 </p>
-              </div>
 
-              {/* Stats Counters */}
-              <div className="stats-grid">
-                {stats.map((item, idx) => (
-                  <div key={idx} className="stat-card glow-box">
-                    <div className="stat-number">{item.number}</div>
-                    <div className="stat-label">{item.label}</div>
+                <div className="sobre-highlights-row mt-4">
+                  <div className="highlight-mini-card">
+                    <CheckCircle2 size={18} className="text-accent" />
+                    <span>Engenharia Especializada</span>
                   </div>
-                ))}
+                  <div className="highlight-mini-card">
+                    <CheckCircle2 size={18} className="text-accent" />
+                    <span>Transmissão Sem Ponto Cego</span>
+                  </div>
+                  <div className="highlight-mini-card">
+                    <CheckCircle2 size={18} className="text-accent" />
+                    <span>Soluções Validadas em Voo</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Imagem Flycast sem bordas */}
+              <div className="about-intro-media">
+                <div className="sobre-media-card-clean">
+                  <img 
+                    src={flycastImg} 
+                    alt="Flycast" 
+                    className="sobre-team-img" 
+                  />
+                </div>
               </div>
             </div>
           </section>
 
-          {/* Mission, Vision, Values */}
-          <section className="section-padding">
+          {/* Seção 2: Os 4 Pilares Fundamentais */}
+          <section className="section-padding sobre-pillars-section">
             <div className="text-center mb-5">
               <h2 className="section-title">
-                Nossos <span className="text-accent glow-text">Fundamentos</span>
+                Nossos Pilares de <span className="text-accent glow-text">Atuação</span>
               </h2>
               <p className="section-subtitle">
-                O compromisso com a segurança de voo e a excelência tecnológica guia cada linha de código e circuito que criamos.
+                Estrutura multidisciplinar que guia a concepção de cada sistema e produto.
               </p>
             </div>
 
-            <div className="mvv-grid">
-              <div className="mvv-card glow-box">
-                <div className="mvv-icon-wrapper">
-                  <Target size={30} />
-                </div>
-                <h3>Nossa Missão</h3>
-                <p>
-                  Garantir conectividade contínua, transmissão ao vivo e inteligência operacional para aeronaves em qualquer lugar do mundo, eliminando pontos cegos e elevando a segurança a patamares inéditos.
-                </p>
-              </div>
-
-              <div className="mvv-card glow-box">
-                <div className="mvv-icon-wrapper">
-                  <Eye size={30} />
-                </div>
-                <h3>Nossa Visão</h3>
-                <p>
-                  Ser a plataforma global de referência em sistemas inteligentes embarcados, streaming aeronáutico e telemetria para a aviação comercial, executiva e de missões críticas.
-                </p>
-              </div>
-
-              <div className="mvv-card glow-box">
-                <div className="mvv-icon-wrapper">
-                  <ShieldCheck size={30} />
-                </div>
-                <h3>Nossos Valores</h3>
-                <p>
-                  Segurança inflexível, transparência em dados, inovação ágil, robustez técnica extrema e parceria contínua com operadores e órgãos da aviação.
-                </p>
-              </div>
-            </div>
-          </section>
-
-          {/* Pillars of Technology */}
-          <section className="section-padding">
-            <div className="text-center mb-5">
-              <h2 className="section-title">
-                Pilares Tecnológicos <span className="text-accent glow-text">Flycast</span>
-              </h2>
-              <p className="section-subtitle">
-                Engenharia de alta complexidade simplificada em soluções robustas para o seu dia a dia operacional.
-              </p>
-            </div>
-
-            <div className="pillars-grid">
-              {pillars.map((pillar, idx) => (
-                <div key={idx} className="pillar-card glow-box">
-                  <div className="pillar-icon">
+            <div className="core-pillars-grid">
+              {corePillars.map((pillar, idx) => (
+                <div key={idx} className="core-pillar-card glow-box">
+                  <div className="core-pillar-icon">
                     {pillar.icon}
                   </div>
-                  <div className="pillar-content">
-                    <h4>{pillar.title}</h4>
+                  <div className="core-pillar-body">
+                    <h3>{pillar.title}</h3>
                     <p>{pillar.desc}</p>
                   </div>
                 </div>
@@ -180,37 +176,54 @@ const SobreNos = () => {
             </div>
           </section>
 
-          {/* Culture Banner / Call to Action */}
-          <section className="section-padding" style={{ paddingTop: '20px' }}>
+          {/* Seção 3: Capacidade de Desenvolver, Integrar e Validar */}
+          <section className="section-padding sobre-capacidades-section">
+            <div className="text-center mb-5">
+              <h2 className="section-title">
+                Desenvolver, Integrar e <span className="text-accent glow-text">Validar</span>
+              </h2>
+              <p className="section-subtitle">
+                Domínio completo de todo o ciclo de vida do projeto aeronáutico embarcado.
+              </p>
+            </div>
+
+            <div className="capacidades-grid">
+              {capacidades.map((cap, idx) => (
+                <div key={idx} className="capacidade-card glow-box">
+                  <div className="cap-icon-box">
+                    {cap.icon}
+                  </div>
+                  <h4>{cap.title}</h4>
+                  <p>{cap.desc}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* Banner de Contato / Próximos Passos */}
+          <section className="section-padding" style={{ paddingTop: '10px' }}>
             <div className="culture-banner glow-box">
               <h2 className="section-title" style={{ marginBottom: '1rem', fontSize: '2.4rem' }}>
-                Pronto para transformar a <span className="text-accent glow-text">Conectividade da sua Frota?</span>
+                Conheça Nossas <span className="text-accent glow-text">Soluções em Operação</span>
               </h2>
-              <p style={{ color: 'var(--text-secondary)', maxWidth: '650px', margin: '0 auto', fontSize: '1.05rem' }}>
-                Fale com nossos especialistas em tecnologia aeronáutica e descubra como integrar a linha Flycast às suas aeronaves.
+              <p style={{ color: 'var(--text-secondary)', maxWidth: '680px', margin: '0 auto', fontSize: '1.05rem' }}>
+                Descubra como o ecossistema Flycast pode ser integrado à sua frota ou instituição de ensino aeronáutico.
               </p>
               <div className="cta-actions">
-                <Link to="/solucoes/flybox" className="btn-primary">
-                  Conhecer Soluções <ArrowRight size={18} />
+                <Link to="/solucoes/avioes-ciacs" className="btn-primary">
+                  Soluções para Aviões & CIACs <ArrowRight size={18} />
                 </Link>
-                <Link to="/login" target="_blank" className="btn-outline">
-                  Acessar Plataforma
+                <Link to="/solucoes/transmissao-aerea" className="btn-outline">
+                  Transmissão para Helicópteros <ArrowRight size={18} />
                 </Link>
               </div>
             </div>
           </section>
 
-          {/* Partners Section */}
+          {/* Clientes & Parceiros */}
           <Partners />
 
         </div>
-
-        {/* Footer */}
-        <footer className="sobre-footer">
-          <div className="container">
-            <p>© {new Date().getFullYear()} FLYCAST Tecnologias Aeronáuticas. Todos os direitos reservados.</p>
-          </div>
-        </footer>
       </div>
     </>
   );
