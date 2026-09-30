@@ -15,7 +15,6 @@ import {
 import './InstalacaoCameras.css';
 import helicopteroImg from '../assets/helicoptero.jpg';
 import cameraImg from '../assets/camera.png';
-import helicopteroBranco from '../assets/helicoptero-branco.webp';
 import imagensHelicoptero from '../assets/imagens-helicoptero.mp4';
 import Header from './Header';
 import Partners from './Partners';
@@ -49,49 +48,22 @@ const InstalacaoCameras = () => {
             <ArrowLeft size={18} /> Voltar ao Início
           </Link>
 
-          <div className="transmissao-hero-grid">
-            <div className="transmissao-hero-left">
-              <h1 className="transmissao-hero-title">
-                Engenharia aeronáutica e <span className="animated-altitude">Serviços Integrados.</span>
-              </h1>
+          <div className="transmissao-hero-content">
+            <h1 className="transmissao-hero-title">
+              Engenharia aeronáutica e <span className="animated-altitude">Serviços Integrados.</span>
+            </h1>
 
-              <p className="transmissao-hero-desc">
-                Unimos transmissão celular híbrida em tempo real, integração e homologação de câmeras giroestabilizadas e sistemas embarcados para as operações aéreas mais exigentes do país.
-              </p>
-              <p className="transmissao-hero-subdesc">
-                Mais de uma década de experiência comprovada com emissoras de TV, órgãos de segurança pública e aviação executiva.
-              </p>
+            <p className="transmissao-hero-desc">
+              Unimos transmissão celular híbrida em tempo real, integração e homologação de câmeras giroestabilizadas e sistemas embarcados para as operações aéreas mais exigentes do país.
+            </p>
+            <p className="transmissao-hero-subdesc">
+              Mais de uma década de experiência comprovada com emissoras de TV, órgãos de segurança pública e aviação executiva.
+            </p>
 
-              <div className="hero-cta-group">
-                <a href="#servicos" className="btn-primary">
-                  Conhecer Nossos Serviços
-                </a>
-              </div>
-            </div>
-
-            <div className="transmissao-hero-right">
-              <div className="helicopter-hover-container">
-                {/* Rotor Principal com Perspectiva 3D e Motion Blur */}
-                <div className="main-rotor-system">
-                  <div className="rotor-blur-disc"></div>
-                  <div className="rotor-blades-spin">
-                    <span className="blade b1"></span>
-                    <span className="blade b2"></span>
-                    <span className="blade b3"></span>
-                  </div>
-                </div>
-
-                {/* Rotor de Cauda */}
-                <div className="tail-rotor-system">
-                  <div className="tail-rotor-disc"></div>
-                </div>
-
-                {/* Corpo do Helicóptero */}
-                <img src={helicopteroBranco} alt="Helicóptero Flycast" className="hero-helicopter-img" />
-
-                {/* Efeito de Sustentação */}
-                <div className="helicopter-downwash-glow"></div>
-              </div>
+            <div className="hero-cta-group">
+              <a href="#servicos" className="btn-primary">
+                Conhecer Nossos Serviços
+              </a>
             </div>
           </div>
         </div>

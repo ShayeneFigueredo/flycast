@@ -21,8 +21,6 @@ import {
 import './TransmissaoAerea.css';
 import livecastImg from '../assets/solucoes/livecast2.png';
 import extenderImg from '../assets/solucoes/extender-1.png';
-import helicopteroImg from '../assets/helicoptero.jpg';
-import helicopteroBranco from '../assets/helicoptero-branco.webp';
 import imagensHelicoptero from '../assets/imagens-helicoptero.mp4';
 import Header from './Header';
 import Partners from './Partners';
@@ -58,49 +56,22 @@ const TransmissaoAerea = () => {
             <ArrowLeft size={18} /> Voltar ao Início
           </Link>
 
-          <div className="transmissao-hero-grid">
-            <div className="transmissao-hero-left">
-              <h1 className="transmissao-hero-title">
-                Conexão e transmissão garantidas em <span className="animated-altitude">qualquer altitude.</span>
-              </h1>
+          <div className="transmissao-hero-content">
+            <h1 className="transmissao-hero-title">
+              Conexão e transmissão garantidas em <span className="animated-altitude">qualquer altitude.</span>
+            </h1>
 
-              <p className="transmissao-hero-desc">
-                O <strong>Livecast PRO</strong> e o <strong>Extender</strong> formam um sistema celular híbrido de transmissão ao vivo em alta definição, desenvolvido para operações de asas rotativas que exigem conectividade contínua, baixa latência e alta disponibilidade.
-              </p>
-              <p className="transmissao-hero-subdesc">
-                Projetada para cenários com grandes variações de relevo, longas distâncias e movimentos bruscos, a solução oferece estabilidade e desempenho mesmo nas condições mais desafiadoras.
-              </p>
+            <p className="transmissao-hero-desc">
+              O <strong>Livecast PRO</strong> e o <strong>Extender</strong> formam um sistema celular híbrido de transmissão ao vivo em alta definição, desenvolvido para operações de asas rotativas que exigem conectividade contínua, baixa latência e alta disponibilidade.
+            </p>
+            <p className="transmissao-hero-subdesc">
+              Projetada para cenários com grandes variações de relevo, longas distâncias e movimentos bruscos, a solução oferece estabilidade e desempenho mesmo nas condições mais desafiadoras.
+            </p>
 
-              <div className="hero-cta-group">
-                <a href="#hardware" className="btn-primary">
-                  Conheça a Solução
-                </a>
-              </div>
-            </div>
-
-            <div className="transmissao-hero-right">
-              <div className="helicopter-hover-container">
-                {/* Main Rotor System with 3D Spinning Motion Blur */}
-                <div className="main-rotor-system">
-                  <div className="rotor-blur-disc"></div>
-                  <div className="rotor-blades-spin">
-                    <span className="blade b1"></span>
-                    <span className="blade b2"></span>
-                    <span className="blade b3"></span>
-                  </div>
-                </div>
-
-                {/* Tail Rotor System */}
-                <div className="tail-rotor-system">
-                  <div className="tail-rotor-disc"></div>
-                </div>
-
-                {/* Helicopter Body */}
-                <img src={helicopteroBranco} alt="Helicóptero Flycast" className="hero-helicopter-img" />
-
-                {/* Flight Glow / Downwash */}
-                <div className="helicopter-downwash-glow"></div>
-              </div>
+            <div className="hero-cta-group">
+              <a href="#hardware" className="btn-primary">
+                Conheça a Solução
+              </a>
             </div>
           </div>
         </div>
