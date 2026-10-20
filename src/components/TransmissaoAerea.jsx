@@ -185,9 +185,6 @@ const TransmissaoAerea = () => {
         </div>
       </section>
 
-      {/* CLIENTES */}
-      <Partners />
-
       {/* MODAL FICHA TÉCNICA */}
       {modalOpen && (
         <div className="modal-backdrop" onClick={() => setModalOpen(false)}>

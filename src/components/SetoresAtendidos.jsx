@@ -4,11 +4,7 @@ import {
   ArrowLeft, 
   Shield, 
   Building2, 
-  CheckCircle2, 
-  Radio, 
-  Video, 
-  MessageCircle, 
-  ArrowRight 
+  CheckCircle2 
 } from 'lucide-react';
 import './SetoresAtendidos.css';
 import Header from './Header';
@@ -16,9 +12,9 @@ import Partners from './Partners';
 
 // Assets
 import imagensHelicoptero from '../assets/imagens-helicoptero.mp4';
-import setorImg1 from '../assets/setores-atendidos1.png';
-import setorImg2 from '../assets/setores atendidos 2.png';
-import setorImg3 from '../assets/setores-atendidos3.png';
+import helicopteroPolicia from '../assets/helicoptero-policia-militar.png';
+import comandanteHamilton from '../assets/comandante-hamilton.jpg';
+import painelHelicoptero from '../assets/painel-helicoptero-privado.png';
 
 const SetoresAtendidos = () => {
   const [activeStrip, setActiveStrip] = useState(0);
@@ -27,24 +23,27 @@ const SetoresAtendidos = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  const galleryStrips = [
+  const galleryImages = [
     {
-      img: setorImg1,
+      id: 'governamental',
       tag: 'Segurança & Defesa',
       title: 'Operações Táticas',
-      desc: 'Missões governamentais e patrulhamento aéreo sob qualquer condição.'
+      img: helicopteroPolicia,
+      imgAlt: 'Helicópteros da Polícia Militar em Operação'
     },
     {
-      img: setorImg2,
+      id: 'midia',
       tag: 'Mídia & Jornalismo',
-      title: 'Transmissão ao Vivo',
-      desc: 'Tecnologia validada pelas maiores emissoras do país.'
+      title: 'Transmissão Ao Vivo',
+      img: comandanteHamilton,
+      imgAlt: 'Comandante Hamilton em transmissão aérea'
     },
     {
-      img: setorImg3,
-      tag: 'Engenharia Aeronáutica',
-      title: 'Integração em Hangar',
-      desc: 'Homologação e instalação técnica especializada de ponta a ponta.'
+      id: 'privado',
+      tag: 'Engenharia & Homologação',
+      title: 'Integração Embarcada',
+      img: painelHelicoptero,
+      imgAlt: 'Painel e interior de helicóptero no setor privado'
     }
   ];
 
@@ -52,7 +51,7 @@ const SetoresAtendidos = () => {
     <div className="setores-page-wrapper">
       <Header />
 
-      {/* 1. HERO SECTION (Mesmo estilo das páginas de Helicóptero) */}
+      {/* 1. HERO SECTION */}
       <section className="setores-hero">
         <video 
           src={imagensHelicoptero}
@@ -93,7 +92,7 @@ const SetoresAtendidos = () => {
         </div>
       </section>
 
-      {/* 2. SEÇÃO DE SETORES ATENDIDOS + GALERIA EM TIRAS VERTICAIS */}
+      {/* 2. SEÇÃO DE SETORES ATENDIDOS (DOIS CARDS AZUIS + CARDS DE IMAGEM LIMPOS) */}
       <section className="setores-main-section section-padding" id="setores">
         <div className="container">
           <div className="text-center mb-5">
@@ -105,87 +104,98 @@ const SetoresAtendidos = () => {
             </p>
           </div>
 
-          <div className="setores-composition-grid">
-            {/* COLUNA ESQUERDA: CARDS DESCRITIVOS DOS SETORES */}
-            <div className="setores-cards-column">
-              {/* Card 1: Governamental & Militar */}
-              <div className="setor-detail-card glow-box">
-                <div className="sdc-icon">
-                  <Shield size={28} />
+          <div className="setores-showcase-container">
+            {/* Coluna Esquerda: 2 Cards Azuis Informativos */}
+            <div className="setores-blue-cards-col">
+              {/* Card 1: Operações Governamentais e Militares */}
+              <div 
+                className="setor-blue-card"
+                onMouseEnter={() => setActiveStrip(0)}
+              >
+                <div className="setor-blue-card-icon">
+                  <Shield size={24} strokeWidth={1.8} />
                 </div>
-                <h3 className="sdc-title">Operações Governamentais e Militares</h3>
-                <p className="sdc-desc">
+                <h3 className="setor-blue-card-title">
+                  OPERAÇÕES GOVERNAMENTAIS E MILITARES
+                </h3>
+                <p className="setor-blue-card-desc">
                   Soluções seguras de conectividade e transmissão para missões estratégicas, segurança pública e operações especiais, desenvolvidas para funcionar em condições exigentes.
                 </p>
-                <ul className="sdc-checklist">
+                <ul className="setor-blue-card-list">
                   <li>
-                    <CheckCircle2 size={16} className="text-accent" />
+                    <CheckCircle2 size={18} className="setor-check-icon" />
                     <span>Transmissão em tempo real para centrais integradas de comando e controle</span>
                   </li>
                   <li>
-                    <CheckCircle2 size={16} className="text-accent" />
+                    <CheckCircle2 size={18} className="setor-check-icon" />
                     <span>Conexão estável em relevo acidentado, fronteiras e áreas remotas</span>
                   </li>
                   <li>
-                    <CheckCircle2 size={16} className="text-accent" />
+                    <CheckCircle2 size={18} className="setor-check-icon" />
                     <span>Criptografia de dados e robustez contra interferência e condições adversas</span>
                   </li>
                 </ul>
               </div>
 
-              {/* Card 2: Executiva & Setor Privado */}
-              <div className="setor-detail-card glow-box">
-                <div className="sdc-icon">
-                  <Building2 size={28} />
+              {/* Card 2: Aviação Executiva e Setor Privado */}
+              <div 
+                className="setor-blue-card"
+                onMouseEnter={() => setActiveStrip(2)}
+              >
+                <div className="setor-blue-card-icon">
+                  <Building2 size={24} strokeWidth={1.8} />
                 </div>
-                <h3 className="sdc-title">Aviação Executiva e Setor Privado</h3>
-                <p className="sdc-desc">
+                <h3 className="setor-blue-card-title">
+                  AVIAÇÃO EXECUTIVA E SETOR PRIVADO
+                </h3>
+                <p className="setor-blue-card-desc">
                   Tecnologia de comunicação e conectividade híbrida para operações executivas e corporativas, com alto desempenho, segurança e confidencialidade.
                 </p>
-                <ul className="sdc-checklist">
+                <ul className="setor-blue-card-list">
                   <li>
-                    <CheckCircle2 size={16} className="text-accent" />
+                    <CheckCircle2 size={18} className="setor-check-icon" />
                     <span>Conexão celular + satelital ininterrupta em qualquer altitude</span>
                   </li>
                   <li>
-                    <CheckCircle2 size={16} className="text-accent" />
+                    <CheckCircle2 size={18} className="setor-check-icon" />
                     <span>Telemetria, rastreabilidade e dados de voo em tempo real</span>
                   </li>
                   <li>
-                    <CheckCircle2 size={16} className="text-accent" />
+                    <CheckCircle2 size={18} className="setor-check-icon" />
                     <span>Transmissão de alta qualidade para emissoras de TV, jornalismo e eventos</span>
                   </li>
                 </ul>
               </div>
             </div>
 
-            {/* COLUNA DIREITA: GALERIA DE FOTOS EM TIRAS VERTICAIS ARREDONDADAS (ESTILO JPCA/I9HUB) */}
-            <div className="setores-gallery-column">
-              <div className="gallery-strips-container">
-                {galleryStrips.map((item, idx) => (
+            {/* Coluna Direita: Cards Verticais de Imagem com títulos e tags (sem os textinhos) */}
+            <div className="setores-images-col">
+              {galleryImages.map((item, idx) => {
+                const isExpanded = activeStrip === idx;
+                return (
                   <div 
-                    key={idx}
-                    className={`gallery-strip-item ${activeStrip === idx ? 'strip-expanded' : ''}`}
+                    key={item.id}
+                    className={`setores-image-card ${isExpanded ? 'card-expanded' : ''}`}
                     onMouseEnter={() => setActiveStrip(idx)}
                     onClick={() => setActiveStrip(idx)}
                   >
-                    <img src={item.img} alt={item.title} className="strip-img" />
-                    <div className="strip-overlay"></div>
-                    <div className="strip-content">
-                      <span className="strip-badge">{item.tag}</span>
-                      <h4 className="strip-title">{item.title}</h4>
-                      <p className="strip-desc">{item.desc}</p>
+                    <img 
+                      src={item.img} 
+                      alt={item.imgAlt} 
+                      className={`setores-card-img setores-card-img-${item.id}`} 
+                    />
+                    <div className="setores-card-overlay"></div>
+                    <div className="setores-card-content">
+                      <span className="setores-card-tag">{item.tag}</span>
+                      <h4 className="setores-card-title">{item.title}</h4>
                     </div>
                   </div>
-                ))}
-              </div>
+                );
+              })}
             </div>
           </div>
         </div>
       </section>
-
-      {/* 3. NOSSOS CLIENTES */}
-      <Partners />
     </div>
   );
 };

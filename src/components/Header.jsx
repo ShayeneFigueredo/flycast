@@ -106,12 +106,20 @@ const Header = () => {
             </div>
           </div>
 
-          {/* Vertical 2: Aviões e CIACs */}
+          {/* Vertical 2: Aviões */}
           <Link 
-            to="/solucoes/flybox" 
-            className={`nav-item ${location.pathname.includes('flybox') || location.pathname.includes('avioes') ? 'active' : ''}`}
+            to="/solucoes/avioes" 
+            className={`nav-item ${location.pathname.includes('avioes') ? 'active' : ''}`}
           >
-            Aviões & CIACs
+            Aviões
+          </Link>
+
+          {/* Vertical 3: Escolas de Aviação / CIACs */}
+          <Link 
+            to="/solucoes/escolas-de-aviacao" 
+            className={`nav-item ${location.pathname.includes('escolas-de-aviacao') || location.pathname.includes('ciacs') || location.pathname.includes('flybox') ? 'active' : ''}`}
+          >
+            Escolas de Aviação
           </Link>
 
           <Link to="/sobre-nos" className={`nav-item ${location.pathname === '/sobre-nos' ? 'active' : ''}`}>
@@ -155,13 +163,22 @@ const Header = () => {
             </div>
           </div>
 
-          {/* Mobile Vertical 2: Aviões & CIACs */}
+          {/* Mobile Vertical 2: Aviões */}
           <Link 
-            to="/solucoes/flybox" 
-            className={`mobile-nav-link ${location.pathname.includes('flybox') || location.pathname.includes('avioes') ? 'active' : ''}`} 
+            to="/solucoes/avioes" 
+            className={`mobile-nav-link ${location.pathname.includes('avioes') ? 'active' : ''}`} 
             onClick={() => setMobileMenuOpen(false)}
           >
-            AVIÕES & CIACS
+            AVIÕES
+          </Link>
+
+          {/* Mobile Vertical 3: Escolas de Aviação */}
+          <Link 
+            to="/solucoes/escolas-de-aviacao" 
+            className={`mobile-nav-link ${location.pathname.includes('escolas-de-aviacao') || location.pathname.includes('ciacs') || location.pathname.includes('flybox') ? 'active' : ''}`} 
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            ESCOLAS DE AVIAÇÃO
           </Link>
 
           <Link to="/sobre-nos" className="mobile-nav-link" onClick={() => setMobileMenuOpen(false)}>

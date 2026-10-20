@@ -511,46 +511,7 @@ const FlyboxPage = () => {
         </div>
       </section>
 
-      {/* 7. ENDOSSO DA INDÚSTRIA — INPAER COLT */}
-      <section className="inpaer-endorsement-section section-padding" id="inpaer">
-        <div className="container">
-          <div className="inpaer-banner dark-blue-box">
-            <div className="inpaer-text-col">
-              <div className="inpaer-brand-row">
-                <img src={inpaerLogo} alt="Inpaer" className="inpaer-logo-img" />
-                <span className="endorsement-tag">HOMOLOGAÇÃO DE FÁBRICA</span>
-              </div>
-              <h2 className="inpaer-title">Tecnologia integrada de fábrica pela Inpaer.</h2>
-              <p className="inpaer-desc">
-                O <strong>Inpaer Colt</strong>, referência em qualidade e segurança nas Américas, pode sair de fábrica com a tecnologia de captura e telemetria <strong>FlyBox</strong> integrada à aeronave.
-              </p>
-              
-              <div className="inpaer-cta-box mt-4">
-                <p className="cta-lead-text">Pronto para basear sua instrução em dados?</p>
-                <a 
-                  href="https://wa.me/553499793418?text=Ol%C3%A1!%20Gostaria%20de%20falar%20com%20um%20consultor%20sobre%20a%20FlyBox%20e%20FlyHub."
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="btn-primary inpaer-btn-cta"
-                >
-                  <MessageCircle size={18} />
-                  Fale com um consultor
-                </a>
-              </div>
-            </div>
-
-            <div className="inpaer-media-col">
-              <img 
-                src={coltImg} 
-                alt="Inpaer Colt com FlyBox integrada de fábrica" 
-                className="colt-right-borderless-img" 
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 8. SEÇÃO FINAL / CONTATO — LEVE SUA ESCOLA PARA A ERA DOS DADOS */}
+      {/* 7. SEÇÃO FINAL / CONTATO — LEVE SUA ESCOLA PARA A ERA DOS DADOS */}
       <section className="flybox-final-cta-section section-padding" id="contato">
         <div className="container">
           <div className="final-cta-split-grid">
@@ -608,9 +569,6 @@ const FlyboxPage = () => {
           </div>
         </div>
       </section>
-
-      {/* CLIENTES */}
-      <Partners />
     </div>
   );
 };

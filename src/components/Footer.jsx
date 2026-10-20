@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Phone, Mail, MapPin, ArrowUpRight, Shield, Radio, Plane, MessageCircle } from 'lucide-react';
+import { Phone, Mail, MapPin, ArrowUpRight, Shield, Radio, Plane, GraduationCap, MessageCircle } from 'lucide-react';
 import logoHorizontal from '../assets/LOGO-HORIZONTAL.png';
 import './Footer.css';
 
@@ -61,16 +61,46 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Nav: Aviões & CIACs */}
+          {/* Nav: Aviões */}
           <div className="footer-col">
             <h4 className="footer-title">
               <Plane size={16} className="text-accent" />
-              <span>Aviões & CIACs</span>
+              <span>Aviões</span>
             </h4>
             <ul className="footer-links">
               <li>
-                <Link to="/solucoes/flybox" onClick={scrollToTop}>
+                <Link to="/solucoes/avioes" onClick={scrollToTop}>
+                  Conheça Melhor Seu Voo
+                </Link>
+              </li>
+              <li>
+                <Link to="/solucoes/avioes#arquitetura" onClick={scrollToTop}>
+                  Arquitetura Técnica
+                </Link>
+              </li>
+              <li>
+                <Link to="/solucoes/avioes#inpaer" onClick={scrollToTop}>
+                  Inpaer Colt Integrado
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Nav: Escolas de Aviação */}
+          <div className="footer-col">
+            <h4 className="footer-title">
+              <GraduationCap size={16} className="text-accent" />
+              <span>Escolas de Aviação</span>
+            </h4>
+            <ul className="footer-links">
+              <li>
+                <Link to="/solucoes/escolas-de-aviacao" onClick={scrollToTop}>
                   A Nova Era da Instrução
+                </Link>
+              </li>
+              <li>
+                <Link to="/solucoes/escolas-de-aviacao#ia-multimodal" onClick={scrollToTop}>
+                  IA Multimodal & Score
                 </Link>
               </li>
             </ul>

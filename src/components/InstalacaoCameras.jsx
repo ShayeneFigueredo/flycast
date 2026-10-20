@@ -154,9 +154,6 @@ const InstalacaoCameras = () => {
           </div>
         </div>
       </section>
-
-      {/* 4. CLIENTES */}
-      <Partners />
     </div>
   );
 };

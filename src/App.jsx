@@ -17,6 +17,8 @@ import InstalacaoCameras from './components/InstalacaoCameras';
 import FlyboxPage from './components/FlyboxPage';
 import SobreNos from './components/SobreNos';
 import SetoresAtendidos from './components/SetoresAtendidos';
+import AvioesPage from './components/AvioesPage';
+import SecretArchivePage from './components/SecretArchivePage';
 import Footer from './components/Footer';
 
 const LandingPage = () => (
@@ -24,15 +26,10 @@ const LandingPage = () => (
     <Header />
     <main>
       <Hero />
-      <Audience />
-      <Solutions />
-      <Benefits />
       <TeamTimeline />
       <CTABanner />
       <Comparison />
-      <Process />
       <Partners />
-      <FAQ />
     </main>
   </>
 );
@@ -62,11 +59,22 @@ function App() {
           <Route path="/solucoes/setores-atendidos" element={<SetoresAtendidos />} />
           <Route path="/setores-atendidos" element={<SetoresAtendidos />} />
 
-          {/* Aviões e CIACs: Flybox / FlyHub */}
+          {/* Aviões: Soluções para Aeronaves e Proprietários */}
+          <Route path="/solucoes/avioes" element={<AvioesPage />} />
+          <Route path="/avioes" element={<AvioesPage />} />
+
+          {/* CIACs / Escolas de Aviação: Instrução, Flybox e FlyHub */}
+          <Route path="/solucoes/escolas-de-aviacao" element={<FlyboxPage />} />
+          <Route path="/escolas-de-aviacao" element={<FlyboxPage />} />
+          <Route path="/solucoes/ciacs" element={<FlyboxPage />} />
+          <Route path="/ciacs" element={<FlyboxPage />} />
           <Route path="/solucoes/flybox" element={<FlyboxPage />} />
           <Route path="/flybox" element={<FlyboxPage />} />
           <Route path="/solucoes/avioes-ciacs" element={<FlyboxPage />} />
           <Route path="/avioes-ciacs" element={<FlyboxPage />} />
+
+          {/* Aba Secreta / Arquivo de Conteúdo da Home */}
+          <Route path="/secret" element={<SecretArchivePage />} />
 
           {/* Fallback route */}
           <Route path="*" element={<LandingPage />} />

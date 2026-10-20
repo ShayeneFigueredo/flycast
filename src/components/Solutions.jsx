@@ -45,7 +45,7 @@ const Solutions = () => {
       image: flyboxImg,
       desc: 'Computador de bordo autônomo com gravação de mais de 100 parâmetros de telemetria, vídeo do cockpit e áudio da cabine.',
       features: ['Alimentação independente', 'Homologado de fábrica no Colt', 'GPS e sensores inerciais'],
-      link: '/solucoes/flybox'
+      link: '/solucoes/avioes'
     },
     {
       title: 'FLY RECORD',
@@ -53,7 +53,7 @@ const Solutions = () => {
       image: flyboxImg,
       desc: 'Solução ágil para celular e tablet que captura vídeo, áudio e GPS para digitalizar a instrução sem custo de hardware inicial.',
       features: ['Início imediato na escola', 'Gravação sincronizada', 'Sincronização pós-voo'],
-      link: '/solucoes/flybox#captura'
+      link: '/solucoes/escolas-de-aviacao'
     },
     {
       title: 'FLYHUB',
@@ -61,7 +61,7 @@ const Solutions = () => {
       image: flyhubImg,
       desc: 'Plataforma web centralizada com replay em 3D, linha do tempo sincronizada e debriefing inteligente com IA Multimodal.',
       features: ['Score de voo automatizado', 'Gestão de alunos e frotas', 'Manutenção preditiva'],
-      link: '/solucoes/flybox'
+      link: '/solucoes/avioes'
     },
     {
       title: 'AIR BIND',
@@ -69,7 +69,7 @@ const Solutions = () => {
       image: airbindImg,
       desc: 'Roteamento e agregação inteligente de múltiplos canais de comunicação com criptografia e baixa latência.',
       features: ['Conexão celular + satélite', 'Failover automático', 'Telemetria em tempo real'],
-      link: '/solucoes/flybox'
+      link: '/solucoes/avioes'
     }
   ];
 
@@ -136,7 +136,7 @@ const Solutions = () => {
                 <p className="vgh-desc">Captura embarcada, eliminação da subjetividade e gestão operacional completa com IA Multimodal</p>
               </div>
             </div>
-            <Link to="/solucoes/flybox" className="vgh-link">
+            <Link to="/solucoes/avioes" className="vgh-link">
               Conhecer Vertical <ArrowRight size={16} />
             </Link>
           </div>
