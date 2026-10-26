@@ -18,7 +18,7 @@ const Comparison = () => {
   ];
 
   return (
-    <section className="comparison section-padding">
+    <section className="comparison section-padding" id="solucoes">
       <div className="container">
         <div className="comparison-content-wrapper">
           

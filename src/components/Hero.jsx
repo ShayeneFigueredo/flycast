@@ -59,7 +59,18 @@ const Hero = () => {
           </p>
 
           <div className="hero-actions">
-            <a href="#solucoes" className="btn-primary">
+            <a 
+              href="#solucoes" 
+              className="btn-primary"
+              onClick={(e) => {
+                const element = document.getElementById('solucoes');
+                if (element) {
+                  e.preventDefault();
+                  element.scrollIntoView({ behavior: 'smooth' });
+                  window.history.pushState(null, '', '#solucoes');
+                }
+              }}
+            >
               Ver Nossas Soluções
             </a>
             <a 
