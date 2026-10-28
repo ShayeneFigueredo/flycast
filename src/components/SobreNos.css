@@ -380,3 +380,48 @@
     font-size: 1.65rem;
   }
 }
+
+@media (max-width: 480px) {
+  .sobre-page-wrapper {
+    padding-top: 75px;
+  }
+
+  .sobre-hero-card {
+    min-height: 380px;
+    border-radius: 18px;
+  }
+
+  .sobre-hero-content {
+    padding: 26px 18px;
+  }
+
+  .sobre-hero-title {
+    font-size: 1.95rem;
+  }
+
+  .sobre-hero-desc {
+    font-size: 0.96rem;
+  }
+
+  .sobre-pillar-card {
+    padding: 24px 18px;
+  }
+
+  .sobre-solution-card {
+    height: 300px;
+    border-radius: 18px;
+  }
+
+  .solution-card-content {
+    padding: 20px 16px;
+  }
+
+  .solution-card-title {
+    font-size: 1.5rem;
+  }
+
+  .solution-btn-pill {
+    padding: 8px 20px;
+    font-size: 0.88rem;
+  }
+}

@@ -166,7 +166,7 @@ const AvioesPage = () => {
         </div>
       </section>
 
-      {/* 3. DIÁRIO DE BORDO DIGITAL & ANÁLISE FLYHUB */}
+      {/* 3. DADOS DE VOO & ANÁLISE FLYHUB */}
       <section className="diario-bordo-section section-padding">
         <div className="container">
           <div className="diario-split-grid">
@@ -178,7 +178,7 @@ const AvioesPage = () => {
                   <div className="tablet-screen-display">
                     <img 
                       src={telaFlyhubAvioes} 
-                      alt="Tela FlyHub Aviões - Painel de Telemetria e Diário de Bordo" 
+                      alt="Tela FlyHub Aviões - Painel de Telemetria e Dados de Voo" 
                       className="tablet-screen-asset" 
                     />
                     <div className="tablet-glare-effect"></div>
@@ -187,13 +187,13 @@ const AvioesPage = () => {
               </div>
             </div>
 
-            {/* Coluna Direita: Diário de Bordo Digital */}
+            {/* Coluna Direita: Dados de Voo */}
             <div className="diario-info-col">
               <div className="diario-badge-icon">
                 <BookOpen size={24} />
               </div>
 
-              <h2 className="diario-title">Diário de bordo digital</h2>
+              <h2 className="diario-title">Dados de Voo</h2>
               <h3 className="diario-subtitle text-accent">
                 O histórico da sua aeronave em um só lugar.
               </h3>
@@ -247,7 +247,7 @@ const AvioesPage = () => {
 
               <div className="diario-cta-row">
                 <a 
-                  href="https://wa.me/553499793418?text=Ol%C3%A1!%20Gostaria%20de%20consultar%20uma%20demonstra%C3%A7%C3%A3o%20do%20Di%C3%A1rio%20de%20Bordo%20Digital." 
+                  href="https://wa.me/553499793418?text=Ol%C3%A1!%20Gostaria%20de%20consultar%20uma%20demonstra%C3%A7%C3%A3o%20dos%20Dados%20de%20Voo." 
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="btn-primary"

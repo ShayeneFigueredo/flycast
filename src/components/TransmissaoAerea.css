@@ -473,11 +473,20 @@
     border-radius: 16px;
   }
 
+  .modal-body {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .tech-spec-table {
+    min-width: 420px;
+  }
+
   .tst-row {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1.1fr 1fr 1fr;
     padding: 10px 8px;
     font-size: 0.82rem;
-    gap: 4px;
+    gap: 6px;
   }
 }
 

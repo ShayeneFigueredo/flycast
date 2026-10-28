@@ -286,6 +286,21 @@
   pointer-events: auto;
 }
 
+@media (max-width: 860px) {
+  .mobile-nav-drawer {
+    top: 68px;
+    height: calc(100dvh - 68px);
+  }
+}
+
+@media (max-width: 480px) {
+  .mobile-nav-drawer {
+    top: 56px;
+    height: calc(100dvh - 56px);
+    padding: 16px 16px 60px;
+  }
+}
+
 @media (min-width: 860px) {
   .mobile-nav-drawer {
     display: none;

@@ -17,7 +17,7 @@ const Solutions = () => {
       badge: 'Hardware Embarcado',
       image: livecastImg,
       desc: 'Transmissão celular híbrida de vídeo ao vivo em alta definição com soma de banda (bonding) para até 12 modems 5G.',
-      features: ['Gabinete em alumínio maciço', 'Sistema LiveCooling', 'Compatível com 5G e Extender'],
+      features: ['Gabinete em alumínio aeronáutico', 'Sistema LiveCooling', 'Compatível com 5G e Extender'],
       link: '/solucoes/transmissao-aerea'
     },
     {

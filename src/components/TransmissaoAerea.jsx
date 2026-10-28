@@ -85,7 +85,7 @@ const TransmissaoAerea = () => {
               Hardware & <span className="text-accent glow-text">Especificações Técnicas</span>
             </h2>
             <p className="section-subtitle">
-              Componentes desenvolvidos a partir de blocos maciços de alumínio com refrigeração avançada para resistir a vibrações severas e condições extremas em voo.
+              Componentes desenvolvidos a partir de blocos de alumínio aeronáutico com refrigeração avançada para resistir a vibrações severas e condições extremas em voo.
             </p>
           </div>
 
@@ -110,7 +110,7 @@ const TransmissaoAerea = () => {
                 <ul className="specs-list">
                   <li>
                     <Layers size={18} className="spec-icon" />
-                    <span><strong>Gabinete em alumínio maciço:</strong> usinado contra choques mecânicos, vibração e EMI.</span>
+                    <span><strong>Gabinete em alumínio aeronáutico:</strong> usinado contra choques mecânicos, vibração e EMI.</span>
                   </li>
                   <li>
                     <ThermometerSnowflake size={18} className="spec-icon" />
@@ -214,7 +214,7 @@ const TransmissaoAerea = () => {
                 </div>
                 <div className="tst-row">
                   <div>Chassi</div>
-                  <div>Alumínio aeroespacial maciço</div>
+                  <div>Alumínio aeronáutico</div>
                   <div>Polímero blindado de alta densidade</div>
                 </div>
                 <div className="tst-row">

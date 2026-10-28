@@ -672,6 +672,36 @@
   }
 }
 
+@media (max-width: 768px) {
+  .avioes-hero {
+    padding: 105px 0 50px 0;
+  }
+
+  .avioes-hero-title {
+    font-size: clamp(2.4rem, 8vw, 3.2rem);
+  }
+
+  .avioes-hero-desc {
+    font-size: 1.05rem;
+  }
+
+  .avioes-highlight-card {
+    padding: 18px 20px;
+    border-radius: 14px;
+  }
+
+  .avioes-hero-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .avioes-hero-actions .btn-primary,
+  .avioes-hero-actions .btn-outline {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
 @media (max-width: 640px) {
   .arch-step-card {
     flex: 100%;
@@ -688,6 +718,55 @@
   }
 
   .avioes-final-banner {
-    padding: 40px 24px;
+    padding: 36px 20px;
+    border-radius: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .avioes-hero {
+    padding: 95px 0 35px 0;
+  }
+
+  .inpaer-colt-banner {
+    padding: 24px 16px;
+    border-radius: 18px;
+  }
+
+  .inpaer-colt-action {
+    padding: 16px 14px;
+  }
+
+  .inpaer-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .avioes-final-banner {
+    padding: 30px 16px;
+  }
+
+  .banner-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .diario-records-card {
+    padding: 16px 14px;
+    border-radius: 16px;
+  }
+
+  .diario-cta-row .btn-primary {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .tablet-frame {
+    border-radius: 18px;
+    padding: 8px 8px 10px 8px;
+  }
+
+  .tablet-screen-display {
+    border-radius: 12px;
   }
 }

@@ -66,52 +66,7 @@ const SobreNos = () => {
           </div>
         </section>
 
-        {/* 2. DESENVOLVER, INTEGRAR E VALIDAR */}
-        <section className="sobre-pillars-section section-padding">
-          <div className="sobre-section-header">
-            <span className="cyan-dash-bar"></span>
-            <h2 className="sobre-section-title">
-              Desenvolver, integrar e validar.
-            </h2>
-          </div>
-
-          <div className="sobre-pillars-grid">
-            {/* Card 1: Desenvolver */}
-            <div className="sobre-pillar-card glow-box">
-              <div className="pillar-icon-box">
-                <Settings size={28} />
-              </div>
-              <h3 className="pillar-title">Desenvolver</h3>
-              <p className="pillar-desc">
-                Hardware e software para operações aéreas.
-              </p>
-            </div>
-
-            {/* Card 2: Integrar */}
-            <div className="sobre-pillar-card glow-box">
-              <div className="pillar-icon-box">
-                <Share2 size={28} />
-              </div>
-              <h3 className="pillar-title">Integrar</h3>
-              <p className="pillar-desc">
-                Sistemas, conectividade e dados a bordo.
-              </p>
-            </div>
-
-            {/* Card 3: Validar */}
-            <div className="sobre-pillar-card glow-box">
-              <div className="pillar-icon-box">
-                <ShieldCheck size={28} />
-              </div>
-              <h3 className="pillar-title">Validar</h3>
-              <p className="pillar-desc">
-                Testes em bancada e em voo.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* 3. CONHEÇA NOSSAS SOLUÇÕES */}
+        {/* 2. CONHEÇA NOSSAS SOLUÇÕES */}
         <section className="sobre-solutions-section section-padding">
           <div className="sobre-section-header">
             <span className="cyan-dash-bar"></span>
@@ -153,6 +108,51 @@ const SobreNos = () => {
                   <ArrowRight size={16} />
                 </Link>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* 3. DESENVOLVER, INTEGRAR E VALIDAR */}
+        <section className="sobre-pillars-section section-padding">
+          <div className="sobre-section-header">
+            <span className="cyan-dash-bar"></span>
+            <h2 className="sobre-section-title">
+              Desenvolver, integrar e validar.
+            </h2>
+          </div>
+
+          <div className="sobre-pillars-grid">
+            {/* Card 1: Desenvolver */}
+            <div className="sobre-pillar-card glow-box">
+              <div className="pillar-icon-box">
+                <Settings size={28} />
+              </div>
+              <h3 className="pillar-title">Desenvolver</h3>
+              <p className="pillar-desc">
+                Hardware e software para operações aéreas.
+              </p>
+            </div>
+
+            {/* Card 2: Integrar */}
+            <div className="sobre-pillar-card glow-box">
+              <div className="pillar-icon-box">
+                <Share2 size={28} />
+              </div>
+              <h3 className="pillar-title">Integrar</h3>
+              <p className="pillar-desc">
+                Sistemas, conectividade e dados a bordo.
+              </p>
+            </div>
+
+            {/* Card 3: Validar */}
+            <div className="sobre-pillar-card glow-box">
+              <div className="pillar-icon-box">
+                <ShieldCheck size={28} />
+              </div>
+              <h3 className="pillar-title">Validar</h3>
+              <p className="pillar-desc">
+                Testes em bancada e em voo.
+              </p>
             </div>
           </div>
         </section>

@@ -293,6 +293,12 @@
   }
 }
 
+@media (max-width: 768px) {
+  .setores-hero {
+    padding: 105px 0 50px 0;
+  }
+}
+
 @media (max-width: 640px) {
   .setor-blue-card {
     padding: 26px 22px;
@@ -304,8 +310,8 @@
   }
 
   .setores-images-col {
-    height: 320px;
-    min-height: 320px;
+    height: 340px;
+    min-height: 340px;
     gap: 10px;
   }
 
@@ -314,7 +320,7 @@
   }
 
   .setores-card-content {
-    padding: 16px 12px;
+    padding: 16px 14px;
     gap: 6px;
   }
 
@@ -324,5 +330,31 @@
 
   .setores-image-card.card-expanded .setores-card-title {
     font-size: 1.15rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .setores-hero {
+    padding: 95px 0 40px 0;
+  }
+
+  .setores-images-col {
+    flex-direction: column;
+    height: 420px;
+    min-height: 420px;
+  }
+
+  .setores-image-card {
+    flex: 1;
+    width: 100%;
+  }
+
+  .setores-image-card.card-expanded {
+    flex: 2;
+  }
+
+  .setores-card-title {
+    font-size: 1rem;
+    white-space: normal;
   }
 }

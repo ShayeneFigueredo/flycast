@@ -111,7 +111,7 @@ const InstalacaoCameras = () => {
                   </li>
                   <li>
                     <CheckCircle2 size={16} className="text-accent" />
-                    <span>Hardware em alumínio maciço aeroespacial (Livecast PRO & Extender)</span>
+                    <span>Hardware em alumínio aeronáutico (Livecast PRO & Extender)</span>
                   </li>
                 </ul>
               </div>
