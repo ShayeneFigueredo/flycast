@@ -28,6 +28,21 @@ const Header = () => {
     }
   }, [location]);
 
+  // Lock body scroll when mobile menu is open to prevent page pull/scroll
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+      document.body.style.touchAction = 'none';
+    } else {
+      document.body.style.overflow = '';
+      document.body.style.touchAction = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+      document.body.style.touchAction = '';
+    };
+  }, [mobileMenuOpen]);
+
   const handleMouseEnter = (name) => {
     if (dropdownTimeoutRef.current) {
       clearTimeout(dropdownTimeoutRef.current);
@@ -58,7 +73,8 @@ const Header = () => {
   };
 
   return (
-    <header className={`header-wrapper ${scrolled ? 'header-scrolled' : ''}`}>
+    <>
+      <header className={`header-wrapper ${scrolled ? 'header-scrolled' : ''}`}>
       <div className="header-capsule">
         <div className="logo-container">
           <Link to="/" aria-label="Flycast Home">
@@ -129,65 +145,105 @@ const Header = () => {
 
         {/* Mobile Toggle Button */}
         <button 
+          type="button"
           className="mobile-toggle-btn"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label={mobileMenuOpen ? 'Fechar menu' : 'Abrir menu'}
         >
-          {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
+          {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+        </button>
+      </div>
+    </header>
+
+    {/* Backdrop Escuro (Fecha ao tocar fora e impede puxar a página) */}
+    <div 
+      className={`mobile-nav-backdrop ${mobileMenuOpen ? 'open' : ''}`}
+      onClick={() => setMobileMenuOpen(false)}
+      aria-hidden="true"
+    />
+
+    {/* Menu Drawer Lateral (Desliza somente pela lateral direita) */}
+    <aside 
+      className={`mobile-nav-drawer ${mobileMenuOpen ? 'open' : ''}`}
+      aria-hidden={!mobileMenuOpen}
+      aria-label="Menu de navegação mobile"
+    >
+      <div className="mobile-drawer-header">
+        <Link to="/" onClick={() => setMobileMenuOpen(false)} aria-label="Flycast Home">
+          <img src={logoHorizontal} alt="Flycast" className="mobile-drawer-logo" />
+        </Link>
+        <button 
+          type="button"
+          className="mobile-drawer-close"
+          onClick={() => setMobileMenuOpen(false)}
+          aria-label="Fechar menu"
+        >
+          <X size={18} />
         </button>
       </div>
 
-      {/* Mobile Drawer */}
-      <div className={`mobile-nav-drawer ${mobileMenuOpen ? 'open' : ''}`}>
-        <div className="mobile-nav-content">
-          <Link to="/" className="mobile-nav-link" onClick={() => setMobileMenuOpen(false)}>
-            HOME
-          </Link>
+      <div className="mobile-nav-content">
+        <Link to="/" className={`mobile-nav-link ${location.pathname === '/' ? 'active' : ''}`} onClick={() => setMobileMenuOpen(false)}>
+          HOME
+        </Link>
 
-          {/* Mobile Vertical 1 */}
-          <div className="mobile-vertical-block">
-            <div className="mobile-vertical-title" onClick={() => toggleDropdown('m-heli')}>
-              <strong>HELICÓPTEROS</strong>
-              <ChevronDown size={18} className={`chevron-icon ${activeDropdown === 'm-heli' ? 'rotate' : ''}`} />
-            </div>
-            <div className={`mobile-vertical-links ${activeDropdown === 'm-heli' ? 'expanded' : ''}`}>
-              <Link to="/solucoes/transmissao-aerea" onClick={() => setMobileMenuOpen(false)}>
-                Transmissão Aérea
-              </Link>
-              <Link to="/solucoes/servicos-integrados" onClick={() => setMobileMenuOpen(false)}>
-                Serviços Integrados
-              </Link>
-              <Link to="/solucoes/setores-atendidos" onClick={() => setMobileMenuOpen(false)}>
-                Setores Atendidos
-              </Link>
-            </div>
+        {/* Mobile Vertical 1: Helicópteros */}
+        <div className="mobile-vertical-block">
+          <button 
+            type="button" 
+            className="mobile-vertical-title" 
+            onClick={() => toggleDropdown('m-heli')}
+            aria-expanded={activeDropdown === 'm-heli'}
+          >
+            <strong>HELICÓPTEROS</strong>
+            <ChevronDown size={16} className={`chevron-icon ${activeDropdown === 'm-heli' ? 'rotate' : ''}`} />
+          </button>
+          <div className={`mobile-vertical-links ${activeDropdown === 'm-heli' ? 'expanded' : ''}`}>
+            <Link to="/solucoes/transmissao-aerea" onClick={() => setMobileMenuOpen(false)}>
+              Transmissão Aérea
+            </Link>
+            <Link to="/solucoes/servicos-integrados" onClick={() => setMobileMenuOpen(false)}>
+              Serviços Integrados
+            </Link>
+            <Link to="/solucoes/setores-atendidos" onClick={() => setMobileMenuOpen(false)}>
+              Setores Atendidos
+            </Link>
           </div>
-
-          {/* Mobile Vertical 2: Aviões */}
-          <Link 
-            to="/solucoes/avioes" 
-            className={`mobile-nav-link ${location.pathname.includes('avioes') ? 'active' : ''}`} 
-            onClick={() => setMobileMenuOpen(false)}
-          >
-            AVIÕES
-          </Link>
-
-          {/* Mobile Vertical 3: Escolas de Aviação */}
-          <Link 
-            to="/solucoes/escolas-de-aviacao" 
-            className={`mobile-nav-link ${location.pathname.includes('escolas-de-aviacao') || location.pathname.includes('ciacs') || location.pathname.includes('flybox') ? 'active' : ''}`} 
-            onClick={() => setMobileMenuOpen(false)}
-          >
-            ESCOLAS DE AVIAÇÃO
-          </Link>
-
-          <Link to="/sobre-nos" className="mobile-nav-link" onClick={() => setMobileMenuOpen(false)}>
-            SOBRE NÓS
-          </Link>
         </div>
+
+        {/* Mobile Vertical 2: Aviões */}
+        <Link 
+          to="/solucoes/avioes" 
+          className={`mobile-nav-link ${location.pathname.includes('avioes') ? 'active' : ''}`} 
+          onClick={() => setMobileMenuOpen(false)}
+        >
+          AVIÕES
+        </Link>
+
+        {/* Mobile Vertical 3: Escolas de Aviação */}
+        <Link 
+          to="/solucoes/escolas-de-aviacao" 
+          className={`mobile-nav-link ${location.pathname.includes('escolas-de-aviacao') || location.pathname.includes('ciacs') || location.pathname.includes('flybox') ? 'active' : ''}`} 
+          onClick={() => setMobileMenuOpen(false)}
+        >
+          ESCOLAS DE AVIAÇÃO
+        </Link>
+
+        <Link 
+          to="/sobre-nos" 
+          className={`mobile-nav-link ${location.pathname === '/sobre-nos' ? 'active' : ''}`} 
+          onClick={() => setMobileMenuOpen(false)}
+        >
+          SOBRE NÓS
+        </Link>
       </div>
-    </header>
-  );
+
+      <div className="mobile-drawer-footer">
+        <span className="drawer-footer-tag">TECNOLOGIA PARA AVIAÇÃO</span>
+      </div>
+    </aside>
+  </>
+);
 };
 
 export default Header;

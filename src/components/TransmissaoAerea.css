@@ -413,7 +413,16 @@
 /* RESPONSIVE SAFETY & MOBILE PADDING REFINEMENTS */
 @media (max-width: 768px) {
   .transmissao-hero {
-    padding: 105px 0 50px 0;
+    padding: 100px 0 45px 0;
+  }
+
+  .transmissao-hero-title {
+    font-size: clamp(1.8rem, 6vw, 2.3rem);
+  }
+
+  .transmissao-hero-desc {
+    font-size: 0.94rem;
+    line-height: 1.55;
   }
 
   .hardware-card {
@@ -444,32 +453,45 @@
 
 @media (max-width: 480px) {
   .transmissao-hero {
-    padding: 95px 0 40px 0;
+    padding: 92px 0 35px 0;
   }
 
   .hw-img-box {
-    height: 190px;
-    margin: 14px 0 18px 0;
+    height: 180px;
+    margin: 12px 0 16px 0;
   }
 
   .hw-img {
-    max-height: 180px;
+    max-height: 170px;
   }
 
   .hardware-card {
-    padding: 20px 16px;
+    padding: 24px 20px;
   }
 
   .servico-card {
-    padding: 20px 16px;
+    padding: 24px 20px;
   }
 
   .setor-card {
-    padding: 20px 16px;
+    padding: 24px 20px;
+  }
+
+  .hw-card-title,
+  .servico-title,
+  .setor-title {
+    font-size: 1.3rem;
+  }
+
+  .hw-card-desc,
+  .servico-desc,
+  .setor-desc {
+    font-size: 0.88rem;
+    line-height: 1.55;
   }
 
   .modal-content {
-    padding: 20px 14px;
+    padding: 20px 16px;
     border-radius: 16px;
   }
 

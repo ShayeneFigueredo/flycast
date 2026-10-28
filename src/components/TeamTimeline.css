@@ -63,3 +63,24 @@
   line-height: 1.6;
   margin: 0;
 }
+
+@media (max-width: 480px) {
+  .timeline-item {
+    padding: 22px 18px;
+    border-radius: 14px;
+  }
+
+  .timeline-icon {
+    margin-bottom: 12px;
+  }
+
+  .role-title {
+    font-size: 1.22rem;
+    margin-bottom: 6px;
+  }
+
+  .role-desc {
+    font-size: 0.88rem;
+    line-height: 1.55;
+  }
+}

@@ -342,61 +342,21 @@
 
 @media (max-width: 640px) {
   .sobre-page-wrapper {
-    padding-top: 85px;
+    padding-top: 90px;
+    padding-bottom: 50px;
   }
 
   .sobre-hero-card {
-    min-height: 420px;
+    min-height: 360px;
     border-radius: 20px;
   }
 
   .sobre-hero-content {
-    padding: 32px 22px;
+    padding: 30px 24px;
   }
 
   .sobre-hero-title {
-    font-size: 2.3rem;
-  }
-
-  .sobre-hero-desc {
-    font-size: 1.05rem;
-  }
-
-  .sobre-pillar-card {
-    padding: 28px 22px;
-    border-radius: 18px;
-  }
-
-  .sobre-solution-card {
-    height: 320px;
-    border-radius: 20px;
-  }
-
-  .solution-card-content {
-    padding: 24px 20px;
-  }
-
-  .solution-card-title {
-    font-size: 1.65rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .sobre-page-wrapper {
-    padding-top: 75px;
-  }
-
-  .sobre-hero-card {
-    min-height: 380px;
-    border-radius: 18px;
-  }
-
-  .sobre-hero-content {
-    padding: 26px 18px;
-  }
-
-  .sobre-hero-title {
-    font-size: 1.95rem;
+    font-size: 2rem;
   }
 
   .sobre-hero-desc {
@@ -404,24 +364,122 @@
   }
 
   .sobre-pillar-card {
-    padding: 24px 18px;
-  }
-
-  .sobre-solution-card {
-    height: 300px;
+    padding: 26px 22px;
     border-radius: 18px;
   }
 
+  .sobre-solution-card {
+    height: 280px;
+    border-radius: 20px;
+  }
+
   .solution-card-content {
-    padding: 20px 16px;
+    padding: 24px 22px;
   }
 
   .solution-card-title {
     font-size: 1.5rem;
   }
+}
+
+@media (max-width: 480px) {
+  .sobre-page-wrapper {
+    padding-top: 90px;
+    padding-bottom: 40px;
+  }
+
+  .sobre-top-nav {
+    margin-bottom: 14px;
+  }
+
+  .btn-back {
+    font-size: 0.86rem;
+  }
+
+  .sobre-hero-card {
+    min-height: 310px;
+    border-radius: 18px;
+  }
+
+  .sobre-hero-content {
+    padding: 26px 20px; /* Respiro amplo e equilibrado nas 4 bordas */
+  }
+
+  .sobre-hero-tag {
+    font-size: 0.72rem;
+    letter-spacing: 1.5px;
+    margin-bottom: 10px;
+    gap: 8px;
+  }
+
+  .cyan-dash-inline {
+    width: 20px;
+    height: 2.5px;
+  }
+
+  .sobre-hero-title {
+    font-size: clamp(1.55rem, 5.2vw, 1.85rem);
+    margin-bottom: 12px;
+    line-height: 1.15;
+  }
+
+  .sobre-hero-desc {
+    font-size: 0.88rem;
+    line-height: 1.55;
+  }
+
+  .sobre-section-header {
+    margin-bottom: 20px;
+  }
+
+  .cyan-dash-bar {
+    width: 26px;
+    height: 3px;
+    margin-bottom: 10px;
+  }
+
+  .sobre-section-title {
+    font-size: clamp(1.45rem, 4.8vw, 1.75rem);
+  }
+
+  .sobre-pillar-card {
+    padding: 22px 18px; /* Bordas e respiros equilibrados */
+    border-radius: 16px;
+  }
+
+  .pillar-icon-box {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    margin-bottom: 14px;
+  }
+
+  .pillar-title {
+    font-size: 1.2rem;
+    margin-bottom: 6px;
+  }
+
+  .pillar-desc {
+    font-size: 0.86rem;
+    line-height: 1.55;
+  }
+
+  .sobre-solution-card {
+    height: 240px;
+    border-radius: 18px;
+  }
+
+  .solution-card-content {
+    padding: 20px 18px;
+    gap: 10px;
+  }
+
+  .solution-card-title {
+    font-size: 1.3rem;
+  }
 
   .solution-btn-pill {
-    padding: 8px 20px;
-    font-size: 0.88rem;
+    padding: 7px 18px;
+    font-size: 0.82rem;
   }
 }

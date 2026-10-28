@@ -185,30 +185,36 @@
 
 @media (max-width: 480px) {
   .comparison-content-wrapper {
-    gap: 2rem;
+    gap: 1.6rem;
   }
 
   .comparison-text-side .section-title {
-    font-size: 1.7rem;
+    font-size: 1.55rem;
     line-height: 1.2;
-    margin-bottom: 1rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .comparison-paragraph {
+    font-size: 0.88rem;
+    line-height: 1.55;
   }
 
   .table-container {
-    min-width: 460px;
+    min-width: 440px;
+    border-radius: 14px;
   }
 
   .table-header {
-    padding: 1rem 1.1rem;
-    font-size: 0.95rem;
+    padding: 0.85rem 1rem;
+    font-size: 0.88rem;
   }
 
   .table-row {
-    padding: 0.85rem 1.1rem;
+    padding: 0.75rem 1rem;
   }
 
   .col-feature {
-    font-size: 0.88rem;
+    font-size: 0.82rem;
     gap: 8px;
   }
 }

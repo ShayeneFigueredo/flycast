@@ -320,7 +320,7 @@
   }
 
   .setores-card-content {
-    padding: 16px 14px;
+    padding: 20px 18px;
     gap: 6px;
   }
 
@@ -335,7 +335,7 @@
 
 @media (max-width: 480px) {
   .setores-hero {
-    padding: 95px 0 40px 0;
+    padding: 92px 0 35px 0;
   }
 
   .setores-images-col {
@@ -354,7 +354,7 @@
   }
 
   .setores-card-title {
-    font-size: 1rem;
+    font-size: 0.95rem;
     white-space: normal;
   }
 }

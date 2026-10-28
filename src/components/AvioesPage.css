@@ -674,15 +674,16 @@
 
 @media (max-width: 768px) {
   .avioes-hero {
-    padding: 105px 0 50px 0;
+    padding: 100px 0 45px 0;
   }
 
   .avioes-hero-title {
-    font-size: clamp(2.4rem, 8vw, 3.2rem);
+    font-size: clamp(1.8rem, 6vw, 2.3rem);
   }
 
   .avioes-hero-desc {
-    font-size: 1.05rem;
+    font-size: 0.94rem;
+    line-height: 1.55;
   }
 
   .avioes-highlight-card {
@@ -705,6 +706,8 @@
 @media (max-width: 640px) {
   .arch-step-card {
     flex: 100%;
+    padding: 22px 18px;
+    border-radius: 14px;
   }
 
   .record-item {
@@ -718,23 +721,23 @@
   }
 
   .avioes-final-banner {
-    padding: 36px 20px;
+    padding: 34px 22px;
     border-radius: 20px;
   }
 }
 
 @media (max-width: 480px) {
   .avioes-hero {
-    padding: 95px 0 35px 0;
+    padding: 92px 0 35px 0;
   }
 
   .inpaer-colt-banner {
-    padding: 24px 16px;
+    padding: 26px 20px;
     border-radius: 18px;
   }
 
   .inpaer-colt-action {
-    padding: 16px 14px;
+    padding: 18px 18px;
   }
 
   .inpaer-btn {
@@ -743,7 +746,7 @@
   }
 
   .avioes-final-banner {
-    padding: 30px 16px;
+    padding: 30px 20px;
   }
 
   .banner-btn {
@@ -752,7 +755,7 @@
   }
 
   .diario-records-card {
-    padding: 16px 14px;
+    padding: 20px 18px;
     border-radius: 16px;
   }
 

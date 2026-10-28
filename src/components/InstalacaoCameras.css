@@ -176,7 +176,7 @@
 /* RESPONSIVE SAFETY & MOBILE PADDING REFINEMENTS */
 @media (max-width: 768px) {
   .instalacao-hero {
-    padding: 105px 0 50px 0;
+    padding: 100px 0 45px 0;
   }
 
   .soc-body {
@@ -184,20 +184,29 @@
   }
 
   .soc-img-wrapper {
-    height: 200px;
+    height: 190px;
   }
 }
 
 @media (max-width: 480px) {
   .instalacao-hero {
-    padding: 95px 0 40px 0;
+    padding: 92px 0 35px 0;
   }
 
   .soc-body {
-    padding: 20px 16px;
+    padding: 24px 20px;
+  }
+
+  .soc-title {
+    font-size: 1.3rem;
+  }
+
+  .soc-desc {
+    font-size: 0.88rem;
+    line-height: 1.55;
   }
 
   .soc-img-wrapper {
-    height: 180px;
+    height: 170px;
   }
 }
