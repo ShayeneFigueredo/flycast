@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Phone, Mail, MapPin, ArrowUpRight, Shield, Radio, Plane, GraduationCap, MessageCircle } from 'lucide-react';
+import { Radio, Plane, GraduationCap, MessageCircle } from 'lucide-react';
 import logoHorizontal from '../assets/LOGO-HORIZONTAL.png';
 import './Footer.css';
 
@@ -20,9 +20,6 @@ const Footer = () => {
             <Link to="/" onClick={scrollToTop} className="footer-logo-link" aria-label="Flycast Home">
               <img src={logoHorizontal} alt="Flycast" className="footer-logo" />
             </Link>
-            <p className="footer-brand-desc">
-              Pioneira em conectividade aeronáutica híbrida, streaming celular em tempo real e inteligência operacional com IA Multimodal para asas rotativas, aviação leve e centros de instrução.
-            </p>
             <div className="footer-contact-item">
               <a 
                 href="https://wa.me/553499793418?text=Ol%C3%A1!%20Gostaria%20de%20falar%20com%20a%20equipe%20da%20Flycast." 
@@ -38,102 +35,26 @@ const Footer = () => {
 
           {/* Nav: Helicópteros */}
           <div className="footer-col">
-            <h4 className="footer-title">
-              <Radio size={16} className="text-accent" />
+            <Link to="/" onClick={scrollToTop} className="footer-nav-title">
+              <Radio size={18} className="text-accent" />
               <span>Helicópteros</span>
-            </h4>
-            <ul className="footer-links">
-              <li>
-                <Link to="/solucoes/transmissao-aerea" onClick={scrollToTop}>
-                  Transmissão Aérea HD
-                </Link>
-              </li>
-              <li>
-                <Link to="/solucoes/servicos-integrados" onClick={scrollToTop}>
-                  Serviços Integrados
-                </Link>
-              </li>
-              <li>
-                <Link to="/solucoes/setores-atendidos" onClick={scrollToTop}>
-                  Setores Atendidos
-                </Link>
-              </li>
-            </ul>
+            </Link>
           </div>
 
           {/* Nav: Aviões */}
           <div className="footer-col">
-            <h4 className="footer-title">
-              <Plane size={16} className="text-accent" />
+            <Link to="/" onClick={scrollToTop} className="footer-nav-title">
+              <Plane size={18} className="text-accent" />
               <span>Aviões</span>
-            </h4>
-            <ul className="footer-links">
-              <li>
-                <Link to="/solucoes/avioes" onClick={scrollToTop}>
-                  Conheça Melhor Seu Voo
-                </Link>
-              </li>
-              <li>
-                <Link to="/solucoes/avioes#arquitetura" onClick={scrollToTop}>
-                  Arquitetura Técnica
-                </Link>
-              </li>
-              <li>
-                <Link to="/solucoes/avioes#inpaer" onClick={scrollToTop}>
-                  Inpaer Colt Integrado
-                </Link>
-              </li>
-            </ul>
+            </Link>
           </div>
 
           {/* Nav: Escolas de Aviação */}
           <div className="footer-col">
-            <h4 className="footer-title">
-              <GraduationCap size={16} className="text-accent" />
+            <Link to="/" onClick={scrollToTop} className="footer-nav-title">
+              <GraduationCap size={18} className="text-accent" />
               <span>Escolas de Aviação</span>
-            </h4>
-            <ul className="footer-links">
-              <li>
-                <Link to="/solucoes/escolas-de-aviacao" onClick={scrollToTop}>
-                  A Nova Era da Instrução
-                </Link>
-              </li>
-              <li>
-                <Link to="/solucoes/escolas-de-aviacao#ia-multimodal" onClick={scrollToTop}>
-                  IA Multimodal & Score
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Nav: Institucional */}
-          <div className="footer-col">
-            <h4 className="footer-title">
-              <Shield size={16} className="text-accent" />
-              <span>Institucional</span>
-            </h4>
-            <ul className="footer-links">
-              <li>
-                <Link to="/" onClick={scrollToTop}>
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link to="/sobre-nos" onClick={scrollToTop}>
-                  Sobre a Flycast
-                </Link>
-              </li>
-              <li>
-                <a href="/#clientes">
-                  Nossos Clientes
-                </a>
-              </li>
-              <li>
-                <Link to="/login" onClick={scrollToTop}>
-                  Portal FlyHub
-                </Link>
-              </li>
-            </ul>
+            </Link>
           </div>
         </div>
 
