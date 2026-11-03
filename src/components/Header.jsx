@@ -144,7 +144,7 @@ const Header = () => {
         </nav>
 
         {/* Language Switcher */}
-        <div className="language-switcher">
+        <div className="language-switcher notranslate" translate="no">
           <button type="button" onClick={() => {
             const selectField = document.querySelector('.goog-te-combo');
             if (selectField) { selectField.value = 'pt'; selectField.dispatchEvent(new Event('change')); }
