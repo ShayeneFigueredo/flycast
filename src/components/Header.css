@@ -233,6 +233,35 @@
 }
 
 /* Mobile Toggle */
+.language-switcher {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: auto;
+  white-space: nowrap;
+}
+
+.language-switcher button {
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.15rem;
+  letter-spacing: 1px;
+  cursor: pointer;
+  padding: 4px;
+  transition: color 0.2s ease;
+}
+
+.language-switcher button:hover {
+  color: #ffffff;
+}
+
+.lang-separator {
+  color: rgba(255, 255, 255, 0.2);
+  font-size: 0.9rem;
+}
+
 .mobile-toggle-btn {
   display: flex;
   align-items: center;

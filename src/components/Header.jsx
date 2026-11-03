@@ -143,6 +143,24 @@ const Header = () => {
           </Link>
         </nav>
 
+        {/* Language Switcher */}
+        <div className="language-switcher">
+          <button type="button" onClick={() => {
+            const selectField = document.querySelector('.goog-te-combo');
+            if (selectField) { selectField.value = 'pt'; selectField.dispatchEvent(new Event('change')); }
+          }} aria-label="Português">PT</button>
+          <span className="lang-separator">|</span>
+          <button type="button" onClick={() => {
+            const selectField = document.querySelector('.goog-te-combo');
+            if (selectField) { selectField.value = 'en'; selectField.dispatchEvent(new Event('change')); }
+          }} aria-label="English">EN</button>
+          <span className="lang-separator">|</span>
+          <button type="button" onClick={() => {
+            const selectField = document.querySelector('.goog-te-combo');
+            if (selectField) { selectField.value = 'es'; selectField.dispatchEvent(new Event('change')); }
+          }} aria-label="Español">ES</button>
+        </div>
+
         {/* Mobile Toggle Button */}
         <button 
           type="button"
