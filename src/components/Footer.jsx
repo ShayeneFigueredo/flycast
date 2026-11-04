@@ -22,20 +22,20 @@ const Footer = () => {
             </Link>
             <div className="footer-contact-item">
               <a 
-                href="https://wa.me/553499793418?text=Ol%C3%A1!%20Gostaria%20de%20falar%20com%20a%20equipe%20da%20Flycast." 
+                href="https://wa.me/5534999793418?text=Ol%C3%A1!%20Gostaria%20de%20falar%20com%20a%20equipe%20da%20Flycast." 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="footer-whatsapp-btn"
               >
                 <MessageCircle size={18} />
-                <span>+55 (34) 99793-418</span>
+                <span>+55 34 99979-3418</span>
               </a>
             </div>
           </div>
 
           {/* Nav: Helicópteros */}
           <div className="footer-col">
-            <Link to="/" onClick={scrollToTop} className="footer-nav-title">
+            <Link to="/solucoes/transmissao-aerea" onClick={scrollToTop} className="footer-nav-title">
               <Radio size={18} className="text-accent" />
               <span>Helicópteros</span>
             </Link>
@@ -43,7 +43,7 @@ const Footer = () => {
 
           {/* Nav: Aviões */}
           <div className="footer-col">
-            <Link to="/" onClick={scrollToTop} className="footer-nav-title">
+            <Link to="/solucoes/avioes" onClick={scrollToTop} className="footer-nav-title">
               <Plane size={18} className="text-accent" />
               <span>Aviões</span>
             </Link>
@@ -51,7 +51,7 @@ const Footer = () => {
 
           {/* Nav: Escolas de Aviação */}
           <div className="footer-col">
-            <Link to="/" onClick={scrollToTop} className="footer-nav-title">
+            <Link to="/solucoes/escolas-de-aviacao" onClick={scrollToTop} className="footer-nav-title">
               <GraduationCap size={18} className="text-accent" />
               <span>Escolas de Aviação</span>
             </Link>

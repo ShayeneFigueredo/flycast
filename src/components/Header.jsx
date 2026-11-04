@@ -84,8 +84,8 @@ const Header = () => {
 
         {/* Desktop Navigation */}
         <nav className="nav-links" aria-label="Navegação principal">
-          <Link to="/" className={`nav-item ${location.pathname === '/' ? 'active' : ''}`}>
-            Home
+          <Link to="/" className={`nav-item notranslate ${location.pathname === '/' ? 'active' : ''}`} translate="no">
+            HOME
           </Link>
 
           {/* Vertical 1: Helicópteros */}
@@ -201,7 +201,7 @@ const Header = () => {
       </div>
 
       <div className="mobile-nav-content">
-        <Link to="/" className={`mobile-nav-link ${location.pathname === '/' ? 'active' : ''}`} onClick={() => setMobileMenuOpen(false)}>
+        <Link to="/" className={`mobile-nav-link notranslate ${location.pathname === '/' ? 'active' : ''}`} onClick={() => setMobileMenuOpen(false)} translate="no">
           HOME
         </Link>
 
