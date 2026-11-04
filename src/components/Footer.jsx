@@ -28,7 +28,7 @@ const Footer = () => {
                 className="footer-whatsapp-btn"
               >
                 <MessageCircle size={18} />
-                <span>(34) 99793-418</span>
+                <span>+55 (34) 99793-418</span>
               </a>
             </div>
           </div>
