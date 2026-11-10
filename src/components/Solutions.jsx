@@ -8,6 +8,7 @@ import extenderImg from '../assets/solucoes/extender-1.png';
 import flyboxImg from '../assets/solucoes/flybox.png';
 import airbindImg from '../assets/solucoes/airbind.png';
 import flyhubImg from '../assets/solucoes/flyhub.png';
+import telaFlyhubImg from '../assets/tela-flyhub.png';
 import cameraImg from '../assets/camera.png';
 
 const Solutions = () => {
@@ -18,6 +19,22 @@ const Solutions = () => {
       image: livecastImg,
       desc: 'Transmissão celular híbrida de vídeo ao vivo em alta definição com soma de banda (bonding) para até 12 modems 5G.',
       features: ['Gabinete em alumínio aeronáutico', 'Sistema LiveCooling', 'Compatível com 5G e Extender'],
+      link: '/solucoes/transmissao-aerea'
+    },
+    {
+      title: 'LIVECAST IA',
+      badge: 'Visão Computacional',
+      image: livecastImg,
+      desc: 'Reconhecimento facial, identificação de carros e leitura de placas integrados à transmissão ao vivo para segurança pública e monitoramento.',
+      features: ['Reconhecimento Facial', 'Leitura de Placas (ALPR)', 'Identificação de Veículos'],
+      link: '/solucoes/transmissao-aerea'
+    },
+    {
+      title: 'AIR BIND',
+      badge: 'Protocolo de Conectividade',
+      image: airbindImg,
+      desc: 'Roteamento e agregação inteligente de múltiplos canais de comunicação com criptografia e baixa latência para operações críticas.',
+      features: ['Conexão híbrida robusta', 'Failover automático', 'Baixa latência'],
       link: '/solucoes/transmissao-aerea'
     },
     {
@@ -50,7 +67,7 @@ const Solutions = () => {
     {
       title: 'FLY RECORD',
       badge: 'Aplicativo Móvel',
-      image: flyboxImg,
+      image: flyhubImg,
       desc: 'Solução ágil para celular e tablet que captura vídeo, áudio e GPS para digitalizar a instrução sem custo de hardware inicial.',
       features: ['Início imediato na escola', 'Gravação sincronizada', 'Sincronização pós-voo'],
       link: '/solucoes/escolas-de-aviacao'
@@ -58,7 +75,7 @@ const Solutions = () => {
     {
       title: 'FLYHUB',
       badge: 'Plataforma em Nuvem',
-      image: flyhubImg,
+      image: telaFlyhubImg,
       desc: 'Plataforma web centralizada com replay em 3D, linha do tempo sincronizada e debriefing inteligente com IA Multimodal.',
       features: ['Score de voo automatizado', 'Gestão de alunos e frotas', 'Manutenção preditiva'],
       link: '/solucoes/avioes'

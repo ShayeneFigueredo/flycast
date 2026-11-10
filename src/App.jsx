@@ -26,6 +26,7 @@ const LandingPage = () => (
     <Header />
     <main>
       <Hero />
+      <Solutions />
       <TeamTimeline />
       <CTABanner />
       <Comparison />
