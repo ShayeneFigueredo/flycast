@@ -26,10 +26,10 @@ const LandingPage = () => (
     <Header />
     <main>
       <Hero />
-      <TeamTimeline />
       <Solutions />
-      <CTABanner />
+      <TeamTimeline />
       <Comparison />
+      <CTABanner />
       <Partners />
     </main>
   </>
