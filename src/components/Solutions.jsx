@@ -76,6 +76,7 @@ const Solutions = () => {
       title: 'FLYHUB',
       badge: 'Plataforma em Nuvem',
       image: telaFlyhubImg,
+      mockup: true,
       desc: 'Plataforma web centralizada com replay em 3D, linha do tempo sincronizada e debriefing inteligente com IA Multimodal.',
       features: ['Score de voo automatizado', 'Gestão de alunos e frotas', 'Manutenção preditiva'],
       link: '/solucoes/avioes'
@@ -162,7 +163,7 @@ const Solutions = () => {
             {avioesSolutions.map((item, idx) => (
               <div key={idx} className="solution-tech-card glow-box">
                 <div className="stc-image-wrapper">
-                  <img src={item.image} alt={item.title} className="stc-image" />
+                  <img src={item.image} alt={item.title} className={`stc-image ${item.mockup ? 'tablet-mockup' : ''}`} />
                 </div>
                 <div className="stc-content">
                   <h4 className="stc-title text-accent">{item.title}</h4>
