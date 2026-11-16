@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
+import useScrollToHash from '../hooks/useScrollToHash';
 import { Link } from 'react-router-dom';
 import { 
   ArrowLeft, 
@@ -28,9 +29,7 @@ import Partners from './Partners';
 const TransmissaoAerea = () => {
   const [modalOpen, setModalOpen] = useState(false);
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+  useScrollToHash();
 
   return (
     <div className="transmissao-page-wrapper">
@@ -91,7 +90,7 @@ const TransmissaoAerea = () => {
 
           <div className="hardware-grid">
             {/* Card 1 — Livecast PRO */}
-            <div className="hardware-card glow-box">
+            <div className="hardware-card glow-box" id="livecast-pro">
               <div className="hw-header">
                 <span className="hw-tag">Unidade Principal Embarcada</span>
                 <h3 className="hw-title">Livecast PRO: robustez e estabilidade</h3>
@@ -133,7 +132,7 @@ const TransmissaoAerea = () => {
             </div>
 
             {/* Card 2 — Extender */}
-            <div className="hardware-card glow-box">
+            <div className="hardware-card glow-box" id="extender">
               <div className="hw-header">
                 <span className="hw-tag">Módulo Portátil de Longo Alcance</span>
                 <h3 className="hw-title">Extender: maior alcance e disponibilidade</h3>
@@ -235,7 +234,7 @@ const TransmissaoAerea = () => {
               </div>
               <div className="modal-footer mt-4 text-center">
                 <a 
-                  href="https://wa.me/553499793418?text=Ol%C3%A1!%20Gostaria%20da%20ficha%20t%C3%A9cnica%20em%20PDF%20do%20Livecast%20PRO%20e%20Extender." 
+                  href="https://wa.me/5534999793418?text=Ol%C3%A1!%20Gostaria%20da%20ficha%20t%C3%A9cnica%20em%20PDF%20do%20Livecast%20PRO%20e%20Extender." 
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="btn-primary"

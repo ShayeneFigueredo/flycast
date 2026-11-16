@@ -1,5 +1,6 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
+import useScrollToHash from '../hooks/useScrollToHash';
 import { 
   ArrowLeft, 
   ArrowRight, 
@@ -34,9 +35,7 @@ import telaFlyhubAvioes from '../assets/tela-flyhub-avioes.png';
 import flyhubImg from '../assets/flyhub.png';
 
 const AvioesPage = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+  useScrollToHash();
 
   return (
     <div className="avioes-page-wrapper">
@@ -84,7 +83,7 @@ const AvioesPage = () => {
 
             <div className="avioes-hero-actions">
               <a 
-                href="https://wa.me/553499793418?text=Ol%C3%A1!%20Gostaria%20de%20conhecer%20a%20solu%C3%A7%C3%A3o%20Flycast%20para%20meu%20avi%C3%A3o."
+                href="https://wa.me/5534999793418?text=Ol%C3%A1!%20Gostaria%20de%20conhecer%20a%20solu%C3%A7%C3%A3o%20Flycast%20para%20meu%20avi%C3%A3o."
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="btn-primary avioes-btn-cta"
@@ -167,7 +166,7 @@ const AvioesPage = () => {
       </section>
 
       {/* 3. DADOS DE VOO & ANÁLISE FLYHUB */}
-      <section className="diario-bordo-section section-padding">
+      <section className="diario-bordo-section section-padding" id="flyhub">
         <div className="container">
           <div className="diario-split-grid">
             {/* Coluna Esquerda: Mockup de Tablet Moderno com a tela FlyHub Aviões */}
@@ -247,7 +246,7 @@ const AvioesPage = () => {
 
               <div className="diario-cta-row">
                 <a 
-                  href="https://wa.me/553499793418?text=Ol%C3%A1!%20Gostaria%20de%20consultar%20uma%20demonstra%C3%A7%C3%A3o%20dos%20Dados%20de%20Voo." 
+                  href="https://wa.me/5534999793418?text=Ol%C3%A1!%20Gostaria%20de%20consultar%20uma%20demonstra%C3%A7%C3%A3o%20dos%20Dados%20de%20Voo." 
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="btn-primary"
@@ -371,7 +370,7 @@ const AvioesPage = () => {
                   Pronto para transformar os registros do seu avião em inteligência?
                 </p>
                 <a 
-                  href="https://wa.me/553499793418?text=Ol%C3%A1!%20Gostaria%20de%20falar%20com%20um%20consultor%20sobre%20o%20Inpaer%20Colt%20com%20FlyBox." 
+                  href="https://wa.me/5534999793418?text=Ol%C3%A1!%20Gostaria%20de%20falar%20com%20um%20consultor%20sobre%20o%20Inpaer%20Colt%20com%20FlyBox." 
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="btn-primary inpaer-btn"
@@ -406,7 +405,7 @@ const AvioesPage = () => {
               </p>
               <div className="banner-action">
                 <a 
-                  href="https://wa.me/553499793418?text=Ol%C3%A1!%20Gostaria%20de%20falar%20com%20um%20consultor%20Flycast%20sobre%20meu%20avi%C3%A3o." 
+                  href="https://wa.me/5534999793418?text=Ol%C3%A1!%20Gostaria%20de%20falar%20com%20um%20consultor%20Flycast%20sobre%20meu%20avi%C3%A3o." 
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="btn-primary banner-btn"

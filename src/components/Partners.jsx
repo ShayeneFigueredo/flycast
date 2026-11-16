@@ -23,12 +23,14 @@ const Clientes = () => {
       name: 'COMAVE - Comando de Aviação da PMMG', 
       src: comaveLogo, 
       url: 'https://www.instagram.com/pmmg.comave/',
+      isInstagram: true,
       isEmblem: true
     },
     { 
       name: 'Águia - Comando de Aviação da PMESP', 
       src: aguiaLogo, 
       url: 'https://www.instagram.com/cavpm_pmesp/',
+      isInstagram: true,
       isEmblem: true
     },
     { 
@@ -66,12 +68,14 @@ const Clientes = () => {
     { 
       name: 'i9 Hub', 
       src: i9Logo, 
-      url: 'https://shayenefigueredo.github.io/site-i9hub/' 
+      url: 'https://i9hubcowork.com.br/' 
     },
   ];
 
   // Repeat for continuous seamless infinite marquee
   const topRowLogos = [...clientLogos, ...clientLogos, ...clientLogos];
+  const linkLabel = (item) => `${item.name} (${item.isInstagram ? 'visitar Instagram' : 'visitar site'})`;
+
   const bottomRowLogos = [...clientLogos.slice().reverse(), ...clientLogos.slice().reverse(), ...clientLogos.slice().reverse()];
 
   return (
@@ -86,8 +90,10 @@ const Clientes = () => {
                 href={item.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="client-logo-item"
-                title={`${item.name} (visitar site)`}
+                className="client-logo-item notranslate"
+                translate="no"
+                title={linkLabel(item)}
+                aria-label={linkLabel(item)}
               >
                 <img 
                   src={item.src} 
@@ -115,8 +121,10 @@ const Clientes = () => {
                 href={item.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="client-logo-item"
-                title={`${item.name} (visitar site)`}
+                className="client-logo-item notranslate"
+                translate="no"
+                title={linkLabel(item)}
+                aria-label={linkLabel(item)}
               >
                 <img 
                   src={item.src} 

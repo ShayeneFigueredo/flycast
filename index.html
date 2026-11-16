@@ -16,6 +16,8 @@
     <style>
       /* Hide Google Translate UI */
       #google_translate_element { position: absolute; top: -9999px; left: -9999px; opacity: 0; z-index: -1; pointer-events: none; }
+      /* Esconde o link "Powered by Google Tradutor" (o seletor de idioma continua funcionando) */
+      #google_translate_element .goog-te-gadget > span, .goog-logo-link { display: none !important; }
       
       /* Hide the top banner and all its containers */
       .goog-te-banner-frame { display: none !important; }
@@ -35,10 +37,29 @@
       .goog-tooltip:hover { display: none !important; }
       .goog-text-highlight { background-color: transparent !important; border: none !important; box-shadow: none !important; }
     </style>
-    <title>flycast</title>
+    <title>Flycast | Transmissão aérea ao vivo e dados de voo</title>
+    <meta name="description" content="A Flycast desenvolve soluções de transmissão aérea ao vivo para helicópteros e de captura e análise de dados de voo para aviões e escolas de aviação. Uberlândia – MG." />
+    <link rel="canonical" href="https://flycast.com.br/" />
+    <meta name="theme-color" content="#000208" />
+
+    <!-- Open Graph / prévias de WhatsApp, LinkedIn, Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Flycast" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:url" content="https://flycast.com.br/" />
+    <meta property="og:title" content="Flycast | Transmissão aérea ao vivo e dados de voo" />
+    <meta property="og:description" content="Transmissão ao vivo para helicópteros e dados de voo com IA para aviões e escolas de aviação." />
+    <meta property="og:image" content="https://flycast.com.br/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Flycast — Transmissão aérea e dados de voo" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Flycast | Transmissão aérea ao vivo e dados de voo" />
+    <meta name="twitter:description" content="Transmissão ao vivo para helicópteros e dados de voo com IA para aviões e escolas de aviação." />
+    <meta name="twitter:image" content="https://flycast.com.br/og-image.jpg" />
   </head>
   <body>
-    <div id="google_translate_element"></div>
+    <div id="google_translate_element" aria-hidden="true"></div>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>

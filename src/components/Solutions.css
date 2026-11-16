@@ -73,6 +73,14 @@
   border: 1px solid rgba(56, 189, 248, 0.25);
   text-decoration: none;
   transition: all 0.2s ease;
+  max-width: 100%;
+}
+
+@media (min-width: 769px) {
+  .vgh-link {
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
 }
 
 .vgh-link:hover {

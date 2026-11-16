@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
+import useScrollToHash from '../hooks/useScrollToHash';
 import { 
   ArrowLeft, 
   Plane, 
@@ -53,9 +54,13 @@ import videoColtBanner from '../assets/video-colt-banner.mp4';
 const FlyboxPage = () => {
   const [capturaTab, setCapturaTab] = useState('flybox'); // 'flybox' | 'flyrecord'
 
+  useScrollToHash();
+
+  // Link direto para a aba Fly Record (ex.: card da home)
+  const { hash } = useLocation();
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+    if (hash === '#fly-record') setCapturaTab('flyrecord');
+  }, [hash]);
 
   return (
     <div className="flybox-page-wrapper">
@@ -92,7 +97,7 @@ const FlyboxPage = () => {
 
             <div className="hero-cta-row">
               <a 
-                href="https://wa.me/553499793418?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20demonstra%C3%A7%C3%A3o%20do%20FlyHub."
+                href="https://wa.me/5534999793418?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20demonstra%C3%A7%C3%A3o%20do%20FlyHub."
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="btn-primary"
@@ -171,7 +176,7 @@ const FlyboxPage = () => {
 
           <div className="etapas-fluxo-grid">
             {/* ETAPA 1: CAPTURA */}
-            <div className="etapa-flow-card">
+            <div className="etapa-flow-card" id="fly-record">
               <div className="etapa-card-header">
                 <span className="etapa-badge-number">01</span>
                 <div>

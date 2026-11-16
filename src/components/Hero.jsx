@@ -74,7 +74,7 @@ const Hero = () => {
               Ver Nossas Soluções
             </a>
             <a 
-              href="https://wa.me/553499793418?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20demonstra%C3%A7%C3%A3o%20da%20Flycast."
+              href="https://wa.me/5534999793418?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20demonstra%C3%A7%C3%A3o%20da%20Flycast."
               target="_blank" 
               rel="noopener noreferrer" 
               className="btn-outline"

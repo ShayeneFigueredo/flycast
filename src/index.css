@@ -23,6 +23,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 110px; /* compensa o header fixo ao navegar por âncoras */
   overflow-x: hidden;
   max-width: 100vw;
 }

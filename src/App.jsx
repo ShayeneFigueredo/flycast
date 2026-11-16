@@ -7,7 +7,7 @@ import Audience from './components/Audience';
 import Benefits from './components/Benefits';
 import TeamTimeline from './components/TeamTimeline';
 import Solutions from './components/Solutions';
-import CTABanner from './components/CTABanner';
+// import CTABanner from './components/CTABanner'; // "Faça login no FlyHub" — reativar quando o link do FlyHub existir
 import Comparison from './components/Comparison';
 import Process from './components/Process';
 import FAQ from './components/FAQ';
@@ -19,6 +19,8 @@ import SobreNos from './components/SobreNos';
 import SetoresAtendidos from './components/SetoresAtendidos';
 import AvioesPage from './components/AvioesPage';
 import SecretArchivePage from './components/SecretArchivePage';
+import NotFound from './components/NotFound';
+import RouteMeta from './components/RouteMeta';
 import Footer from './components/Footer';
 
 const LandingPage = () => (
@@ -29,7 +31,7 @@ const LandingPage = () => (
       <TeamTimeline />
       <Solutions />
       <Comparison />
-      <CTABanner />
+      {/* <CTABanner /> — oculto até termos o link de login do FlyHub */}
       <Partners />
     </main>
   </>
@@ -38,6 +40,7 @@ const LandingPage = () => (
 function App() {
   return (
     <BrowserRouter>
+      <RouteMeta />
       <div className="app-container">
         <Routes>
           <Route path="/" element={<LandingPage />} />
@@ -77,8 +80,8 @@ function App() {
           {/* Aba Secreta / Arquivo de Conteúdo da Home */}
           <Route path="/secret" element={<SecretArchivePage />} />
 
-          {/* Fallback route */}
-          <Route path="*" element={<LandingPage />} />
+          {/* Página 404 */}
+          <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
       </div>

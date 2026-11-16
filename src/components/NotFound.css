@@ -1,0 +1,97 @@
+/* NotFound.css — Página 404 Flycast */
+
+.notfound-page {
+  padding-top: 105px;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  background:
+    radial-gradient(ellipse at top, rgba(2, 132, 199, 0.12), transparent 60%),
+    var(--bg-dark);
+  color: var(--text-primary);
+}
+
+.notfound-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding-top: 60px;
+  padding-bottom: 90px;
+}
+
+.notfound-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: var(--accent-blue);
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+
+.notfound-dash {
+  display: inline-block;
+  width: 26px;
+  height: 3px;
+  background: var(--accent-blue);
+  border-radius: 2px;
+  box-shadow: 0 0 10px rgba(56, 189, 248, 0.7);
+}
+
+.notfound-code {
+  font-family: var(--font-title);
+  font-size: clamp(7rem, 20vw, 12rem);
+  line-height: 1;
+  letter-spacing: 6px;
+  color: var(--accent-blue);
+  margin-bottom: 4px;
+}
+
+.notfound-title {
+  font-family: var(--font-title);
+  font-size: clamp(2rem, 4.5vw, 3rem);
+  line-height: 1.15;
+  margin-bottom: 16px;
+}
+
+.notfound-text {
+  max-width: 560px;
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.notfound-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+}
+
+@media (max-width: 480px) {
+  .notfound-container {
+    padding-top: 40px;
+    padding-bottom: 60px;
+  }
+
+  .notfound-tag {
+    font-size: 0.72rem;
+    letter-spacing: 1.5px;
+  }
+
+  .notfound-text {
+    font-size: 0.95rem;
+    margin-bottom: 28px;
+  }
+
+  .notfound-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+}

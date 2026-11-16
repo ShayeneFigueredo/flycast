@@ -11,6 +11,18 @@ import flyhubImg from '../assets/solucoes/flyhub.png';
 import telaFlyhubImg from '../assets/tela-flyhub.png';
 import cameraImg from '../assets/camera.png';
 
+// Link interno (rota/âncora) ou externo (WhatsApp) do botão "Ver Detalhes"
+const CardLink = ({ item }) =>
+  item.href ? (
+    <a href={item.href} target="_blank" rel="noopener noreferrer" className="stc-link">
+      <span>Saiba Mais</span>
+    </a>
+  ) : (
+    <Link to={item.link} className="stc-link">
+      <span>Ver Detalhes</span>
+    </Link>
+  );
+
 const Solutions = () => {
   const helicopterSolutions = [
     {
@@ -19,7 +31,7 @@ const Solutions = () => {
       image: livecastImg,
       desc: 'Transmissão celular híbrida de vídeo ao vivo em alta definição com soma de banda (bonding) para até 12 modems 5G.',
       features: ['Gabinete em alumínio aeronáutico', 'Sistema LiveCooling', 'Compatível com 5G e Extender'],
-      link: '/solucoes/transmissao-aerea'
+      link: '/solucoes/transmissao-aerea#livecast-pro'
     },
     {
       title: 'LIVECAST IA',
@@ -27,7 +39,7 @@ const Solutions = () => {
       image: livecastImg,
       desc: 'Reconhecimento facial, identificação de carros e leitura de placas integrados à transmissão ao vivo para segurança pública e monitoramento.',
       features: ['Reconhecimento Facial', 'Leitura de Placas (ALPR)', 'Identificação de Veículos'],
-      link: '/solucoes/transmissao-aerea'
+      href: 'https://wa.me/5534999793418?text=Ol%C3%A1%21%20Gostaria%20de%20saber%20mais%20sobre%20o%20Livecast%20IA.'
     },
     {
       title: 'AIR BIND',
@@ -35,7 +47,7 @@ const Solutions = () => {
       image: airbindImg,
       desc: 'Roteamento e agregação inteligente de múltiplos canais de comunicação com criptografia e baixa latência para operações críticas.',
       features: ['Conexão híbrida robusta', 'Failover automático', 'Baixa latência'],
-      link: '/solucoes/transmissao-aerea'
+      href: 'https://wa.me/5534999793418?text=Ol%C3%A1%21%20Gostaria%20de%20saber%20mais%20sobre%20o%20Air%20Bind%20para%20helic%C3%B3pteros.'
     },
     {
       title: 'EXTENDER',
@@ -43,7 +55,7 @@ const Solutions = () => {
       image: extenderImg,
       desc: 'Amplificador de sinal e modems com antenas de alto ganho para conectar torres remotas em voos de longa distância.',
       features: ['4 modems de alta capacidade', 'Antenas externas potentes', 'Conexão via Ethernet'],
-      link: '/solucoes/transmissao-aerea'
+      link: '/solucoes/transmissao-aerea#extender'
     },
     {
       title: 'SERVIÇOS INTEGRADOS',
@@ -70,7 +82,7 @@ const Solutions = () => {
       image: flyhubImg,
       desc: 'Solução ágil para celular e tablet que captura vídeo, áudio e GPS para digitalizar a instrução sem custo de hardware inicial.',
       features: ['Início imediato na escola', 'Gravação sincronizada', 'Sincronização pós-voo'],
-      link: '/solucoes/escolas-de-aviacao'
+      link: '/solucoes/escolas-de-aviacao#fly-record'
     },
     {
       title: 'FLYHUB',
@@ -79,7 +91,7 @@ const Solutions = () => {
       mockup: true,
       desc: 'Plataforma web centralizada com replay em 3D, linha do tempo sincronizada e debriefing inteligente com IA Multimodal.',
       features: ['Score de voo automatizado', 'Gestão de alunos e frotas', 'Manutenção preditiva'],
-      link: '/solucoes/avioes'
+      link: '/solucoes/avioes#flyhub'
     },
     {
       title: 'AIR BIND',
@@ -87,7 +99,7 @@ const Solutions = () => {
       image: airbindImg,
       desc: 'Roteamento e agregação inteligente de múltiplos canais de comunicação com criptografia e baixa latência.',
       features: ['Conexão celular + satélite', 'Failover automático', 'Telemetria em tempo real'],
-      link: '/solucoes/avioes'
+      link: '/solucoes/avioes#arquitetura'
     }
   ];
 
@@ -114,7 +126,7 @@ const Solutions = () => {
               </div>
             </div>
             <Link to="/solucoes/transmissao-aerea" className="vgh-link">
-              Conhecer Vertical <ArrowRight size={16} />
+              Ver soluções para helicópteros <ArrowRight size={16} />
             </Link>
           </div>
 
@@ -125,7 +137,7 @@ const Solutions = () => {
                   <img src={item.image} alt={item.title} className="stc-image" />
                 </div>
                 <div className="stc-content">
-                  <h4 className="stc-title text-accent">{item.title}</h4>
+                  <h4 className="stc-title text-accent notranslate" translate="no">{item.title}</h4>
                   <p className="stc-desc">{item.desc}</p>
                   <ul className="stc-features">
                     {item.features.map((feat, fIdx) => (
@@ -135,9 +147,7 @@ const Solutions = () => {
                       </li>
                     ))}
                   </ul>
-                  <Link to={item.link} className="stc-link">
-                    <span>Ver Detalhes</span>
-                  </Link>
+                  <CardLink item={item} />
                 </div>
               </div>
             ))}
@@ -155,7 +165,7 @@ const Solutions = () => {
               </div>
             </div>
             <Link to="/solucoes/avioes" className="vgh-link">
-              Conhecer Vertical <ArrowRight size={16} />
+              Ver soluções para aviões <ArrowRight size={16} />
             </Link>
           </div>
 
@@ -166,7 +176,7 @@ const Solutions = () => {
                   <img src={item.image} alt={item.title} className={`stc-image ${item.mockup ? 'tablet-mockup' : ''}`} />
                 </div>
                 <div className="stc-content">
-                  <h4 className="stc-title text-accent">{item.title}</h4>
+                  <h4 className="stc-title text-accent notranslate" translate="no">{item.title}</h4>
                   <p className="stc-desc">{item.desc}</p>
                   <ul className="stc-features">
                     {item.features.map((feat, fIdx) => (
@@ -176,9 +186,7 @@ const Solutions = () => {
                       </li>
                     ))}
                   </ul>
-                  <Link to={item.link} className="stc-link">
-                    <span>Ver Detalhes</span>
-                  </Link>
+                  <CardLink item={item} />
                 </div>
               </div>
             ))}
