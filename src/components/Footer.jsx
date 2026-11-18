@@ -58,11 +58,6 @@ const Footer = () => {
               <Radio size={18} className="text-accent" />
               <span>Helicópteros</span>
             </Link>
-            <ul className="footer-sublinks">
-              <li><Link to="/solucoes/transmissao-aerea" onClick={scrollToTop}>Transmissão Aérea</Link></li>
-              <li><Link to="/solucoes/servicos-integrados" onClick={scrollToTop}>Serviços Integrados</Link></li>
-              <li><Link to="/solucoes/setores-atendidos" onClick={scrollToTop}>Setores Atendidos</Link></li>
-            </ul>
           </div>
 
           {/* Nav: Aviões */}

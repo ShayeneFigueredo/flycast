@@ -187,25 +187,6 @@
   }
 }
 
-.footer-sublinks {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  padding-left: 28px; /* alinha com o texto do título, após o ícone */
-}
-
-.footer-sublinks a {
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: var(--text-muted);
-  transition: color 0.25s ease;
-}
-
-.footer-sublinks a:hover {
-  color: var(--accent-blue);
-}
-
 .footer-bottom {
   display: flex;
   flex-direction: column;
@@ -251,10 +232,6 @@
   .footer-nav-title {
     font-size: 1.1rem;
     padding: 6px 0;
-  }
-
-  .footer-sublinks a {
-    font-size: 0.85rem;
   }
 
   .footer-bottom {
